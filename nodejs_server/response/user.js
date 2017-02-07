@@ -1,4 +1,5 @@
 var querystring = require("querystring");
+var sql = require("../mysqlQuery");
 
 function start(request, response) {
   console.log("Request handler 'start' was called.");
@@ -24,57 +25,60 @@ var body = '<html>'+
 }
 
 function list(request, response) {
-    //连接数据库
-    var mysql = require('mysql');
-    var connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database:'test'
-    });
-
-    connection.connect();
-    //查询
-    connection.query('SELECT * from user', function(err, rows, fields) {
-        if (err) throw err;
-        response.write(JSON.stringify(rows));
-        response.end();
-    });
-    //关闭连接
-    connection.end();
+    let s = 'SELECT * from user';
+    querySQL(s, response);
 }
 
 function add(request, response) {
-    //连接数据库
-    var mysql = require('mysql');
-    var connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database:'test'
+    receiveData(request).then((query) => {
+        let s = 'insert into user(name) values("'+query.name+'")';
+        querySQL(s, response);
     });
+}
 
-    connection.connect();
+function update(request, response, routes) {
+    receiveData(request).then((query) => {
+        let s = 'update user set name="'+query.name+'" where id='+routes[3];
+        querySQL(s, response);
+    });
+}
+
+function del(request, response, routes) {
+    let s = 'delete from user where id='+routes[3];
+    querySQL(s, response);
+}
+
+function edit(request, response, routes) {
+    let s = 'SELECT * from user where id='+routes[3];
+    querySQL(s, response);
+}
+
+function receiveData(request) {
     var postData = "";
     request.addListener("data", function (data) {
         postData += data;
     });
     
-    request.addListener("end", function () {
-        console.log(postData);
-        var query = JSON.parse(postData);
-        console.log(query);
-        //查询
-        connection.query('SELECT * from user', function(err, rows, fields) {
-            if (err) throw err;
-            response.write(JSON.stringify(rows));
-            response.end();
+    return new Promise(function(resolve, reject) {
+        request.addListener("end", function () {
+            var query = JSON.parse(postData);
+            resolve(query);
         });
     });
-    //关闭连接
-    connection.end();
+}
+
+function querySQL(s, res) {
+    sql.query(s).then((data) => {
+        res.write(JSON.stringify(data));
+        res.end();
+    }, (err) => {
+        res.write(err);
+        res.end();
+    });
 }
 
 exports.start = start;
 exports.list = list;
 exports.add = add;
+exports.update = update;
+exports.del = del;
