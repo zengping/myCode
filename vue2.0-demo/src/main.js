@@ -4,6 +4,7 @@ import Vue from 'vue'
 import store from './public/store'
 import { router } from './conf/router-config'
 import { http } from './public/appApi'
+import lib from './public/lib'
 import Alertmsg from './public/Alertmsg'
 import Loading from './public/Loading'
 import './assets/css/style.css'
@@ -13,7 +14,8 @@ new Vue({
   router,
   store: store,
   data: {
-    http
+    http,
+    lib
   },
   components: {
     Alertmsg,
