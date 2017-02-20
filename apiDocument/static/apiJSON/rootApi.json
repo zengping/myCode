@@ -1,0 +1,16 @@
+{
+    "status": {
+        "code": 200,
+        "message": "请求成功"
+    },
+    "data":[
+        {
+            "name": "首页",
+            "apiJSON": "/index"
+        },
+        {
+            "name": "注册数据",
+            "apiJSON": "/dataAccess"
+        }
+    ]
+}

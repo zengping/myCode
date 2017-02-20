@@ -1,5 +1,5 @@
 let APP_DEV_ENV = 1  // 1开发环境 0生产环境
-let DEV_TEST = 1     // 1本地联调 0本地开发
+let DEV_TEST = 0     // 1本地联调 0本地开发
 let apiJoin = APP_DEV_ENV && !DEV_TEST ? '?' : ''
 let type = {
   'post': 'post',
@@ -16,7 +16,7 @@ if (APP_DEV_ENV && !DEV_TEST) {
 
 function api (code) {
   let appApi = {
-    'LOGIN': APP_DEV_ENV ? (DEV_TEST ? '/api/sys/login' : './static/jsons/onoff.json') : 'sys/login'
+    'root_api': APP_DEV_ENV ? (DEV_TEST ? '/api/root' : './static/apiJSON/rootApi.json') : 'api/root'
   }
   return appApi[code]
 }
