@@ -16,7 +16,8 @@ if (APP_DEV_ENV && !DEV_TEST) {
 
 function api (code) {
   let appApi = {
-    'root_api': APP_DEV_ENV ? (DEV_TEST ? '/api/root' : './static/apiJSON/rootApi.json') : 'api/root'
+    'root_api': APP_DEV_ENV ? (DEV_TEST ? '/api/root' : './static/apiJSON/rootApi.json') : 'api/root',
+    'second_api': APP_DEV_ENV ? (DEV_TEST ? '/api/second' : './static/apiJSON/') : 'api/second'
   }
   return appApi[code]
 }

@@ -1,0 +1,20 @@
+{
+    "status": {
+        "code": 200,
+        "message": "请求成功"
+    },
+    "data":[
+        {
+            "name": "WIFI采集",
+            "apiJSON": "/wifi"
+        },
+        {
+            "name": "电子围栏",
+            "apiJSON": "/electric"
+        },
+        {
+            "name": "镜像采集",
+            "apiJSON": "/port"
+        }
+    ]
+}

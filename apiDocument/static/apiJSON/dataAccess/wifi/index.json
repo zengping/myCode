@@ -1,0 +1,20 @@
+{
+    "status": {
+        "code": 200,
+        "message": "请求成功"
+    },
+    "data":[
+        {
+            "name": "列表",
+            "apiJSON": "list.json"
+        },
+        {
+            "name": "添加",
+            "apiJSON": "add.json"
+        },
+        {
+            "name": "删除",
+            "apiJSON": "delete.json"
+        }
+    ]
+}

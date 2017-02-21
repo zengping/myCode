@@ -2,7 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import http from '../http'
 import filters from '../filters'
-import App from '../App'
+import App from 'App'
+import Home from 'views/Home'
+import Second from 'views/Second'
 
 Vue.use(Router)
 filters.init(Vue)
@@ -13,7 +15,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: App
+      component: App,
+      children: [
+        {
+          path: '',
+          component: Home
+        },
+        {
+          path: '/:second',
+          component: Second
+        }
+      ]
     }
   ]
 })

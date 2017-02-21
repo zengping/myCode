@@ -4,7 +4,8 @@
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
-import loading from './loading'
+import head from './head'
+import left from './left'
 
 Vue.use(Vuex)
 
@@ -14,7 +15,8 @@ let status = {
   actions: {}
 }
 
-status = objAdd(status, loading)
+status = objAdd(status, head)
+status = objAdd(status, left)
 
 function objAdd (a, b) {
   Object.keys(a).forEach((o) => {
