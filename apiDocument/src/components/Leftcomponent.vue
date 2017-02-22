@@ -1,12 +1,11 @@
 <template>
-  <div class="left">
+  <div class="left" v-if="list.length > 0">
     <div class="col-lg-3">
       <ul class="list-group">
-        <li class="list-group-item active">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <li class="list-group-item active">{{leftApi.name}}</li>
+        <a href="javascript:void(0)">
+        <li class="list-group-item" v-for="i in list" v-on:click="infoShow(i)">{{i.name}}</li>
+        </a>
       </ul>
     </div>
   </div>
@@ -20,24 +19,30 @@ export default {
     }
   },
   computed: {
-    secondApi () {
-      return this.$store.state.secondApi
+    leftApi () {
+      return this.$store.state.leftApi
     }
   },
-  created () {
-    this.getList()
+  watch: {
+    leftApi (val, oldVal) {
+      this.getList()
+    }
   },
   methods: {
     getList () {
+      if (!this.leftApi.apiJSON) {
+        return
+      }
       let self = this
-      this.$http.get({api: 'third_api', params: {path: this.secondApi.apiJSON}}).then((res) => {
+      let api = './static/apiJSON/' + this.$route.params.second + '/' + this.leftApi.apiJSON + '/index.json'
+      this.$http.get({api: api, params: {}}).then((res) => {
         self.list = res.data
       }, (res) => {
         // error callback
       })
     },
-    apiShow (i) {
-      this.$store.commit('setSecond', i)
+    infoShow (i) {
+      this.$store.commit('setRight', i)
     }
   }
 }

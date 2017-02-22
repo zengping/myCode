@@ -27,14 +27,15 @@ export default {
   methods: {
     getList () {
       let self = this
-      this.$http.get({api: 'second_api', params: {path: this.$route.params.second}}).then((res) => {
+      let api = './static/apiJSON/' + this.$route.params.second + '/index.json'
+      this.$http.get({api: api, params: {}}).then((res) => {
         self.list = res.data
       }, (res) => {
         // error callback
       })
     },
     thirdShow (i) {
-      this.$store.commit('setSecond', i)
+      this.$store.commit('setLeft', i)
     }
   }
 }

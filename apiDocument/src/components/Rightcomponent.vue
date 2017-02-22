@@ -1,11 +1,11 @@
 <template>
-  <div class="right">
+  <div class="right" v-if="info.name">
       <div class="col-lg-9">
           <div class="page-header">
             <h2>
-                列表接口
+                {{info.name}}
             </h2>
-            <h5>作者：zengping，版本：1.0.0</h5>
+            <h5>作者：{{info.author}}，版本：{{info.version}}</h5>
           </div>
           <div class="table-responsive">
           <table class="table table-bordered">
@@ -18,14 +18,14 @@
             <tbody>
             <tr>
                 <td>
-                /api/user
+                {{info.api}}
                 </td>
-                <td>POST</td>
+                <td>{{info.type}}</td>
             </tr>
             <tr>
                 <td colspan="2">
                     <pre>
-                        sdf
+                        {{info.remark}}
                     </pre>
                 </td>
             </tr>
@@ -47,26 +47,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
+              <tr v-for="i in info.fields">
+                <td>{{i.name}}</td>
+                <td>{{i.type}}</td>
+                <td>{{i.default}}</td>
+                <td>{{i.rang}}</td>
+                <td>{{i.remark}}</td>
               </tr>
               <tr>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
-              </tr>
-              <tr>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
+                  <td colspan="5">
+                      <pre>
+                          {{info.reqDemo}}
+                      </pre>
+                  </td>
               </tr>
             </tbody>
           </table>
@@ -86,19 +79,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
+              <tr v-for="i in info.resFields">
+                <td>{{i.name}}</td>
+                <td>{{i.type}}</td>
+                <td>{{i.default}}</td>
+                <td>{{i.rang}}</td>
+                <td>{{i.remark}}</td>
               </tr>
               <tr>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
-                <td>12</td>
+                  <td colspan="5">
+                      <pre>
+                          {{info.resDemo}}
+                      </pre>
+                  </td>
               </tr>
             </tbody>
           </table>
@@ -106,3 +99,43 @@
         </div>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      info: {}
+    }
+  },
+  computed: {
+    leftApi () {
+      return this.$store.state.leftApi
+    },
+    rightApi () {
+      return this.$store.state.rightApi
+    }
+  },
+  watch: {
+    rightApi (val, oldVal) {
+      this.getList()
+    }
+  },
+  methods: {
+    getList () {
+      if (!this.rightApi.apiJSON) {
+        return
+      }
+      let self = this
+      let api = './static/apiJSON/' + this.$route.params.second + '/' + this.leftApi.apiJSON + '/' + this.rightApi.apiJSON
+      this.$http.get({api: api, params: {}}).then((res) => {
+        self.info = res.data
+      }, (res) => {
+        // error callback
+      })
+    },
+    apiShow (i) {
+      this.$store.commit('setSecond', i)
+    }
+  }
+}
+</script>

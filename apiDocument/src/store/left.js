@@ -1,11 +1,11 @@
 export default {
   state: {
-    secondApi: {}
+    leftApi: {}
   },
   mutations: {
     // loading
-    setSecond (state, i) {
-      state.secondApi = i
+    setLeft (state, i) {
+      state.leftApi = i
     }
   },
   actions: {

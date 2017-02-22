@@ -3,22 +3,71 @@
         "code": 200,
         "message": "请求成功"
     },
-    "data":[
+    "data":
         {
-            "name": "首页",
-            "apiJSON": "/index"
-        },
-        {
-            "name": "注册数据",
-            "apiJSON": "/dataAccess"
-        },
-        {
-            "name": "任务管理",
-            "apiJSON": "/taskManagement"
-        },
-        {
-            "name": "工具录入",
-            "apiJSON": "/entryTool"
+            "name": "列表",
+            "author": "zengping",
+            "version": "1.0.0",
+            "api": "/dataAccess/getList",
+            "type": "get",
+            "remark": "",
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "int",
+                    "default": "zengping",
+                    "rang": "0-12",
+                    "remark": "中英文字符"
+                }
+            ],
+            "reqDemo": {
+                "name": "zengping"
+            },
+            "resFields": [
+                {
+                    "name": "name",
+                    "type": "int",
+                    "default": "",
+                    "rang": "",
+                    "remark": ""
+                }
+            ],
+            "resDemo": {
+                "status": {
+                    "code": 200,
+                    "message": "请求成功"
+                },
+                "data":
+                    {
+                        "name": "列表",
+                        "author": "zengping",
+                        "version": "1.0.0",
+                        "api": "/dataAccess/getList",
+                        "type": "get",
+                        "remark": "",
+                        "fields": [
+                            {
+                                "name": "name",
+                                "type": "int",
+                                "default": "zengping",
+                                "rang": "0-12",
+                                "remark": "中英文字符"
+                            }
+                        ],
+                        "reqDemo": {
+                            "name": "zengping"
+                        },
+                        "resFields": [
+                            {
+                                "name": "name",
+                                "type": "int",
+                                "default": "",
+                                "rang": "",
+                                "remark": ""
+                            }
+                        ],
+                        "resDemo": {}
+                    }
+            }
         }
-    ]
 }

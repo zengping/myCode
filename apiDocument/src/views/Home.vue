@@ -30,7 +30,7 @@ export default {
   methods: {
     getRoot () {
       let self = this
-      this.$http.get({api: 'root_api', params: {}}).then((res) => {
+      this.$http.get({api: './static/apiJSON/index.json', params: {}}).then((res) => {
         self.root = res.data
       }, (res) => {
         // error callback

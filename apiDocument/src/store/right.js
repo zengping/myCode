@@ -1,15 +1,10 @@
 export default {
   state: {
-      // loading状态
-    loading: false
+    rightApi: {}
   },
   mutations: {
-    // loading
-    showLoading (state) {
-      state.loading = true
-    },
-    hideLoading (state) {
-      state.loading = false
+    setRight (state, i) {
+      state.rightApi = i
     }
   },
   actions: {
