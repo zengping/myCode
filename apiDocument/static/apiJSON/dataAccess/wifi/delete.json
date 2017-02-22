@@ -1,0 +1,43 @@
+{
+    "status": {
+        "code": 200,
+        "message": "请求成功"
+    },
+    "data": {
+        "name": "删除",
+        "author": "zengping",
+        "version": "1.0.0",
+        "api": "/dataAccess/delete/:id",
+        "type": "post",
+        "remark": "",
+        "reqParams": [
+            {
+                "name": "id",
+                "type": "int",
+                "default": "0",
+                "rang": "",
+                "remark": "id"
+            }
+        ],
+        "reqDemo": {
+            "id": "12"
+        },
+        "resFields": [],
+        "resDemo": {
+            "succ": {
+                "status": {
+                    "code": 200,
+                    "message": "请求成功"
+                },
+                "data": 1
+            },
+            "err": {
+                "status": {
+                    "code": 200,
+                    "message": "请求成功"
+                },
+                "data": 0
+            }
+        }
+    }
+}

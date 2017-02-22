@@ -3,71 +3,78 @@
         "code": 200,
         "message": "请求成功"
     },
-    "data":
-        {
-            "name": "列表",
-            "author": "zengping",
-            "version": "1.0.0",
-            "api": "/dataAccess/getList",
-            "type": "get",
-            "remark": "",
-            "fields": [
-                {
-                    "name": "name",
-                    "type": "int",
-                    "default": "zengping",
-                    "rang": "0-12",
-                    "remark": "中英文字符"
-                }
-            ],
-            "reqDemo": {
-                "name": "zengping"
-            },
-            "resFields": [
-                {
-                    "name": "name",
-                    "type": "int",
-                    "default": "",
-                    "rang": "",
-                    "remark": ""
-                }
-            ],
-            "resDemo": {
+    "data": {
+        "name": "列表",
+        "author": "zengping",
+        "version": "1.0.0",
+        "api": "/dataAccess/getList",
+        "type": "get",
+        "remark": "",
+        "reqParams": [
+            {
+                "name": "name",
+                "type": "int",
+                "default": "zengping",
+                "rang": "0-12",
+                "remark": "中英文字符"
+            }
+        ],
+        "reqDemo": {
+            "name": "zengping"
+        },
+        "resFields": [
+            {
+                "name": "name",
+                "type": "int",
+                "default": "",
+                "rang": "",
+                "remark": ""
+            }
+        ],
+        "resDemo": {
+            "succ": {
                 "status": {
                     "code": 200,
                     "message": "请求成功"
                 },
-                "data":
-                    {
-                        "name": "列表",
-                        "author": "zengping",
-                        "version": "1.0.0",
-                        "api": "/dataAccess/getList",
-                        "type": "get",
-                        "remark": "",
-                        "fields": [
-                            {
-                                "name": "name",
-                                "type": "int",
-                                "default": "zengping",
-                                "rang": "0-12",
-                                "remark": "中英文字符"
-                            }
-                        ],
-                        "reqDemo": {
-                            "name": "zengping"
-                        },
-                        "resFields": [
-                            {
-                                "name": "name",
-                                "type": "int",
-                                "default": "",
-                                "rang": "",
-                                "remark": ""
-                            }
-                        ],
-                        "resDemo": {}
-                    }
+                "data": {
+                    "name": "列表",
+                    "author": "zengping",
+                    "version": "1.0.0",
+                    "api": "/dataAccess/getList",
+                    "type": "get",
+                    "remark": "",
+                    "fields": [
+                        {
+                            "name": "name",
+                            "type": "int",
+                            "default": "zengping",
+                            "rang": "0-12",
+                            "remark": "中英文字符"
+                        }
+                    ],
+                    "reqDemo": {
+                        "name": "zengping"
+                    },
+                    "resFields": [
+                        {
+                            "name": "name",
+                            "type": "int",
+                            "default": "",
+                            "rang": "",
+                            "remark": ""
+                        }
+                    ],
+                    "resDemo": {}
+                }
+            },
+            "err": {
+                "status": {
+                    "code": 200,
+                    "message": "请求成功"
+                },
+                "data": 0
             }
         }
+    }
 }

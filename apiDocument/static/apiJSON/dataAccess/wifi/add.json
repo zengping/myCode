@@ -1,0 +1,51 @@
+{
+    "status": {
+        "code": 200,
+        "message": "请求成功"
+    },
+    "data": {
+        "name": "添加",
+        "author": "zengping",
+        "version": "1.0.0",
+        "api": "/dataAccess/add",
+        "type": "post",
+        "remark": "",
+        "reqParams": [
+            {
+                "name": "name",
+                "type": "int",
+                "default": "zengping",
+                "rang": "0-12",
+                "remark": "中英文字符"
+            }
+        ],
+        "reqDemo": {
+            "name": "zengping"
+        },
+        "resFields": [
+            {
+                "name": "name",
+                "type": "int",
+                "default": "",
+                "rang": "",
+                "remark": ""
+            }
+        ],
+        "resDemo": {
+            "succ": {
+                "status": {
+                    "code": 200,
+                    "message": "请求成功"
+                },
+                "data": 1
+            },
+            "err": {
+                "status": {
+                    "code": 200,
+                    "message": "请求成功"
+                },
+                "data": 0
+            }
+        }
+    }
+}

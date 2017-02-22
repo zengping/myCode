@@ -15,6 +15,10 @@
         {
             "name": "删除",
             "apiJSON": "delete.json"
+        },
+        {
+            "name": "修改",
+            "apiJSON": "update.json"
         }
     ]
 }

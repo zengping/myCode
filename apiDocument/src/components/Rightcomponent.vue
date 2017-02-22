@@ -47,7 +47,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="i in info.fields">
+              <tr v-for="i in info.reqParams">
                 <td>{{i.name}}</td>
                 <td>{{i.type}}</td>
                 <td>{{i.default}}</td>
@@ -56,9 +56,7 @@
               </tr>
               <tr>
                   <td colspan="5">
-                      <pre>
-                          {{info.reqDemo}}
-                      </pre>
+                      <pre>{{info.reqDemo}}</pre>
                   </td>
               </tr>
             </tbody>
@@ -88,9 +86,10 @@
               </tr>
               <tr>
                   <td colspan="5">
-                      <pre>
-                          {{info.resDemo}}
-                      </pre>
+                    成功：
+                      <pre>{{info.resDemo.succ}}</pre>
+                    失败：
+                      <pre>{{info.resDemo.err}}</pre>
                   </td>
               </tr>
             </tbody>

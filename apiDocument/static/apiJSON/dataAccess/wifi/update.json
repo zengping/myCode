@@ -1,0 +1,59 @@
+{
+    "status": {
+        "code": 200,
+        "message": "请求成功"
+    },
+    "data": {
+        "name": "修改",
+        "author": "zengping",
+        "version": "1.0.0",
+        "api": "/dataAccess/update/:id",
+        "type": "post",
+        "remark": "",
+        "reqParams": [
+            {
+                "name": "id",
+                "type": "int",
+                "default": "0",
+                "rang": "",
+                "remark": "id"
+            },
+            {
+                "name": "name",
+                "type": "varchar(255)",
+                "default": "",
+                "rang": "0-12",
+                "remark": ""
+            },
+            {
+                "name": "age",
+                "type": "int",
+                "default": "20",
+                "rang": "0-150",
+                "remark": ""
+            }
+        ],
+        "reqDemo": {
+            "id": "12",
+            "name": "zengping",
+            "age": "25"
+        },
+        "resFields": [],
+        "resDemo": {
+            "succ": {
+                "status": {
+                    "code": 200,
+                    "message": "请求成功"
+                },
+                "data": 1
+            },
+            "err": {
+                "status": {
+                    "code": 200,
+                    "message": "请求成功"
+                },
+                "data": 0
+            }
+        }
+    }
+}
