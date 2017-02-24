@@ -11,6 +11,7 @@
           <table class="table table-bordered">
             <thead>
             <tr>
+                <th>API</th>
                 <th>地址</th>
                 <th>请求方式</th>
             </tr>
@@ -18,12 +19,15 @@
             <tbody>
             <tr>
                 <td>
+                {{info.var}}
+                </td>
+                <td>
                 {{info.api}}
                 </td>
                 <td>{{info.type}}</td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="3">
                     <pre>
                         {{info.remark}}
                     </pre>
