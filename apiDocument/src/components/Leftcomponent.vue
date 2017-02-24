@@ -1,11 +1,16 @@
 <template>
-  <div class="left" v-if="list.length > 0">
+  <div class="left" v-if="leftApi.name">
     <div class="col-lg-3">
       <ul class="list-group">
         <li class="list-group-item active">{{leftApi.name}}</li>
-        <a href="javascript:void(0)">
-        <li class="list-group-item" v-for="i in list" v-on:click="infoShow(i)">{{i.name}}</li>
-        </a>
+        <template v-if="list.length > 0">
+          <a href="javascript:void(0)">
+          <li class="list-group-item" v-for="i in list" v-on:click="infoShow(i)">{{i.name}}</li>
+          </a>
+        </template>
+        <template v-if="list.length < 1">
+          <li class="list-group-item">nothing</li>
+        </template>
       </ul>
     </div>
   </div>
@@ -31,14 +36,17 @@ export default {
   methods: {
     getList () {
       if (!this.leftApi.apiJSON) {
+        this.list = []
         return
       }
       let self = this
-      let api = './static/apiJSON/' + this.$route.params.second + '/' + this.leftApi.apiJSON + '/index.json'
+      let api = './static/apiJSON/' + this.$route.params.second + this.leftApi.apiJSON + '/index.json'
       this.$http.get({api: api, params: {}}).then((res) => {
         self.list = res.data
+        self.$store.commit('setRightNull')
       }, (res) => {
-        // error callback
+        self.list = []
+        self.$store.commit('setRightNull')
       })
     },
     infoShow (i) {

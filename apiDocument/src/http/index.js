@@ -23,10 +23,10 @@ export default {
           resolve(res.data)
         } else {
           // reject(res.data.status.message)
-          resolve(res.data)
+          reject(res)
         }
-      }).catch((res) => {
-        resolve(res.data)
+      }).catch((err) => {
+        reject(err)
       })
     })
   }

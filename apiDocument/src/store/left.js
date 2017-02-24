@@ -6,6 +6,9 @@ export default {
     // loading
     setLeft (state, i) {
       state.leftApi = i
+    },
+    setLeftNull (state) {
+      state.leftApi = {}
     }
   },
   actions: {

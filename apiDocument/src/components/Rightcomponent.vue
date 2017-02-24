@@ -126,6 +126,7 @@ export default {
   methods: {
     getList () {
       if (!this.rightApi.apiJSON) {
+        this.info = {}
         return
       }
       let self = this
@@ -133,11 +134,8 @@ export default {
       this.$http.get({api: api, params: {}}).then((res) => {
         self.info = res.data
       }, (res) => {
-        // error callback
+        self.info = {}
       })
-    },
-    apiShow (i) {
-      this.$store.commit('setSecond', i)
     }
   }
 }

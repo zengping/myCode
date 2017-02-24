@@ -5,6 +5,9 @@ export default {
   mutations: {
     setRight (state, i) {
       state.rightApi = i
+    },
+    setRightNull (state) {
+      state.rightApi = {}
     }
   },
   actions: {

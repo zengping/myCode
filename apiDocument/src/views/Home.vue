@@ -33,7 +33,7 @@ export default {
       this.$http.get({api: './static/apiJSON/index.json', params: {}}).then((res) => {
         self.root = res.data
       }, (res) => {
-        // error callback
+        self.root = []
       })
     },
     secondShow (i) {
