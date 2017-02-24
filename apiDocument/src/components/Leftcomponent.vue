@@ -5,7 +5,7 @@
         <li class="list-group-item active">{{leftApi.name}}</li>
         <template v-if="list.length > 0">
           <a href="javascript:void(0)">
-          <li class="list-group-item" v-for="i in list" v-on:click="infoShow(i)">{{i.name}}</li>
+          <li class="list-group-item" v-for="i in list" v-on:click="infoShow(i)" v-bind:class="{myactive: action.name == i.name}">{{i.name}}</li>
           </a>
         </template>
         <template v-if="list.length < 1">
@@ -20,6 +20,7 @@
 export default {
   data () {
     return {
+      action: {},
       list: []
     }
   },
@@ -33,10 +34,17 @@ export default {
       this.getList()
     }
   },
+  created () {
+    this.init()
+  },
   methods: {
+    init () {
+      this.action = {}
+      this.list = []
+    },
     getList () {
       if (!this.leftApi.apiJSON) {
-        this.list = []
+        this.init()
         return
       }
       let self = this
@@ -45,13 +53,20 @@ export default {
         self.list = res.data
         self.$store.commit('setRightNull')
       }, (res) => {
-        self.list = []
+        self.init()
         self.$store.commit('setRightNull')
       })
     },
     infoShow (i) {
+      this.action = i
       this.$store.commit('setRight', i)
     }
   }
 }
 </script>
+
+<style>
+  li.myactive {
+    background-color: #ccc;
+  }
+</style>
