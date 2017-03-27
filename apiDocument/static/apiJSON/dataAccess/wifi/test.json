@@ -1,0 +1,67 @@
+{
+    "status": {
+        "code": 200,
+        "message": "请求成功"
+    },
+    "data": {
+        "name": "测试",
+        "author": "zengping",
+        "version": "1.0.0",
+        "api": "/dataAccess/add",
+        "type": "post",
+        "remark": "",
+        "reqParams": [
+            {
+                "name": "id",
+                "type": "int",
+                "default": "5",
+                "rang": "",
+                "remark": "数字"
+            },
+            {
+                "name": "name",
+                "type": "int",
+                "default": "zengping",
+                "rang": "0-12",
+                "remark": "中英文字符"
+            },
+            {
+                "name": "code",
+                "type": "int",
+                "default": "456",
+                "rang": "0-12",
+                "remark": "中英文字符"
+            }
+        ],
+        "reqDemo": {
+            "id": "5",
+            "name": "zengping",
+            "code": "zengping"
+        },
+        "resFields": [
+            {
+                "name": "name",
+                "type": "int",
+                "default": "",
+                "rang": "",
+                "remark": ""
+            }
+        ],
+        "resDemo": {
+            "succ": {
+                "status": {
+                    "code": 200,
+                    "message": "请求成功"
+                },
+                "data": 1
+            },
+            "err": {
+                "status": {
+                    "code": 200,
+                    "message": "请求成功"
+                },
+                "data": 0
+            }
+        }
+    }
+}

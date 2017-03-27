@@ -8,6 +8,10 @@
     width: 100%;
     margin: 50px auto;
   }
+  .form-group {
+    display: block;
+    height: 40px;
+  }
 </style>
 <template>
   <div class="right" v-if="info.name">
@@ -114,7 +118,7 @@
           </div>
           <div v-show="testStatus">
             <div class="form-group">
-                <label class="col-sm-3 control-label">API PATH PARAMS：</label>
+                <label class="col-sm-3 control-label">API PATH：</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" v-model="apiPath">
                 </div>
@@ -165,6 +169,7 @@ export default {
       let api = './static/apiJSON/' + this.$route.params.second + '/' + this.leftApi.apiJSON + '/' + this.rightApi.apiJSON
       this.$http.get({api: api, params: {}}).then((res) => {
         self.info = res.data
+        self.apiPath = self.info.api
       }, (res) => {
         self.info = {}
       })
