@@ -130,6 +130,7 @@
                   <input type="text" class="form-control" :name="i.name" :value="i.default">
                 </div>
               </div>
+              <input type="hidden" name="t" :value="(new Date()).getTime()">
             </form>
             <span class="btn btn-primary testBtn" v-on:click="apiSubmit">提交</span>
           </div>

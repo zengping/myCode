@@ -11,7 +11,7 @@ filters.init(Vue)
 Vue.prototype.$http = http
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   routes: [
     {
       path: '/',
