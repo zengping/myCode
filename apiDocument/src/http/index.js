@@ -16,9 +16,24 @@ export default {
     o.type = 'delete'
     return this.xhr(o)
   },
+  getUrl (o) {
+    let uri = o.api
+    if (o.type === 'get' && Object.keys(o.params).length > 0) {
+      uri = uri + '&' + this.joinP(o.params)
+    }
+    return uri
+  },
+  joinP (o) {
+    let x = ''
+    for (let i in o) {
+      x += i + '=' + o[i] + '&'
+    }
+    x = encodeURI(x)
+    return x
+  },
   xhr (o) {
     return new Promise((resolve, reject) => {
-      axios[o.type](o.api, o.params).then((res) => {
+      axios[o.type](this.getUrl(o), o.params).then((res) => {
         if (res.data.status.code === 200) {
           resolve(res.data)
         } else {
