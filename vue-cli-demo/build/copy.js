@@ -13,11 +13,12 @@ var webpackConfig = require('./webpack.copy.conf')
 var spinner = ora('copy the assets...')
 spinner.start()
 
-rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
-  if (err) throw err
-  webpack(webpackConfig, function (err, stats) {
-    spinner.stop()
+webpack(webpackConfig, function (err, stats) {
+  spinner.stop()
+  console.log(chalk.cyan('  assets copy complete.\n'))
 
-    console.log(chalk.cyan('  assets copy complete.\n'))
+  rm(__dirname + '/../app.js', err => {
+    if (err) throw err
+    console.log(chalk.cyan('  app.js delete complete.\n'))
   })
 })
