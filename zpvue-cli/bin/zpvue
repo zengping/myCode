@@ -1,0 +1,82 @@
+#!/usr/bin/env node
+
+var download = require('download-git-repo')
+var program = require('commander')
+var ora = require('ora')
+var chalk = require('chalk')
+
+/**
+ * Usage.
+ */
+
+program
+  .usage('<template-name> [project-name]')
+  .option('-c, --clone', 'use git clone')
+
+/**
+ * Help.
+ */
+
+program.on('--help', function () {
+  console.log('  Examples:')
+  console.log()
+  console.log(chalk.gray('    # create a new project straight from a github template'))
+  console.log('    $ zpvue my-project')
+  console.log()
+})
+
+/**
+ * Help.
+ */
+
+function help () {
+  program.parse(process.argv)
+  if (program.args.length < 1) return program.help()
+}
+help()
+
+/**
+ * Padding.
+ */
+
+console.log()
+process.on('exit', function () {
+  console.log()
+})
+
+/**
+ * Settings.
+ */
+var rawName = program.args[0]
+var clone = program.clone || false
+
+run()
+
+/**
+ * Check, download and generate the project.
+ */
+
+function run () {
+  // check if template is local
+  downloadAndGenerate()
+}
+
+/**
+ * Download a generate from a template repo.
+ *
+ * @param {String} template
+ */
+
+function downloadAndGenerate () {
+  var spinner = ora('downloading template')
+  spinner.start()
+  download('zengping/vue-template', rawName, { clone: clone }, function (err) {
+    spinner.stop()
+      console.log('  Examples:')
+      console.log()
+      console.log('    cd ' + rawName)
+      console.log('    npm install')
+      console.log('    npm run dev')
+      console.log()
+  })
+}

@@ -1,0 +1,23 @@
+{
+  "name": "zpvue-cli",
+  "version": "1.0.1",
+  "description": "a vue template generator by zengping",
+  "bin": {
+    "zpvue": "bin/zpvue"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "bind/zpvue"
+  },
+  "keywords": [
+    "vue-cli"
+  ],
+  "author": "zengping（331962716@qq.com）",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.0.1",
+    "commander": "^2.11.0",
+    "download-git-repo": "^1.0.1",
+    "ora": "^1.3.0"
+  }
+}
