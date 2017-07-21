@@ -2,6 +2,8 @@
 
 var download = require('download-git-repo')
 var program = require('commander')
+var fs = require('fs')
+var exists = require('fs').existsSync
 var ora = require('ora')
 var chalk = require('chalk')
 
@@ -58,6 +60,10 @@ run()
 
 function run () {
   // check if template is local
+  if (rawName == 'router') {
+    cvue()
+    return
+  }
   downloadAndGenerate()
 }
 
@@ -79,4 +85,48 @@ function downloadAndGenerate () {
       console.log('    npm run dev')
       console.log()
   })
+}
+
+function cvue () {
+  let vuepath = program.args[1]
+  let index = vuepath.lastIndexOf('/')
+  let dirpath = vuepath.substr(0, index)
+  let vuefile = vuepath.substr(index+1)
+  let dirpath2 = './src'
+  if (dirpath) {
+    let dirs = dirpath.split('/')
+    for (let i = 0; i < dirs.length; i++) {
+      let paths = [dirpath2, dirs[i]]
+      dirpath2 = paths.join('/')
+      if (!fs.existsSync(dirpath2)) {
+        fs.mkdirSync(dirpath2)
+      }
+    }
+  }
+  fs.writeFile(dirpath2 + '/' + vuefile + '.vue', cele(vuefile.toLowerCase()), function(err){
+    if(err) {
+      return console.log(err);
+    }
+  })
+}
+
+function cele (name) {
+  return `
+<template>
+  <div id="${name}">
+    {{msg}}
+  </div>
+</template>
+
+<script>
+export default {
+  name: '${name}',
+  data () {
+    return {
+      msg: 'this is a example'
+    }
+  }
+}
+</script>
+  `
 }
