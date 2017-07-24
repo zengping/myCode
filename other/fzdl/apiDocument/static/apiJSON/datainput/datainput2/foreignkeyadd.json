@@ -1,0 +1,46 @@
+{
+  "status": {
+    "code": 200,
+    "message": "请求成功"
+  },
+  "data": {
+    "name": "数据录入数据新增",
+    "author": "zengping",
+    "version": "1.0.0",
+    "var": "D_I_FOREIGN_KEY_ADD",
+    "api": "",
+    "type": "post",
+    "remark": "",
+    "reqParams": [
+      {
+        "name": "params",
+        "type": "obj",
+        "default": "",
+        "rang": "",
+        "remark": "表对象，所有字段"
+      }
+    ],
+    "reqDemo": {
+      "params": {
+        "name": "x_s_h"
+      }
+    },
+    "resFields": [],
+    "resDemo": {
+      "succ": {
+        "status": {
+          "code": "200",
+          "message": "接口调用成功"
+        },
+        "data": 1
+      },
+      "err": {
+        "status": {
+          "code": 500,
+          "message": "请求失败"
+        },
+        "data": 0
+      }
+    }
+  }
+}

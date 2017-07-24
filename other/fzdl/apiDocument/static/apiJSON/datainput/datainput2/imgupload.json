@@ -1,0 +1,44 @@
+{
+  "status": {
+    "code": 200,
+    "message": "请求成功"
+  },
+  "data": {
+    "name": "数据录入图片上传",
+    "author": "zengping",
+    "version": "1.0.0",
+    "var": "D_I_IMG_UPLOAD",
+    "api": "",
+    "type": "post",
+    "remark": "",
+    "reqParams": [
+      {
+        "name": "file",
+        "type": "formdata",
+        "default": "",
+        "rang": "",
+        "remark": "上传图片内容"
+      }
+    ],
+    "reqDemo": {
+      "file": "formdata"
+    },
+    "resFields": [],
+    "resDemo": {
+      "succ": {
+        "status": {
+          "code": "200",
+          "message": "接口调用成功"
+        },
+        "data": "/army/1.png"
+      },
+      "err": {
+        "status": {
+          "code": 500,
+          "message": "请求失败"
+        },
+        "data": 0
+      }
+    }
+  }
+}

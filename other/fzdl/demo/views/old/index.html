@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>基础数据上报平台</title>
+<link rel="stylesheet" href="../../assets/css/style.default.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/icons/style.css">
+<script src="../../scripts/jquery-1.11.3.min.js"></script>
+<style type="text/css">
+.mmodel02, .mmodel03, .mmodel04{ display:none; }
+</style>
+</head>
+
+<body class="withvernav">
+
+<div class="bodywrapper">
+    <div class="topheader">
+        <div class="left">
+            <h1 class="logo">基础数据上报<span>平台</span></h1>
+            <span class="slogan">后台管理系统</span>
+            
+            
+            <br clear="all" />
+            
+        </div><!--left-->
+        
+        <div class="right">
+            <div class="userinfo">
+            	<i class="icon-user-setting"></i>
+                <span>admin</span>
+            </div><!--userinfo-->
+            
+            <div class="userinfodrop">
+            	<div class="avatar">
+                	<a href=""><img src="images/thumbs/avatarbig.png" alt="" /></a>
+                    <div class="changetheme">
+                    	Change theme: <br />
+                    	<a class="default"></a>
+                        <a class="blueline"></a>
+                        <a class="greenline"></a>
+                        <a class="contrast"></a>
+                        <a class="custombg"></a>
+                    </div>
+                </div><!--avatar-->
+				<div class="userdata">
+                	<h4>Juan Dela Cruz</h4>
+                    <span class="email">youremail@yourdomain.com</span>
+                    <ul>
+                    	<li><a href="editprofile.html">Edit Profile</a></li>
+                        <li><a href="accountsettings.html">Account Settings</a></li>
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="index.html">Sign Out</a></li>
+                    </ul>
+                </div><!--userdata-->
+            </div><!--userinfodrop-->
+        </div><!--right-->
+    </div><!--topheader-->
+    
+    
+    <div class="header">
+    	<ul class="headermenu">
+        	<li class="current"><a href="index.html"><span class="icon icon-user-info"></span>数据录入</a></li>
+            <li><a href="manage.html"><span class="icon icon-txt-setting"></span>码表管理</a></li>
+        </ul>
+        
+        <div class="headerwidget">
+        	<div class="earnings">
+            	<div class="one_half">
+                	<h4>今日新增数据</h4>
+                    <h2>3984</h2>
+                </div><!--one_half-->
+                <div class="one_half last alignright">
+                	<h4>历史录入数据</h4>
+                    <h2>10万条</h2>
+                </div><!--one_half last-->
+            </div><!--earnings-->
+        </div><!--headerwidget-->
+        
+    </div><!--header-->
+    
+    <div class="vernav2 iconmenu">
+    	<ul>
+        	<li class="current"><a href="#formsub" class="editor">党委重要材料</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="gallery">官兵思想动态</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+            <li class="current"><a href="##" class="elements">心理疏导</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+			<li><a href="##" class="elements">重点要害部位人员</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+            <li><a href="##" class="elements">保卫干部队伍</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+            <li><a href="##" class="elements">通用装备保障</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+            <li><a href="##" class="elements">装备基础数据</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+            <li><a href="##" class="elements">医院</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+            <li><a href="##" class="elements">疗养院</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+            <li><a href="##" class="elements">国防工程</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+            <li><a href="##" class="elements">作战物资储备</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a class="togglemenu"></a>
+        <br /><br />
+    </div><!--leftmenu-->
+        
+    <div class="centercontent">
+    
+        <div class="pageheader">
+            <h1 class="pagetitle">党委重要材料</h1>
+            <span class="pagedesc">请依据部门情况进行实际填写请依据部门情况进行实际填写请依据部门情况进行实际填写请依据部门情况进行实际填写</span>
+            
+            <ul class="hornav">
+                <li class="current"><a href="#basicform">党委干部任免</a></li>
+            </ul>
+        </div><!--pageheader-->
+        
+        <div class="contentwrapper">
+        	
+        	<div class="subcontent subcontent">
+                                
+                    <div class="contenttitle2">
+                        <h3>第一条记录的标题</h3>
+                        <a href="#" class="btn btn_blue fr"><i class="icon-upcloud"></i>导入</a>
+                        <a href="##" class="btn btn_orange fr"><i class="icon-downcloud"></i>导出</a>
+                        <a href="index-list.html" class="fr"><i class="icon-reply-all"></i>返回</a>
+                    </div><!--contenttitle-->
+
+                    <div class="stdform">
+                    	
+                        <p>
+                        	<label>所在党委</label>
+                            <span class="field"><input type="text" name="input1" class="smallinput" /><a href="##" class="lookmb btn btn_blue radius50 clickmb">查看码表</a></span>
+                            <small class="desc">从码表中选择合适的信息.</small>
+                        </p>
+                        
+                        <p>
+                        	<label>所在党组</label>
+                            <span class="field"><input type="text" name="input1" class="smallinput" /><a href="##" class="lookmb btn btn_blue radius50 clickmb">查看码表</a></span>
+                            <small class="desc">从码表中选择合适的信息.</small>
+                        </p>
+                        
+                        <p>
+                        	<label>党委书记</label>
+                            <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                        </p>
+                        
+                        <p>
+                        	<label>上传党委书记照片</label>
+                            <span class="field"><input type="file" name="input1" class="smallinput" /></span>
+                        </p>
+                        
+                        <p>
+                        	<label>党委书记任命时间</label>
+                            <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                        </p>
+                        
+                        <p>
+                        	<label>党委书记工作职责</label>
+                            <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                        </p>
+                        
+                        <p>
+                        	<label>党小组人数</label>
+                            <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                        </p>
+                        
+                        <p>
+                        	<label>党小组成立时间</label>
+                            <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                        </p>
+                        
+                        <p>
+                        	<label>从属机构</label>
+                            <span class="field"><input type="text" name="input1" class="smallinput" /><a href="#" class="lookmb btn btn_blue radius50 clickdialog">查看机构表</a></span>
+                            <small class="desc">从相关表中选择数据.</small>
+                        </p>
+                        
+                        
+                        <br clear="all" /><br />
+                        
+                        <p class="stdformbutton">
+                        	<button class="submit radius2">保存</button>
+                            <input type="reset" class="reset radius2" value="取消" />
+                        </p>
+                        
+                        
+                    </div>
+                    
+                    <!-- 右侧弹出码表 -->
+					<div class="rightslide">
+                    	<a href="##" class="rightslideclose"><i class="icon-close"></i></a>
+                        <div class="contenttitle2">
+                            <h3>党委信息码表</h3>
+                        </div>
+                        <div class="chatsearch">
+                        	<input name="" value="Search" type="text">
+                        </div>
+                        <table class="stdtable stdtablecb" cellspacing="0" cellpadding="0" border="0">
+                            <colgroup>
+                                <col class="con0" style="width: 4%">
+                                <col class="con1">
+                                <col class="con0">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="head0">#</th>
+                                    <th class="head1">编码</th>
+                                    <th class="head0">名称</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="">
+                                    <td align="center"><input class="checkall" type="checkbox"></td>
+                                    <td>3001</td>
+                                    <td>国防部</td>
+                                </tr>
+                                <tr class="">
+                                    <td align="center"><input class="checkall" type="checkbox"></td>
+                                    <td>30010</td>
+                                    <td>东部党委</td>
+                                </tr>
+                                <tr class="">
+                                    <td align="center"><input class="checkall" type="checkbox"></td>
+                                    <td>30011</td>
+                                    <td>蒙自党委</td>
+                                </tr>
+                                <tr class="">
+                                    <td align="center"><input class="checkall" type="checkbox"></td>
+                                    <td>30012</td>
+                                    <td>新安所党委</td>
+                                </tr>
+                                <tr class="">
+                                    <td align="center"><input class="checkall" type="checkbox"></td>
+                                    <td>30013</td>
+                                    <td>冷雨镇党委</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </br>
+                        <p class="stdform stdformbutton" style="float: left; margin: 0px 30px 0px 0px;">
+                        	<button class="submit radius2">确定</button>
+                        </p>
+                        <ul class="pagination">
+                            <li class="first"><a href="#" class="disable">«</a></li>
+                            <li class="previous"><a href="#" class="disable">‹</a></li>
+                            <li><a href="#" class="current">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li class="next"><a href="#">›</a></li>
+                            <li class="last"><a href="#">»</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 弹出层 -->
+                    <div class="dialog dialog-lg">
+                      <div class="dialog-win">
+                        <div class="dialog-head">机构表<a class="close" href="javascript:void(0)"><i class="icon-close"></i></a></div>
+                        <div class="dialog-body">
+                        	<div class="tabchose">
+                            	<div class="tabslide"><a href="#"><i class="icon-chevron-left"></i></a><a href="#"><i class="icon-chevron-right"></i></a></div>
+                                <div class="tablist">
+                                	<!-- ul的宽度动态获取 -->
+                                	<ul style=" width:1000px;">
+                                        <li class="tabchose01 active"><em>1.</em>表一<i class="icon-close"></i></li>
+                                        <li  class="tabchose02"><em>2.</em>表二<i class="icon-close"></i></li>
+                                        <li  class="tabchose02"><em>2.</em>表二<i class="icon-close"></i></li>
+                                        <li  class="tabchose02"><em>2.</em>表二<i class="icon-close"></i></li>
+                                        <li  class="tabchose02"><em>2.</em>表二<i class="icon-close"></i></li>
+                                        <li  class="tabchose02"><em>2.</em>表二<i class="icon-close"></i></li>
+                                        <li  class="tabchose02"><em>2.</em>表二<i class="icon-close"></i></li>
+                                        <li  class="tabchose02"><em>2.</em>表二<i class="icon-close"></i></li>
+                                        <li  class="tabchose02"><em>2.</em>表二<i class="icon-close"></i></li>
+                                        <li  class="tabchose02"><em>2.</em>表二<i class="icon-close"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        	
+                            <!-- mmodel01 -->
+                            <div class="mmodel01">
+                            	<div class="dialog-chose">
+                                    <a href="#" class="click-chose-01"><i class="icon-add"></i>新增</a>
+                                    机构名称：<input name="input1" class="smallinput" type="text">
+                                </div>
+                            	<table class="stdtable stdtablecb" cellspacing="0" cellpadding="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>机构代码</th>
+                                        <th>机构人员数</th>
+                                        <th>机构职责</th>
+                                        <th>机构名称</th>
+                                        <th>人员编号</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>332425</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>553219</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>895421</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>890912</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>409312</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>509842</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>509246</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            	</br>
+                                <ul class="pagination">
+                                    <li class="first"><a href="" class="disable">«</a></li>
+                                    <li class="previous"><a href="" class="disable">‹</a></li>
+                                    <li><a href="" class="current">1</a></li>
+                                    <li><a href="">2</a></li>
+                                    <li><a href="">3</a></li>
+                                    <li><a href="">4</a></li>
+                                    <li><a href="">5</a></li>
+                                    <li class="next"><a href="">›</a></li>
+                                    <li class="last"><a href="">»</a></li>
+                                </ul>
+                            </div>
+							<!-- mmodel02 -->
+                            <div class="mmodel02">
+                            	<div class="dialog-chose">
+                                    <a href="#" class="click-chose-02"><i class="icon-reply"></i>返回</a>
+                                </div>
+                            	<div class="stdform">
+                    				<p>
+                                        <label>机构代码</label>
+                                        <span class="field"><input type="text" name="input1" class="smallinput" /><a href="#" class="lookmb btn btn_blue radius50 clickmb">查看码表</a></span>
+                                        <small class="desc">从码表中选择合适的信息.</small>
+                                    </p>
+                                    <p>
+                                        <label>机构人员数</label>
+                                        <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                                    </p>
+                                    <p>
+                                        <label>机构职责</label>
+                                        <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                                    </p>
+                                    <p>
+                                        <label>机构名称</label>
+                                        <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                                    </p>
+                                    <p>
+                                        <label>人员编号</label>
+                                        <span class="field"><input type="text" name="input1" class="smallinput" /><a href="#" class="lookmb btn btn_blue radius50  click-chose-03">查看组织表</a></span>
+                                        <small class="desc">从码表中选择合适的信息.</small>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- mmodel03 -->
+                            <div class="mmodel03">
+                            	<div class="dialog-chose">
+                                    <a href="#" class="click-chose-04"><i class="icon-add"></i>新增</a>
+                                    机构名称：<input name="input1" class="smallinput" type="text">
+                                </div>
+                            	<table class="stdtable stdtablecb" cellspacing="0" cellpadding="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>机构代码</th>
+                                        <th>机构人员数</th>
+                                        <th>机构职责</th>
+                                        <th>机构名称</th>
+                                        <th>人员编号</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>332425</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>553219</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>895421</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>890912</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>409312</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>509842</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td align="center"><input class="checkall" type="checkbox"></td>
+                                        <td>3001</td>
+                                        <td>34人</td>
+                                        <td>后勤保障</td>
+                                        <td>后勤</td>
+                                        <td>509246</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            	</br>
+                                <ul class="pagination">
+                                    <li class="first"><a href="" class="disable">«</a></li>
+                                    <li class="previous"><a href="" class="disable">‹</a></li>
+                                    <li><a href="" class="current">1</a></li>
+                                    <li><a href="">2</a></li>
+                                    <li><a href="">3</a></li>
+                                    <li><a href="">4</a></li>
+                                    <li><a href="">5</a></li>
+                                    <li class="next"><a href="">›</a></li>
+                                    <li class="last"><a href="">»</a></li>
+                                </ul>
+                            </div>
+                            <!-- mmodel04 -->
+                            <div class="mmodel04">
+                            	<div class="dialog-chose">
+                                    <a href="#" class="click-chose-05"><i class="icon-reply"></i>返回</a>
+                                </div>
+                            	<div class="stdform">
+                    				<p>
+                                        <label>机构代码</label>
+                                        <span class="field"><input type="text" name="input1" class="smallinput" /><a href="#" class="lookmb btn btn_blue radius50">查看码表</a></span>
+                                        <small class="desc">从码表中选择合适的信息.</small>
+                                    </p>
+                                    <p>
+                                        <label>机构人员数</label>
+                                        <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                                    </p>
+                                    <p>
+                                        <label>机构职责</label>
+                                        <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                                    </p>
+                                    <p>
+                                        <label>机构名称</label>
+                                        <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                                    </p>
+                                    <p>
+                                        <label>人员编号</label>
+                                        <span class="field"><input type="text" name="input1" class="smallinput" /><a href="#" class="lookmb btn btn_blue radius50 ">查看组织表</a></span>
+                                        <small class="desc">从码表中选择合适的信息.</small>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="stdform dialog-btn">
+                            	<p class="stdformbutton">
+                                    <button class="submit radius2">保存</button>
+                                    <input type="reset" class="reset radius2" value="取消" />
+                                </p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+
+            </div><!--subcontent-->
+            
+            <!--subcontent-->
+        
+        </div><!--contentwrapper-->
+        
+	</div><!-- centercontent -->
+    
+    
+</div><!--bodywrapper-->
+
+<script>
+$(document).ready(function(){
+	//结案弹出
+	$(".icon-archive").on("click",function(){
+      $(".dialog").show();
+    })
+	$(".close").on("click",function(){
+      $(".dialog").hide();
+    })
+	
+	$(".click-chose-01").on("click",function(){
+      $(".mmodel01").hide();
+	  $(".mmodel02").show();
+    })
+	$(".click-chose-02").on("click",function(){
+      $(".mmodel02").hide();
+	  $(".mmodel01").show();
+    })
+	$(".click-chose-03").on("click",function(){
+      $(".mmodel02").hide();
+	  $(".mmodel03").show();
+	  $(".tabchose02").addClass("active");
+    })
+	$(".click-chose-04").on("click",function(){
+	  $(".mmodel03").hide();
+	  $(".mmodel04").show();
+    })
+	
+	$(".clickmb").on("click",function(){
+	  $(".rightslide").show();
+    })
+	
+	$(".rightslideclose").on("click",function(){
+	  $(".rightslide").hide();
+    })
+	
+	$(".clickdialog").on("click",function(){
+	  $(".dialog").show();
+    })
+	
+	
+	
+	
+	
+	
+	
+})
+</script>
+
+</body>
+</html>

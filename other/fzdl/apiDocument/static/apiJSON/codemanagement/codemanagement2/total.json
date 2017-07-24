@@ -1,0 +1,52 @@
+{
+  "status": {
+    "code": 200,
+    "message": "请求成功"
+  },
+  "data": {
+    "name": "数据管理记录总数",
+    "author": "zengping",
+    "version": "1.0.0",
+    "var": "D_M_DATA_TOTAL",
+    "api": "",
+    "type": "get",
+    "remark": "",
+    "reqParams": [],
+    "reqDemo": "",
+    "resFields": [
+      {
+        "name": "newNum",
+        "type": "int",
+        "default": "",
+        "rang": "",
+        "remark": "今日新增数据"
+      },
+      {
+        "name": "totalNum",
+        "type": "varchar",
+        "default": "",
+        "rang": "",
+        "remark": "历史录入数据"
+      }
+    ],
+    "resDemo": {
+      "succ": {
+        "status": {
+          "code": "200",
+          "message": "接口调用成功"
+        },
+        "data": {
+          "newNum": 3985,
+          "totalNum": "10万条"
+        }
+      },
+      "err": {
+        "status": {
+          "code": 500,
+          "message": "请求失败"
+        },
+        "data": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "status": {
+    "code": 200,
+    "message": "请求成功"
+  },
+  "data": {
+    "name": "码表详情",
+    "author": "zengping",
+    "version": "1.0.0",
+    "var": "M_CODE_TABLE_INFO",
+    "api": "",
+    "type": "get",
+    "remark": "",
+    "reqParams": [
+      {
+        "name": "id",
+        "type": "int",
+        "default": "",
+        "rang": "",
+        "remark": "数据表id"
+      }
+    ],
+    "reqDemo": {
+      "id": 12
+    },
+    "resFields": [
+      {
+        "name": "id",
+        "type": "int",
+        "default": "",
+        "rang": "",
+        "remark": "数据表id"
+      },
+      {
+        "name": "name",
+        "type": "varchar",
+        "default": "",
+        "rang": "",
+        "remark": "数据表名称"
+      },
+      {
+        "name": "parentName",
+        "type": "varchar",
+        "default": "",
+        "rang": "",
+        "remark": "数据表上级目录名称"
+      },
+      {
+        "name": "info",
+        "type": "varchar",
+        "default": "",
+        "rang": "",
+        "remark": "数据表介绍"
+      }
+    ],
+    "resDemo": {
+      "succ": {
+        "status": {
+          "code": "200",
+          "message": "接口调用成功"
+        },
+        "data": {
+          "id": 1,
+          "name": "党委干部任免",
+          "parentName": "党委重要材料",
+          "info": "请依据部门情况进行实际填写请依据部门情况进行实际填写请依据部门情况进行实际填写请依据部门情况进行实际填写"
+        }
+      },
+      "err": {
+        "status": {
+          "code": 500,
+          "message": "请求失败"
+        },
+        "data": 0
+      }
+    }
+  }
+}

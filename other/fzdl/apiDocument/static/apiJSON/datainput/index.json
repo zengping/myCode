@@ -1,0 +1,12 @@
+{
+    "status": {
+        "code": 200,
+        "message": "请求成功"
+    },
+    "data":[
+        {
+            "name": "数据录入",
+            "apiJSON": "/datainput2"
+        }
+    ]
+}

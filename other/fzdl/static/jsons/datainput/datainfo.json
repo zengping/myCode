@@ -1,0 +1,71 @@
+{
+  "status": {
+    "code": "200",
+    "message": "接口调用成功"
+  },
+  "data": [
+      {
+        "fidCname": "ID",
+        "fidEname": "id",
+        "value": "1015",
+        "type": "input"
+      },
+      {
+        "fidCname": "所在党委",
+        "fidEname": "s_z_d_w",
+        "value": "1015",
+        "type": "button",
+        "tableName": "s_z_d_w"
+      },
+      {
+        "fidCname": "所在党组",
+        "fidEname": "s_z_d_z",
+        "value": "华东",
+        "type": "button",
+        "tableName": "s_z_d_z"
+      },
+      {
+        "fidCname": "党委书记",
+        "fidEname": "d_w_s_j",
+        "value": "李清照",
+        "type": "input"
+      },
+      {
+        "fidCname": "上传党委书记照片",
+        "fidEname": "s_c_d_w_s_j_z_p",
+        "value": "/static/assets/images/1.png",
+        "type": "img"
+      },
+      {
+        "fidCname": "党委书记任命时间",
+        "fidEname": "d_w_s_j_r_m_s_j",
+        "value": "1216-04-06",
+        "type": "date"
+      },
+      {
+        "fidCname": "党委书记工作职责",
+        "fidEname": "d_w_s_j_g_z_z_z",
+        "value": "指挥",
+        "type": "input"
+      },
+      {
+        "fidCname": "党小组人数",
+        "fidEname": "d_x_z_r_s",
+        "value": "21",
+        "type": "input-int"
+      },
+      {
+        "fidCname": "党小组成立时间",
+        "fidEname": "d_x_z_c_l_s_j",
+        "value": "1211-07-23",
+        "type": "date"
+      },
+      {
+        "fidCname": "从属机构",
+        "fidEname": "c_s_j_g",
+        "value": "1589",
+        "type": "foreignKey",
+        "tableName": "s_z_d_z"
+      }
+    ]
+}

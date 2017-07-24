@@ -1,0 +1,71 @@
+{
+  "status": {
+    "code": 200,
+    "message": "请求成功"
+  },
+  "data": {
+    "name": "码表添加",
+    "author": "zengping",
+    "version": "1.0.0",
+    "var": "M_CODE_TABLE_ADD",
+    "api": "",
+    "type": "post",
+    "remark": "",
+    "reqParams": [
+      {
+        "name": "name",
+        "type": "varchar",
+        "default": "",
+        "rang": "",
+        "remark": "表名"
+      },
+      {
+        "name": "codeObj",
+        "type": "object",
+        "default": "",
+        "rang": "",
+        "remark": "",
+        "list": [
+          {
+            "name": "codeName",
+            "type": "varchar",
+            "default": "",
+            "rang": "",
+            "remark": "码表名称"
+          },
+          {
+            "name": "codeNum",
+            "type": "int",
+            "default": "",
+            "rang": "",
+            "remark": "码表编码"
+          }
+        ]
+      }
+    ],
+    "reqDemo": {
+      "name": "s_z_d_z",
+      "codeObj": {
+        "codeName": "华东党委",
+        "codeNum": "13100"
+      }
+    },
+    "resFields": [],
+    "resDemo": {
+      "succ": {
+        "status": {
+          "code": 200,
+          "message": "获取数据成功"
+        },
+        "data": 1
+      },
+      "err": {
+        "status": {
+          "code": 500,
+          "message": "请求失败"
+        },
+        "data": 0
+      }
+    }
+  }
+}

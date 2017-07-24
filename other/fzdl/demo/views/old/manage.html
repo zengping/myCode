@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>基础数据上报平台</title>
+<link rel="stylesheet" href="../../assets/css/style.default.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/icons/style.css">
+<script src="../../scripts/jquery-1.11.3.min.js"></script>
+</head>
+
+<body class="withvernav">
+
+<div class="bodywrapper">
+    <div class="topheader">
+        <div class="left">
+            <h1 class="logo">基础数据上报<span>平台</span></h1>
+            <span class="slogan">后台管理系统</span>
+            
+            <div class="search" style=" display:none">
+                <input type="text" name="keyword" value="输入关键字" />
+                <button class="submitbutton"></button>
+            </div><!--search-->
+            
+            <br clear="all" />
+            
+        </div><!--left-->
+        
+        <div class="right">
+            <div class="userinfo">
+            	<i class="icon-user-setting"></i>
+                <span>admin</span>
+            </div><!--userinfo-->
+            
+            <div class="userinfodrop">
+            	<div class="avatar">
+                	<a href=""><img src="images/thumbs/avatarbig.png" alt="" /></a>
+                    <div class="changetheme">
+                    	Change theme: <br />
+                    	<a class="default"></a>
+                        <a class="blueline"></a>
+                        <a class="greenline"></a>
+                        <a class="contrast"></a>
+                        <a class="custombg"></a>
+                    </div>
+                </div><!--avatar-->
+				<div class="userdata">
+                	<h4>Juan Dela Cruz</h4>
+                    <span class="email">youremail@yourdomain.com</span>
+                    <ul>
+                    	<li><a href="editprofile.html">Edit Profile</a></li>
+                        <li><a href="accountsettings.html">Account Settings</a></li>
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="index.html">Sign Out</a></li>
+                    </ul>
+                </div><!--userdata-->
+            </div><!--userinfodrop-->
+        </div><!--right-->
+    </div><!--topheader-->
+    
+    
+    <div class="header">
+    	<ul class="headermenu">
+        	<li><a href="index.html"><span class="icon icon-user-info"></span>数据录入</a></li>
+            <li class="current"><a href="manage.html"><span class="icon icon-txt-setting"></span>码表管理</a></li>
+        </ul>
+        
+        <div class="headerwidget">
+        	<div class="earnings">
+            	<div class="one_half">
+                	<h4>今日新增数据</h4>
+                    <h2>3984</h2>
+                </div><!--one_half-->
+                <div class="one_half last alignright">
+                	<h4>历史录入数据</h4>
+                    <h2>10万条</h2>
+                </div><!--one_half last-->
+            </div><!--earnings-->
+        </div><!--headerwidget-->
+        
+    </div><!--header-->
+    
+    <div class="vernav2 iconmenu">
+    	<ul>
+        	<li class="current"><a href="#formsub" class="editor">组织机构</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党组织编码</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>军衔编码</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>干部级别编码</a></li>
+                </ul>
+            </li>
+            <li class="current"><a href="#" class="gallery">设备信息</a>
+            	<span class="arrow"></span>
+            	<ul>
+                    <li><a href="#"><i class="icon-file-text"></i>武器编码</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>枪支编码</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>车辆编码</a></li>
+                </ul>
+            </li>
+            <li><a href="##" class="elements">档案信息</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+			<li><a href="##" class="elements">部队编码</a>
+            	<span class="arrow"></span>
+            	<ul>
+               		<li class="current"><a href="#"><i class="icon-file-text"></i>党委干部任免</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党章</a></li>
+                    <li><a href="#"><i class="icon-file-text"></i>党委干部职责</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a class="togglemenu"></a>
+        <br /><br />
+    </div><!--leftmenu-->
+        
+    <div class="centercontent">
+    
+        <div class="pageheader">
+            <h1 class="pagetitle">组织机构</h1>
+            <span class="pagedesc">请依据部门情况进行实际填写请依据部门情况进行实际填写请依据部门情况进行实际填写请依据部门情况进行实际填写</span>
+            
+            <ul class="hornav">
+                <li class="current"><a href="#basicform">党组织编码</a></li>
+            </ul>
+        </div><!--pageheader-->
+        
+        <div class="contentwrapper">
+        	
+        	<div class="subcontent subcontent">
+                                
+                   <div class="col-8">
+                   		<div class="dialog-chose">
+                            <a href="#" class="click-chose-01"><i class="icon-delete"></i>批量删除</a>
+                            <input name="input1" class="smallinput" type="text" placeholder="请输入关键字">
+                        </div>
+                   		<table class="stdtable stdtablecb" cellspacing="0" cellpadding="0" border="0">
+                        	<colgroup>
+                                <col class="con0" style="width: 4%">
+                                <col class="con1">
+                                <col class="con0">
+                                <col class="con1">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="head0"><input class="checkall" type="checkbox"></th>
+                                    <th class="head1">编码</th>
+                                    <th class="head0">名称</th>
+                                    <th class="head1">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="">
+                                    <td align="center"><input class="checkall" type="checkbox"></td>
+                                    <td>3001</td>
+                                    <td>国防部</td>
+                                    <td><a href=""><i class="icon-txt-pen"></i></a><a href=""><i class="icon-delete"></i></a></td>
+                                </tr>
+                                <tr class="">
+                                    <td align="center"><input class="checkall" type="checkbox"></td>
+                                    <td>30010</td>
+                                    <td>东部党委</td>
+                                    <td><a href=""><i class="icon-txt-pen"></i></a><a href=""><i class="icon-delete"></i></a></td>
+                                </tr>
+                                <tr class="">
+                                    <td align="center"><input class="checkall" type="checkbox"></td>
+                                    <td>30011</td>
+                                    <td>蒙自党委</td>
+                                    <td><a href=""><i class="icon-txt-pen"></i></a><a href=""><i class="icon-delete"></i></a></td>
+                                </tr>
+                                <tr class="">
+                                    <td align="center"><input class="checkall" type="checkbox"></td>
+                                    <td>30012</td>
+                                    <td>新安所党委</td>
+                                    <td><a href=""><i class="icon-txt-pen"></i></a><a href=""><i class="icon-delete"></i></a></td>
+                                </tr>
+                                <tr class="">
+                                    <td align="center"><input class="checkall" type="checkbox"></td>
+                                    <td>30013</td>
+                                    <td>冷雨镇党委</td>
+                                    <td><a href=""><i class="icon-txt-pen"></i></a><a href=""><i class="icon-delete"></i></a></td>
+                                </tr>
+                                <tr class="">
+                                    <td align="center"><input class="checkall" type="checkbox"></td>
+                                    <td>30012</td>
+                                    <td>新安所党委</td>
+                                    <td><a href=""><i class="icon-txt-pen"></i></a><a href=""><i class="icon-delete"></i></a></td>
+                                </tr>
+                                <tr class="">
+                                    <td align="center"><input class="checkall" type="checkbox"></td>
+                                    <td>30013</td>
+                                    <td>冷雨镇党委</td>
+                                    <td><a href=""><i class="icon-txt-pen"></i></a><a href=""><i class="icon-delete"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </br>
+                        <ul class="pagination">
+                            <li class="first"><a href="" class="disable">«</a></li>
+                            <li class="previous"><a href="" class="disable">‹</a></li>
+                            <li><a href="" class="current">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li class="next"><a href="">›</a></li>
+                            <li class="last"><a href="">»</a></li>
+                        </ul>
+                   </div>
+                   <div class="col-4 addmb">
+                   		<div class="contenttitle2">
+                            <h3>新增内容</h3>
+                        </div>
+                   		<div class="stdform">
+                        	<p>
+                                <label>名称</label>
+                                <span class="field"><input name="input1" class="smallinput" type="text"></span>
+                            </p>
+                            <p>
+                                <label>编码</label>
+                                <span class="field"><input name="input1" class="smallinput" type="text"></span>
+                            </p>
+                            <p class="stdformbutton">
+                                <button class="submit radius2">保存</button>
+                                <input class="reset radius2" value="取消" type="reset">
+                            </p>
+                        </div>
+                   </div>
+
+            </div><!--subcontent-->
+            
+            <!--subcontent-->
+        
+        </div><!--contentwrapper-->
+        
+	</div><!-- centercontent -->
+    
+    
+</div><!--bodywrapper-->
+
+<script>
+$(document).ready(function(){
+	//结案弹出
+	$(".icon-archive").on("click",function(){
+      $(".dialog").show();
+    })
+	$(".close").on("click",function(){
+      $(".dialog").hide();
+    })
+	
+	$(".click-chose-01").on("click",function(){
+      $(".mmodel01").hide();
+	  $(".mmodel02").show();
+    })
+	$(".click-chose-02").on("click",function(){
+      $(".mmodel02").hide();
+	  $(".mmodel01").show();
+    })
+	$(".click-chose-03").on("click",function(){
+      $(".mmodel02").hide();
+	  $(".mmodel03").show();
+	  $(".tabchose02").addClass("active");
+	  $(".tabchose01").removeClass("active");
+    })
+	$(".click-chose-04").on("click",function(){
+	  $(".mmodel03").hide();
+	  $(".mmodel04").show();
+    })
+	
+	$(".clickmb").on("click",function(){
+	  $(".rightslide").show();
+    })
+	
+	$(".rightslideclose").on("click",function(){
+	  $(".rightslide").hide();
+    })
+	
+	$(".clickdialog").on("click",function(){
+	  $(".dialog").show();
+    })
+	
+	
+	
+	
+	
+	
+	
+})
+</script>
+
+</body>
+</html>

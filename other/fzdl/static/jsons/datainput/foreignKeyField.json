@@ -1,0 +1,39 @@
+{
+  "status": {
+    "code": "200",
+    "message": "接口调用成功"
+  },
+  "data": [
+    {
+      "fidCname": "机构代码",
+      "fidEname": "j_g_d_m",
+      "value": "1015",
+      "type": "button"
+    },
+    {
+      "fidCname": "机构人员数",
+      "fidEname": "j_g_r_y_s",
+      "value": "华东",
+      "type": "button"
+    },
+    {
+      "fidCname": "机构职责",
+      "fidEname": "j_g_z_z",
+      "value": "李清照",
+      "type": "input"
+    },
+    {
+      "fidCname": "机构名称",
+      "fidEname": "j_g_m_c",
+      "value": "1216-04-06",
+      "type": "input"
+    },
+    {
+      "fidCname": "人员编号",
+      "fidEname": "r_y_b_h",
+      "value": "1589",
+      "type": "foreignKey",
+      "tableName": "s_z_d_z"
+    }
+  ]
+}

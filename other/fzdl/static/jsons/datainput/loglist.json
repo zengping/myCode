@@ -1,0 +1,41 @@
+{
+  "status": {
+    "code": 200,
+    "message": "获取数据成功"
+  },
+  "data": {
+    "totalRecord": 51,
+    "content": [
+      {
+        "name": "删除",
+        "tableName": "s_d_s_w",
+        "primaryKey": "16",
+        "time": "2017-05-12 12:00:00"
+      },
+      {
+        "name": "更新",
+        "tableName": "s_d_s_w",
+        "primaryKey": "116",
+        "time": "2017-05-12 12:00:00"
+      },
+      {
+        "name": "更新",
+        "tableName": "s_d_s_w",
+        "primaryKey": "36",
+        "time": "2017-05-12 12:00:00"
+      },
+      {
+        "name": "新增",
+        "tableName": "s_d_s_w",
+        "primaryKey": "126",
+        "time": "2017-05-12 12:00:00"
+      },
+      {
+        "name": "删除",
+        "tableName": "s_d_s_w",
+        "primaryKey": "19",
+        "time": "2017-05-12 12:00:00"
+      }
+    ]
+  }
+}
