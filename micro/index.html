@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base href=".">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>服务注册中心</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="./assets/wro.css">
+
+</head>
+<body id="one">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+          <span></span>
+        </a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">导航切换(Toggle navigation)</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页(Home)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid xd-container">
+    <h1>目前在注册中心注册的前端服务</h1>
+    <table id="instances" class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>应用(Application)</th>
+          <th>朋友(AMIs)</th>
+          <th>可用性区域(Availability Zones)</th>
+          <th>状态(Status)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <b>安康(home)API</b>
+          </td>
+          <td>
+            <b>n/a</b> (1)
+          </td>
+          <td>
+            <b></b> (1)
+          </td>
+          <td>
+            <a href="http://172.17.225.116:8187/api/v1/swagger-html" target="_blank" class="pingTest">172.17.225.116:8187</a>,
+            <a href="http://172.17.225.160:8187/api/v1/swagger-html" target="_blank" class="pingTest">172.17.225.160:8187</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>安康(sysManage)API</b>
+          </td>
+          <td>
+            <b>n/a</b> (1)
+          </td>
+          <td>
+            <b></b> (1)
+          </td>
+          <td>
+            <a href="http://172.17.225.116:8188/api/v1/swagger-html" target="_blank" class="pingTest">172.17.225.116:8188</a>,
+            <a href="http://172.17.225.160:8188/api/v1/swagger-html" target="_blank" class="pingTest">172.17.225.160:8188</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+<script>
+  var nodea = document.querySelectorAll('.pingTest');
+  nodea.forEach(function(o){
+    var link = o.getAttribute('href');
+    ping(link, o);
+  });
+  function ping(link, el){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', link);
+    var time = false;//是否超时
+    var timer = setTimeout(function(){
+      xhr.abort();//请求中止
+      createEl(el, 'DOWN');
+    }, 1000);
+    xhr.onreadystatechange = function () {
+      clearTimeout(timer);
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        createEl(el, 'UP');
+      }
+    };
+    xhr.send();
+  }
+  function createEl(el, content){
+    var b = document.createElement('b');
+    b.innerHTML = content + ' (1) - ';
+    if (content === 'DOWN') b.setAttribute('style', 'color: red;');
+    el.parentNode.insertBefore(b, el);
+  }
+</script>
+</html>
