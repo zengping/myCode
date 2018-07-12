@@ -1,0 +1,53 @@
+// 将设置放入此文件中以覆盖默认设置
+{
+    "files.associations": {
+        "*.tmpl": "html",
+        "*.zp": "html"
+    },
+    
+    "editor.tabSize": 2,
+    "editor.wordWrap": "bounded",
+    "editor.minimap.enabled": true,
+
+    // Auto Rename Tag configuration
+    "path-intellisense.extensionOnImport": true,
+    "path-intellisense.showHiddenFiles": true,
+
+    // Auto Rename Tag
+    "auto-rename-tag.activationOnLanguage": [
+        "html",
+        "javascript"
+    ],
+    "workbench.colorTheme": "Monokai",
+    "workbench.iconTheme": "vscode-icons",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "vsicons.projectDetection.disableDetect": true,
+    "extensions.ignoreRecommendations": true,
+    "window.zoomLevel": 0,
+    "git.path": "E:\\Program Files\\Git\\bin\\git.exe",
+
+    "vetur.validation.template": false,
+
+    "beautify.language": {
+        "js": {
+        "type": [
+            "javascript",
+            "json"
+        ],
+        "filename": [
+            ".jshintrc",
+            ".jsbeautify"
+        ]
+        },
+        "css": [
+        "css",
+        "scss"
+        ],
+        "html": [
+        "htm",
+        "html",
+        "vue"
+        ]
+    },
+    "vsicons.dontShowNewVersionMessage": true
+}
