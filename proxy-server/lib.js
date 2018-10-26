@@ -36,7 +36,7 @@ module.exports = {
       return JSON.stringify({
         status: {
           code: 404,
-          message: '接口错误！'
+          message: '接口不存在！'
         },
         data: 0
       })
@@ -55,7 +55,7 @@ module.exports = {
     let json = ''
     filename = filepath + url + '.' + originName
     json = filepath + url + '.json'
-    if (fs.existsSync(json)) {
+    if (fs.existsSync(json) && fs.existsSync(filename)) {
       return
     }
     for (let i = 0; i < (urls.length - 1); i++) {
@@ -87,12 +87,21 @@ module.exports = {
       return JSON.stringify({
         status: {
           code: 404,
-          message: '接口错误！'
+          message: '接口不存在！'
         },
         data: 0
       })
     }
     let filename = fs.readFileSync(json, {encoding: 'utf-8'})
+    if (!fs.existsSync(filename)) {
+      return JSON.stringify({
+        status: {
+          code: 404,
+          message: '文件不存在！'
+        },
+        data: 0
+      })
+    }
     let rs = fs.createReadStream(filepath + url + '.' + filename)
     res.writeHead(200, {'content-disposition': 'attachment;fileName=' + encodeURI(filename)})
     rs.once('open', function () {
