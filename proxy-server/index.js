@@ -21,15 +21,33 @@ proxy.on('proxyRes', function (proxyRes, req, res) {
     body = Buffer.concat([body, data])
   })
   proxyRes.on('end', function () {
-    body = body.toString()
-    lib.creatJson(path.pathname, body)
+    try {
+      if (req.headers.downloadapi && res.getHeader('content-disposition')) {
+        let originArray = res.getHeader('content-disposition').split('=')
+        let originName = decodeURI(originArray[originArray.length - 1])
+        lib.creatFile(path.pathname, body, originName)
+      } else {
+        body = body.toString()
+        lib.creatJson(path.pathname, body)
+      }
+    } catch (e) {
+      console.log(e.message)
+    }
     res.end()
   })
 })
 proxy.on('error', function (proxyRes, req, res) {
-  var path = url.parse(req.url, true)
-  var jsons = lib.readJson(path.pathname)
-  res.end(jsons)
+  try {
+    var path = url.parse(req.url, true)
+    if (req.headers.downloadapi) {
+      lib.readFile(path.pathname, res)
+    } else {
+      var jsons = lib.readJson(path.pathname)
+      res.end(jsons)
+    }
+  } catch (e) {
+    res.end(e.message)
+  }
 })
 server.listen(8182)
 console.log('Server has started.')
