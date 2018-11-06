@@ -4,6 +4,8 @@ var os = require('os')
 
 module.exports = {
   creatJson (url, data) {
+    let obj = JSON.parse(data)
+    if (obj.status.code != 200) return false
     let urls = url.split('/')
     let ds = '/'
     if (os.platform() === 'win32') {
@@ -114,5 +116,39 @@ module.exports = {
     rs.on('data', function (data) {
       res.write(data)
     })
+  },
+  existsSync (url, res, req) {
+    let ds = '/'
+    if (os.platform() === 'win32') {
+      ds = '\\'
+    }
+    let filepath = path.resolve(__dirname, './') + ds + 'jsons'
+    let json = ''
+    json = filepath + url + '.json'
+    if (!fs.existsSync(json)) {
+      return false
+    }
+    if (req.headers.downloadapi) {
+      let filename = fs.readFileSync(json, {encoding: 'utf-8'})
+      if (!fs.existsSync(filename)) {
+        return false
+      }
+      let rs = fs.createReadStream(filepath + url + '.' + filename)
+      res.writeHead(200, {'content-disposition': 'attachment;fileName=' + encodeURI(filename)})
+      rs.once('open', function () {
+        console.log('可读流已经打开')
+      })
+      rs.once('close', function () {
+        console.log('可读流已经关闭')
+        res.end()
+      })
+      rs.on('data', function (data) {
+        res.write(data)
+      })
+    } else {
+      let jsons = fs.readFileSync(json, {encoding: 'utf-8'})
+      res.end(jsons)
+    }
+    return true
   }
 }

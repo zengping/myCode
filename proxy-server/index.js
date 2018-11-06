@@ -7,10 +7,14 @@ var proxy = httpProxy.createProxyServer({})
 var server = http.createServer(function (req, res) {
   var path = url.parse(req.url, true)
   var query = path.query
-  var target = 'http://172.17.225.116:8185'
+  var target = 'http://192.168.112.44:8000'
   if (query.proxy) {
     query.proxy = query.proxy.indexOf('http://') > -1 ? query.proxy : 'http://' + query.proxy
     target = query.proxy
+  }
+  var hash = lib.existsSync(path.pathname, res, req)
+  if (hash) {
+    return
   }
   proxy.web(req, res, { target: target })
 })
