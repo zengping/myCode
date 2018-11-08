@@ -4,7 +4,7 @@
         "*.tmpl": "html",
         "*.zp": "html"
     },
-    
+
     "editor.tabSize": 2,
     "editor.wordWrap": "bounded",
     "editor.minimap.enabled": true,
@@ -25,29 +25,22 @@
     "extensions.ignoreRecommendations": true,
     "window.zoomLevel": 0,
     "git.path": "E:\\Program Files\\Git\\bin\\git.exe",
-
+    "vsicons.dontShowNewVersionMessage": true,
     "vetur.validation.template": false,
-
-    "beautify.language": {
-        "js": {
-        "type": [
-            "javascript",
-            "json"
-        ],
-        "filename": [
-            ".jshintrc",
-            ".jsbeautify"
-        ]
+    // 保存自动格式化
+    "editor.formatOnSave": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        //开启对.vue文件中错误的检查
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "html",
+            "autoFix": true
         },
-        "css": [
-        "css",
-        "scss"
-        ],
-        "html": [
-        "htm",
-        "html",
-        "vue"
-        ]
-    },
-    "vsicons.dontShowNewVersionMessage": true
+        {
+            "language": "vue",
+            "autoFix": true
+        }
+    ]
 }
