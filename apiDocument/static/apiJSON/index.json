@@ -5,16 +5,16 @@
     },
     "data":[
         {
-            "name": "首页",
-            "apiJSON": "/index"
-        },
-        {
-            "name": "注册数据",
+            "name": "数据源注册",
             "apiJSON": "/dataAccess"
         },
         {
-            "name": "任务管理",
+            "name": "数据采集任务管理",
             "apiJSON": "/taskManagement"
+        },
+        {
+            "name": "数据采集监控",
+            "apiJSON": "/monitor"
         },
         {
             "name": "工具录入",

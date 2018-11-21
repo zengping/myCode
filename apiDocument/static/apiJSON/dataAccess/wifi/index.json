@@ -5,7 +5,7 @@
     },
     "data":[
         {
-            "name": "列表",
+            "name": "数据源列表",
             "apiJSON": "list.json"
         },
         {

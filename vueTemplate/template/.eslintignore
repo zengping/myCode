@@ -1,0 +1,7 @@
+/build/
+/config/
+/dist/
+/*.js
+/koa-server/
+/src/api/
+/static/

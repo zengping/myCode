@@ -5,12 +5,24 @@
     },
     "data":[
         {
-            "name": "WIFI采集",
+            "name": "WIFI围栏",
             "apiJSON": "/wifi"
         },
         {
             "name": "电子围栏",
             "apiJSON": "/electric"
+        },
+        {
+            "name": "手机采集",
+            "apiJSON": "/phone"
+        },
+        {
+            "name": "业务软件",
+            "apiJSON": "/app"
+        },
+        {
+            "name": "爬虫采集",
+            "apiJSON": "/spider"
         },
         {
             "name": "镜像采集",

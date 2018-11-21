@@ -7,71 +7,263 @@
         "name": "列表",
         "author": "zengping",
         "version": "1.0.0",
-        "api": "/dataAccess/getList",
+        "var": "D_WF_LIST",
+        "api": "/accessSystem/wifisource/findwifidatasources",
         "type": "get",
         "remark": "",
         "reqParams": [
             {
-                "name": "name",
+                "name": "accessAddress",
+                "type": "varchar",
+                "default": "",
+                "rang": "",
+                "remark": "地址"
+            },
+            {
+                "name": "deviceNum",
                 "type": "int",
-                "default": "zengping",
-                "rang": "0-12",
-                "remark": "中英文字符"
+                "default": "",
+                "rang": "",
+                "remark": "编号，主键"
             }
         ],
         "reqDemo": {
-            "name": "zengping"
+            "accessAddress": "天马路一段",
+            "deviceNum": "89758"
         },
         "resFields": [
             {
-                "name": "name",
+                "name": "totalRecord",
                 "type": "int",
                 "default": "",
                 "rang": "",
                 "remark": ""
+            },
+            {
+                "name": "content",
+                "type": "list",
+                "default": "",
+                "rang": "",
+                "remark": "",
+                "list": [
+                    {
+                        "name": "id",
+                        "type": "int",
+                        "default": "",
+                        "rang": "",
+                        "remark": "主键"
+                    },
+                    {
+                        "name": "sourceName",
+                        "type": "varchar",
+                        "default": "",
+                        "rang": "",
+                        "remark": "数据源名称"
+                    },
+                    {
+                        "name": "accessTypeName",
+                        "type": "varchar",
+                        "default": "",
+                        "rang": "",
+                        "remark": "接入方式"
+                    },
+                    {
+                        "name": "accessTypeId",
+                        "type": "int",
+                        "default": "",
+                        "rang": "",
+                        "remark": "接入方式ID"
+                    },
+                    {
+                        "name": "sourceIp",
+                        "type": "varchar",
+                        "default": "",
+                        "rang": "",
+                        "remark": "ip地址"
+                    },
+                    {
+                        "name": "sourcePort",
+                        "type": "int",
+                        "default": "",
+                        "rang": "",
+                        "remark": "端口"
+                    },
+                    {
+                        "name": "lonAndLat",
+                        "type": "varchar",
+                        "default": "",
+                        "rang": "",
+                        "remark": "经纬度"
+                    },
+                    {
+                        "name": "accessAddress",
+                        "type": "varchar",
+                        "default": "",
+                        "rang": "",
+                        "remark": "接入地点"
+                    },
+                    {
+                        "name": "runStatus",
+                        "type": "int",
+                        "default": "0",
+                        "rang": "0-1",
+                        "remark": "运行状态"
+                    },
+                    {
+                        "name": "accessRadius",
+                        "type": "int",
+                        "default": "",
+                        "rang": "",
+                        "remark": "接入半径"
+                    },
+                    {
+                        "name": "deviceNum",
+                        "type": "int",
+                        "default": "",
+                        "rang": "",
+                        "remark": "设备编号"
+                    },
+                    {
+                        "name": "updateTime",
+                        "type": "varchar",
+                        "default": "",
+                        "rang": "",
+                        "remark": "接入时间"
+                    },
+                    {
+                        "name": "remark",
+                        "type": "varchar",
+                        "default": "",
+                        "rang": "",
+                        "remark": "备注"
+                    }
+                ]
             }
         ],
         "resDemo": {
             "succ": {
                 "status": {
-                    "code": 200,
-                    "message": "请求成功"
+                    "code": "200",
+                    "message": "数据获取成功"
                 },
                 "data": {
-                    "name": "列表",
-                    "author": "zengping",
-                    "version": "1.0.0",
-                    "api": "/dataAccess/getList",
-                    "type": "get",
-                    "remark": "",
-                    "fields": [
+                    "content": [
                         {
-                            "name": "name",
-                            "type": "int",
-                            "default": "zengping",
-                            "rang": "0-12",
-                            "remark": "中英文字符"
+                            "id": 15,
+                            "sourceName": "测试321",
+                            "accessTypeName": "接口",
+                            "accessTypeId": "2",
+                            "sourceIp": null,
+                            "sourcePort": null,
+                            "remark": "富家大室假肥大；撒就",
+                            "lonAndLat": "103.375435,23.365815",
+                            "accessAddress": "天马路121",
+                            "runStatus": 1,
+                            "updateTime": "2017-03-27 19:03:24",
+                            "accessRadius": 852,
+                            "deviceNum": "852200"
+                        },
+                        {
+                            "id": 4,
+                            "sourceName": "测试1",
+                            "accessTypeName": "接口",
+                            "accessTypeId": "2",
+                            "sourceIp": null,
+                            "sourcePort": null,
+                            "remark": "测试仪范德萨",
+                            "lonAndLat": "103.394407,23.375833",
+                            "accessAddress": "天马路一段",
+                            "runStatus": 1,
+                            "updateTime": "2017-03-27 19:03:40",
+                            "accessRadius": 58627,
+                            "deviceNum": "89758"
+                        },
+                        {
+                            "id": 11,
+                            "sourceName": "123",
+                            "accessTypeName": "接口",
+                            "accessTypeId": "2",
+                            "sourceIp": null,
+                            "sourcePort": null,
+                            "remark": null,
+                            "lonAndLat": "103.357038,23.366412",
+                            "accessAddress": "123",
+                            "runStatus": 1,
+                            "updateTime": "2017-03-24 16:03:51",
+                            "accessRadius": 123,
+                            "deviceNum": "123"
+                        },
+                        {
+                            "id": 5,
+                            "sourceName": "测试2",
+                            "accessTypeName": "接口",
+                            "accessTypeId": "2",
+                            "sourceIp": null,
+                            "sourcePort": null,
+                            "remark": " 鸡蒙异界监测点",
+                            "lonAndLat": "103.368321,23.380543",
+                            "accessAddress": "秀和县济公村",
+                            "runStatus": 1,
+                            "updateTime": "2017-03-22 21:03:29",
+                            "accessRadius": 1212,
+                            "deviceNum": "fddfasfds"
+                        },
+                        {
+                            "id": 13,
+                            "sourceName": "测试消息发送",
+                            "accessTypeName": "接口",
+                            "accessTypeId": "2",
+                            "sourceIp": null,
+                            "sourcePort": null,
+                            "remark": "21212",
+                            "lonAndLat": "103.378956,23.370261",
+                            "accessAddress": "消息创建",
+                            "runStatus": 1,
+                            "updateTime": "2017-03-20 15:03:54",
+                            "accessRadius": 2121,
+                            "deviceNum": "121212"
+                        },
+                        {
+                            "id": 14,
+                            "sourceName": "南湖接口站",
+                            "accessTypeName": "接口",
+                            "accessTypeId": "2",
+                            "sourceIp": null,
+                            "sourcePort": null,
+                            "remark": "南湖接口站测试啊",
+                            "lonAndLat": "103.077025,23.304297",
+                            "accessAddress": "南湖",
+                            "runStatus": 0,
+                            "updateTime": "2017-03-20 09:03:10",
+                            "accessRadius": 10001,
+                            "deviceNum": "09809@mzga.cn"
+                        },
+                        {
+                            "id": 12,
+                            "sourceName": "测试12134",
+                            "accessTypeName": "接口",
+                            "accessTypeId": "2",
+                            "sourceIp": null,
+                            "sourcePort": null,
+                            "remark": "12134",
+                            "lonAndLat": "103.364008,23.370924",
+                            "accessAddress": "测试12134",
+                            "runStatus": 1,
+                            "updateTime": "2017-03-19 19:03:44",
+                            "accessRadius": 12144,
+                            "deviceNum": "87654"
                         }
                     ],
-                    "reqDemo": {
-                        "name": "zengping"
-                    },
-                    "resFields": [
-                        {
-                            "name": "name",
-                            "type": "int",
-                            "default": "",
-                            "rang": "",
-                            "remark": ""
-                        }
-                    ],
-                    "resDemo": {}
+                    "totalRecord": 7,
+                    "pageNumber": 1,
+                    "pageSize": 10,
+                    "totalPageCount": 1
                 }
             },
             "err": {
                 "status": {
-                    "code": 200,
-                    "message": "请求成功"
+                    "code": 500,
+                    "message": "接口异常"
                 },
                 "data": 0
             }
