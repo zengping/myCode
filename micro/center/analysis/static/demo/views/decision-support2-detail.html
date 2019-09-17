@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/nav.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts.min.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts-wordcloud.min.js"></script>
+
+<script src="../scripts/plugins/jquery.ztree.all.min.js"></script>
+
+<style type="text/css">.ztree li a span.add{ display:none;}</style>
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+  <!-- sys-header -->
+  <div class="sys-header">
+    <div class="sys-logo">
+      <h1>重庆质监缺陷管理分析系统</h1>
+      <h2>缺陷产品管理系统</h2>
+    </div>
+    <div class="sys-menu" id="sys-menu">
+      <ul>
+        <li>loading......</li>
+      </ul>
+      <div class="curLine"></div>
+    </div>
+    <div class="sys-topbar">
+      <ul>
+        <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+        <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 执法任务管理 &gt; 决策支持</div>
+
+
+  <!-- sys-main -->
+  <div class="sys-main sys-main-style">
+  
+  	<div class="catechose">
+      	<ul>
+        	<li><a href="decision-support.html">精准执法</a></li>
+            <li><a class="active" href="decision-support2.html">专项整治</a></li>
+            <li><a href="decision-support3.html">案件处置</a></li>
+        </ul>
+      </div>
+    
+    
+    <div class="panel" style=" margin-top:-10px;">
+        <div class="panel-heading" style=" border-top:1px solid #ddd">
+          <div class="panel-title">
+          	
+          </div>
+        </div>
+        <div class="panel-body">
+        
+            <div class="form-box" style=" margin-bottom:10px; ">
+                <div class="form-item">                 
+                        <a class="btn" href="decision-support2.html">返回上一页</a>
+                </div>
+              </div>
+              
+                    
+                <div class="col-3">
+                  
+                  <div class="panel" style=" margin-bottom:30px; ">
+                    <div class="panel-heading">
+                      <div class="panel-title">案件概况</div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="chart"><img alt="" src="../assets/images/test/92.png" style=" height:260px" /></div>
+                    </div>
+                  </div>
+                
+                  <div class="panel">
+                    <div class="panel-heading">
+                      <div class="panel-title">案件来源</div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="chart" id="chart_1"><img alt="" src="../assets/images/test/93.png" style=" height:260px" /></div>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                
+                <div class="col-9">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">案件列表&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <select style=" width:120px; ">
+                                    <option>请选择行业</option>
+                                    <option>全部</option>
+                                    <option>汽车</option>
+                                    <option>摩托车</option>
+                                    <option>玩具</option>
+                                </select>
+                                <select style=" width:150px; ">
+                                    <option>请选择案件来源</option>
+                                    <option>全部</option>
+                                </select>
+                                <select style=" width:150px; ">
+                                    <option>请选择办案单位</option>
+                                    <option>全部</option>
+                                </select>
+                                <select style=" width:150px; ">
+                                    <option>请选择违法类型</option>
+                                    <option>全部</option>
+                                </select>
+                                <input class="input" placeholder="输入关键字" type="text" style=" width:200px;">
+                                <button class="btn"><i class="icon-search"></i>查询</button>
+                          </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-item"></div>
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                  <td>案件编号</td>
+                                  <td>办案单位</td>
+                                  <td>案件来源</td>
+                                  <td>案件名称</td>
+                                  <td>违法类型</td>
+                                  <td>涉案物品</td>
+                                  <td>案件状态</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>NAQ10256</td>
+                                  <td>南岸</td>
+                                  <td>监督检查</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆加建房地产开发有限公司在岳建阁小区使用的8台电梯超过定期检验有效期案</span></a></td>
+                                  <td>使用未经定期检验或检验不合格的特种设备</td>
+                                  <td>电梯</td>
+                                  <td>办理中</td>
+                                </tr>
+                                <tr>
+                                  <td>YYA10369</td>
+                                  <td>云阳</td>
+                                  <td>监督检验后处理</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆源通设备制造有限公司涉嫌生产销售壳体材料与强制性产品认证描述不一致的低压成套开关设备案</span></a></td>
+                                  <td>强制性产品认证一致性不合格</td>
+                                  <td>食品玻璃容器</td>
+                                  <td>已结案</td>
+                                </tr>
+                                <tr>
+                                  <td>LPX12546</td>
+                                  <td>梁平</td>
+                                  <td>12365转办</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆啤酒股份有限公司六厂涉嫌生产、销售不符合保障人体健康和人身、财产安全的国家标准啤酒案</span></a></td>
+                                  <td>生产、销售不符合保障人体健康和人身</td>
+                                  <td>啤酒</td>
+                                  <td>待办理</td>
+                                </tr>
+                                <tr>
+                                  <td>NAQ10256</td>
+                                  <td>南岸</td>
+                                  <td>监督检查</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆加建房地产开发有限公司在岳建阁小区使用的8台电梯超过定期检验有效期案</span></a></td>
+                                  <td>使用未经定期检验或检验不合格的特种设备</td>
+                                  <td>电梯</td>
+                                  <td>办理中</td>
+                                </tr>
+                                <tr>
+                                  <td>YYA10369</td>
+                                  <td>云阳</td>
+                                  <td>监督检验后处理</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆源通设备制造有限公司涉嫌生产销售壳体材料与强制性产品认证描述不一致的低压成套开关设备案</span></a></td>
+                                  <td>强制性产品认证一致性不合格</td>
+                                  <td>食品玻璃容器</td>
+                                  <td>已结案</td>
+                                </tr>
+                                <tr>
+                                  <td>LPX12546</td>
+                                  <td>梁平</td>
+                                  <td>12365转办</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆啤酒股份有限公司六厂涉嫌生产、销售不符合保障人体健康和人身、财产安全的国家标准啤酒案</span></a></td>
+                                  <td>生产、销售不符合保障人体健康和人身</td>
+                                  <td>啤酒</td>
+                                  <td>待办理</td>
+                                </tr>
+                                <tr>
+                                  <td>NAQ10256</td>
+                                  <td>南岸</td>
+                                  <td>监督检查</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆加建房地产开发有限公司在岳建阁小区使用的8台电梯超过定期检验有效期案</span></a></td>
+                                  <td>使用未经定期检验或检验不合格的特种设备</td>
+                                  <td>电梯</td>
+                                  <td>办理中</td>
+                                </tr>
+                                <tr>
+                                  <td>YYA10369</td>
+                                  <td>云阳</td>
+                                  <td>监督检验后处理</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆源通设备制造有限公司涉嫌生产销售壳体材料与强制性产品认证描述不一致的低压成套开关设备案</span></a></td>
+                                  <td>强制性产品认证一致性不合格</td>
+                                  <td>食品玻璃容器</td>
+                                  <td>已结案</td>
+                                </tr>
+                                <tr>
+                                  <td>LPX12546</td>
+                                  <td>梁平</td>
+                                  <td>12365转办</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆啤酒股份有限公司六厂涉嫌生产、销售不符合保障人体健康和人身、财产安全的国家标准啤酒案</span></a></td>
+                                  <td>生产、销售不符合保障人体健康和人身</td>
+                                  <td>啤酒</td>
+                                  <td>待办理</td>
+                                </tr>
+                                <tr>
+                                  <td>NAQ10256</td>
+                                  <td>南岸</td>
+                                  <td>监督检查</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆加建房地产开发有限公司在岳建阁小区使用的8台电梯超过定期检验有效期案</span></a></td>
+                                  <td>使用未经定期检验或检验不合格的特种设备</td>
+                                  <td>电梯</td>
+                                  <td>办理中</td>
+                                </tr>
+                                <tr>
+                                  <td>YYA10369</td>
+                                  <td>云阳</td>
+                                  <td>监督检验后处理</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆源通设备制造有限公司涉嫌生产销售壳体材料与强制性产品认证描述不一致的低压成套开关设备案</span></a></td>
+                                  <td>强制性产品认证一致性不合格</td>
+                                  <td>食品玻璃容器</td>
+                                  <td>已结案</td>
+                                </tr>
+                                <tr>
+                                  <td>LPX12546</td>
+                                  <td>梁平</td>
+                                  <td>12365转办</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆啤酒股份有限公司六厂涉嫌生产、销售不符合保障人体健康和人身、财产安全的国家标准啤酒案</span></a></td>
+                                  <td>生产、销售不符合保障人体健康和人身</td>
+                                  <td>啤酒</td>
+                                  <td>待办理</td>
+                                </tr>
+                                <tr>
+                                  <td>YYA10369</td>
+                                  <td>云阳</td>
+                                  <td>监督检验后处理</td>
+                                  <td><a href="decision-support2-detail2.html"><span class="word-wrap" style=" width:200px; ">重庆源通设备制造有限公司涉嫌生产销售壳体材料与强制性产品认证描述不一致的低压成套开关设备案</span></a></td>
+                                  <td>强制性产品认证一致性不合格</td>
+                                  <td>食品玻璃容器</td>
+                                  <td>已结案</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div class="pagebar">
+                                <div class="pageinfo">共有50条记录，每页显示10条</div>
+                                <ul class="pagination">
+                                    <li class="disabled"><a href="#">&lt;</a></li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li class="disabled"><a href="#">&gt;</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                
+            
+            
+            
+        </div>
+      </div>
+    
+    
+
+
+
+
+    
+  </div>
+  
+  
+  
+</div>
+
+<script>
+
+    var setting = {
+      data: {
+        simpleData: {
+          enable: true
+        }
+      }
+    };
+
+    var zNodes1 =[
+			{ id:1, pId:0, name:"乘用车", open:true,font:{'background-color':'black', 'color':'white'}},
+		
+			{ id:2, pId:1, name:"安全故障信息"},
+			{ id:3, pId:1, name:"技术服务信息"},
+			{ id:4, pId:1, name:"境外召回说明"},
+			{ id:5, pId:1, name:"更退换货信息"},
+			{ id:6, pId:1, name:"车型基本配置"},
+			{ id:7, pId:1, name:"车型系列信息", open:true},
+			{ id:71, pId:7, name:"速腾"},
+			{ id:72, pId:7, name:"迈腾"},
+			{ id:73, pId:7, name:"高尔夫"},
+			{ id:74, pId:7, name:"宝来"},
+			
+			{ id:8, pId:1, name:"经销商信息"},
+			{ id:9, pId:1, name:"汽车总成信息"},
+  
+	];
+
+    $(document).ready(function(){
+      $.fn.zTree.init($("#role"), setting, zNodes1);
+
+    });
+
+    var dataBJ = [
+        [55,9,56,0.46,18,6,1],
+        [25,11,21,0.65,34,9,2],
+        [56,7,63,0.3,14,5,3],
+        [33,7,29,0.33,16,6,4],
+        [42,24,44,0.76,40,16,5],
+        [82,58,90,1.77,68,33,6],
+        [74,49,77,1.46,48,27,7],
+        [78,55,80,1.29,59,29,8],
+        [267,216,280,4.8,108,64,9],
+        [185,127,216,2.52,61,27,10],
+        [39,19,38,0.57,31,15,11],
+        [41,11,40,0.43,21,7,12],
+        [64,38,74,1.04,46,22,13],
+        [108,79,120,1.7,75,41,14],
+        [108,63,116,1.48,44,26,15],
+        [33,6,29,0.34,13,5,16],
+        [94,66,110,1.54,62,31,17],
+        [186,142,192,3.88,93,79,18],
+        [57,31,54,0.96,32,14,19],
+        [22,8,17,0.48,23,10,20],
+        [39,15,36,0.61,29,13,21],
+        [94,69,114,2.08,73,39,22],
+        [99,73,110,2.43,76,48,23],
+        [31,12,30,0.5,32,16,24],
+        [42,27,43,1,53,22,25],
+        [154,117,157,3.05,92,58,26],
+        [234,185,230,4.09,123,69,27],
+        [160,120,186,2.77,91,50,28],
+        [134,96,165,2.76,83,41,29],
+        [52,24,60,1.03,50,21,30],
+        [46,5,49,0.28,10,6,31]
+    ];
+
+    var dataGZ = [
+        [26,37,27,1.163,27,13,1],
+        [85,62,71,1.195,60,8,2],
+        [78,38,74,1.363,37,7,3],
+        [21,21,36,0.634,40,9,4],
+        [41,42,46,0.915,81,13,5],
+        [56,52,69,1.067,92,16,6],
+        [64,30,28,0.924,51,2,7],
+        [55,48,74,1.236,75,26,8],
+        [76,85,113,1.237,114,27,9],
+        [91,81,104,1.041,56,40,10],
+        [84,39,60,0.964,25,11,11],
+        [64,51,101,0.862,58,23,12],
+        [70,69,120,1.198,65,36,13],
+        [77,105,178,2.549,64,16,14],
+        [109,68,87,0.996,74,29,15],
+        [73,68,97,0.905,51,34,16],
+        [54,27,47,0.592,53,12,17],
+        [51,61,97,0.811,65,19,18],
+        [91,71,121,1.374,43,18,19],
+        [73,102,182,2.787,44,19,20],
+        [73,50,76,0.717,31,20,21],
+        [84,94,140,2.238,68,18,22],
+        [93,77,104,1.165,53,7,23],
+        [99,130,227,3.97,55,15,24],
+        [146,84,139,1.094,40,17,25],
+        [113,108,137,1.481,48,15,26],
+        [81,48,62,1.619,26,3,27],
+        [56,48,68,1.336,37,9,28],
+        [82,92,174,3.29,0,13,29],
+        [106,116,188,3.628,101,16,30],
+        [118,50,0,1.383,76,11,31]
+    ];
+
+    var dataSH = [
+        [91,45,125,0.82,34,23,1],
+        [65,27,78,0.86,45,29,2],
+        [83,60,84,1.09,73,27,3],
+        [109,81,121,1.28,68,51,4],
+        [106,77,114,1.07,55,51,5],
+        [109,81,121,1.28,68,51,6],
+        [106,77,114,1.07,55,51,7],
+        [89,65,78,0.86,51,26,8],
+        [53,33,47,0.64,50,17,9],
+        [80,55,80,1.01,75,24,10],
+        [117,81,124,1.03,45,24,11],
+        [99,71,142,1.1,62,42,12],
+        [95,69,130,1.28,74,50,13],
+        [116,87,131,1.47,84,40,14],
+        [108,80,121,1.3,85,37,15],
+        [134,83,167,1.16,57,43,16],
+        [79,43,107,1.05,59,37,17],
+        [71,46,89,0.86,64,25,18],
+        [97,71,113,1.17,88,31,19],
+        [84,57,91,0.85,55,31,20],
+        [87,63,101,0.9,56,41,21],
+        [104,77,119,1.09,73,48,22],
+        [87,62,100,1,72,28,23],
+        [168,128,172,1.49,97,56,24],
+        [65,45,51,0.74,39,17,25],
+        [39,24,38,0.61,47,17,26],
+        [39,24,39,0.59,50,19,27],
+        [93,68,96,1.05,79,29,28],
+        [188,143,197,1.66,99,51,29],
+        [174,131,174,1.55,108,50,30],
+        [187,143,201,1.39,89,53,31]
+    ];
+
+    var lineStyle = {
+        normal: {
+            width: 1,
+            opacity: 0.5
+        }
+    };
+
+    option = {
+        backgroundColor: '#161627',
+        legend: {
+            bottom: 5,
+            data: ['办理中', '代办理', '已结案'],
+            itemGap: 20,
+            textStyle: {
+                color: '#fff',
+                fontSize: 14
+            },
+            selectedMode: 'single'
+        },
+        // visualMap: {
+        //     show: true,
+        //     min: 0,
+        //     max: 20,
+        //     dimension: 6,
+        //     inRange: {
+        //         colorLightness: [0.5, 0.8]
+        //     }
+        // },
+        radar: {
+            indicator: [
+                {name: '监督检查', max: 300},
+                {name: '专项执法', max: 250},
+                {name: '12365转办', max: 300},
+                {name: '举报', max: 5},
+                {name: '上级交办', max: 200},
+                {name: '专项整治', max: 100}
+            ],
+            shape: 'circle',
+            splitNumber: 5,
+            name: {
+                textStyle: {
+                    color: 'rgb(238, 197, 102)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: [
+                        'rgba(238, 197, 102, 0.1)', 'rgba(238, 197, 102, 0.2)',
+                        'rgba(238, 197, 102, 0.4)', 'rgba(238, 197, 102, 0.6)',
+                        'rgba(238, 197, 102, 0.8)', 'rgba(238, 197, 102, 1)'
+                    ].reverse()
+                }
+            },
+            splitArea: {
+                show: false
+            },
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(238, 197, 102, 0.5)'
+                }
+            }
+        },
+        series: [
+            {
+                name: '办理中',
+                type: 'radar',
+                lineStyle: lineStyle,
+                data: dataBJ,
+                symbol: 'none',
+                itemStyle: {
+                    normal: {
+                        color: '#F9713C'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        opacity: 0.1
+                    }
+                }
+            },
+            {
+                name: '代办理',
+                type: 'radar',
+                lineStyle: lineStyle,
+                data: dataSH,
+                symbol: 'none',
+                itemStyle: {
+                    normal: {
+                        color: '#B3E4A1'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        opacity: 0.05
+                    }
+                }
+            },
+            {
+                name: '已结案',
+                type: 'radar',
+                lineStyle: lineStyle,
+                data: dataGZ,
+                symbol: 'none',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(238, 197, 102)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        opacity: 0.05
+                    }
+                }
+            }
+        ]
+    };
+
+
+    var myChart = echarts.init($("#chart_1")[0], 'macarons');
+    myChart.setOption(option);
+
+  </script>
+
+
+</body>
+</html>

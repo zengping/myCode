@@ -1,0 +1,109 @@
+
+
+.listtree ul
+{
+    display: inline-block;
+    vertical-align: top;
+	position:relative;
+	padding-left:16px;
+	margin-left:18px;
+}
+.listtree ul:before {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  display: block;
+  height: 1px;
+  width: 21px;
+  content: "";
+  color:#70cefa;
+  background-image: url(../images/treelinec.png);
+  background-repeat: no-repeat;
+  background-position: left center; 
+}
+.listtree ul:nth-child(1):before{ background:none}
+.listtree ul li
+{
+    min-width: 140px;
+    margin-left: 20px;
+	position:relative;
+    list-style: none;
+}
+/*保存、取消按钮组*/
+.btnDiv
+{
+    margin-top: 50px;
+}
+/*增加按钮*/
+.addTree
+{
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: left;
+    color: green;
+    border: none;
+	margin-top:5px
+}
+.addTree span{ display:block; background:#29c200; width:18px; height:18px; overflow:hidden; color:#fff; border-radius:50%; text-align:center; font-size:16px; line-height:18px }
+/*展开按钮*/
+.openTree,
+.delTree
+{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 16px;
+
+    display: inline-block;
+
+    margin: 0 2px;
+
+    cursor: pointer;
+
+    color: green;
+    border: none;
+}
+.delTree
+{
+    color: red; position:relative
+}
+
+.openTree span{ display:block; background:#29c200; width:18px; height:18px; overflow:hidden; color:#fff; border-radius:50%; text-align:center; font-size:16px; line-height:18px }
+.delTree span{ display:block; background:#70cefa; width:18px; height:18px; overflow:hidden; color:#fff; border-radius:50%; text-align:center; font-size:16px; line-height:15px; font-weight:normal; }
+/*节点*/
+.child > input
+{
+    width: 100px;
+    border: 1px solid #33afc9;
+    border-radius: 3px;
+    outline: none;
+	color:#333;
+	background: url(../images/formbg.png) repeat left top;
+	padding:2px 0 2px 5px;
+	margin-bottom:5px;
+	font-size:16px;
+	position:relative 
+}
+.child > input:before {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  display: block;
+  height: 1px;
+  width: 21px;
+  content: "";
+  color:#70cefa;
+  background-image: url(../images/treelinec.png);
+  background-repeat: no-repeat;
+  background-position: left center; 
+}
+/* 切换子菜单显示隐藏 */
+.hidden
+{
+    display: none !important;
+}
+
+.tree-line-t, .tree-line-c, .tree-line-b{ position:absolute; left:0;}
+.tree-line-c{ border-left:1px solid #70cefa;}
+.tree-line-t{ background: url(../images/treeline.png) no-repeat left top; width:32px; height:7px;  }
+.tree-line-b{ background: url(../images/treelineb.png) no-repeat left top; width:33px; height:7px; bottom:5px;  }

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/nav.js"></script>
+    <script src="../scripts/lib/echarts-3.3.1/echarts.min.js"></script>
+    <script src="../scripts/lib/echarts-3.3.1/echarts-wordcloud.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+  <!-- sys-header -->
+  <div class="sys-header">
+    <div class="sys-logo">
+      <h1>重庆质监缺陷管理分析系统</h1>
+      <h2>缺陷产品管理系统</h2>
+    </div>
+    <div class="sys-menu" id="sys-menu">
+      <ul>
+        <li>loading......</li>
+      </ul>
+      <div class="curLine"></div>
+    </div>
+    <div class="sys-topbar">
+      <ul>
+        <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+        <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 执法任务管理 &gt; 案源发现</div>
+
+  <!-- sys-main -->
+  <div class="sys-main sys-main-style">
+	
+    <div class="catechose">
+      	<ul>
+        	<li><a href="task-found.html">被动案源接收</a></li>
+            <li><a href="task-found-bug.html" class="active">产品质量案源发现</a></li>
+            <li><a href="task-found-risk.html">潜在风险案源发现</a></li>
+            <li><a href="task-found-web.html">互联网信息案源发现</a></li>
+        </ul>
+      </div>
+    
+    
+    <div class="col-12" style=" margin-top:20px; ">
+      <div class="panel">
+        <div class="panel-heading" style=" border-top:1px solid #ddd">
+          <div class="panel-title">
+          	<div class="list-chose">
+                <ul>
+                    <li class="active"><a href="task-found-bug.html">投诉</a></li>
+                    <li><a href="task-found-bug02.html" class="active">维保</a></li>
+                    <li><a href="task-found-bug03.html">质量事故</a></li>
+                </ul>
+              </div>
+          </div>
+        </div>
+        <div class="panel-body">
+        
+            <div class="form-box" style=" margin-bottom:20px; background:#f4f4f4; padding:10px; ">
+                <div class="form-item">                 
+                    	产品类型：
+                        <select style=" width:160px; ">
+                            <option>请选择产品类别</option>
+                            <option>全部</option>
+                        </select>
+                        选择时间：
+                    	<ul class="list-time">
+                            <li class="active">今天</li>
+                            <li>近7天</li>
+                            <li>近30天</li>
+                        </ul>
+                        自定义时间
+                        <input class="input" placeholder="请选择开始时间" value="" type="text" style=" width:200px;"> -  <input class="input" placeholder="请选择结束时间" type="text" style=" width:200px;">
+                        <button class="btn"><i class="icon-search"></i>查询</button>
+                </div>
+              </div>
+              
+              <div class="assessment">
+                <div class="assessment-l assessment-l-style">
+                    <a href="task-found-bug.html" class="active"><i class="icon-view-quilt"></i>投诉概览</a>
+                    <a href="task-found-bug-band.html"><i class="icon-view-carousel"></i>投诉品牌</a>
+                    <a href="task-found-bug-pro.html"><i class="icon-assessment"></i>投诉产品</a>
+                    <a href="task-found-bug-info.html"><i class="icon-recent-actors"></i>投诉信息</a>
+                </div>
+        
+                <div class="assessment-r">
+                    
+                    
+                    <div class="col-5">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">投诉预警</div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                  <td>预警评分</td>
+                                  <td>车型系列</td>
+                                  <td>品牌</td>
+                                  <td>投诉量</td>
+                                  <td>涉及货值</td>
+                                  <td>增速</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="active01">
+                                  <td>15</td>
+                                  <td><a href="task-found-bug-pro.html">新福克斯</a></td>
+                                  <td>长安福特</td>
+                                  <td>136</td>
+                                  <td>500000</td>
+                                  <td>39%</td>
+                                </tr>
+                                <tr class="active02">
+                                  <td>13</td>
+                                  <td><a href="task-found-bug-pro.html">迈腾MAGOTAN</a></td>
+                                  <td>一汽-大众</td>
+                                  <td>125</td>
+                                  <td>345345</td>
+                                  <td>26%</td>
+                                </tr>
+                                <tr class="active03">
+                                  <td>11</td>
+                                  <td><a href="task-found-bug-pro.html">昂科拉</a></td>
+                                  <td>别克</td>
+                                  <td>97</td>
+                                  <td>234234</td>
+                                  <td>24%</td>
+                                </tr>
+                                <tr>
+                                  <td>8</td>
+                                  <td><a href="task-found-bug-pro.html">陆风X7</a></td>
+                                  <td>江铃陆风</td>
+                                  <td>136</td>
+                                  <td>500000</td>
+                                  <td>39%</td>
+                                </tr>
+                                <tr>
+                                  <td>5</td>
+                                  <td><a href="task-found-bug-pro.html">科帕奇</a></td>
+                                  <td>上汽通用雪佛兰</td>
+                                  <td>136</td>
+                                  <td>500000</td>
+                                  <td>39%</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-4">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">投诉实时监控趋势</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="chart" id="chart_1"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-3">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">增速趋势图</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="chart" id="chart_2"></br>与增速排名联动</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-4">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">涉及货值</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="chart" id="chart_3"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-4">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">投诉处理情况</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="chart" id="chart_4" style=" height:200px"></div>
+                            <div class="list-deal">
+                            	<ul>
+                                	<li><b>10000</b>总投诉量</li>
+                                    <li><b>116/天</b>当前处理效率</li>
+                                    <li><b>快</b>效率评估</li>
+                                </ul>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-4">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">投诉关键字</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="chart" id="word"><img alt="" src="../assets/images/test/25.png" style=" height:260px"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
+                </div>
+    		
+            </div>
+            
+            
+            
+        </div>
+      </div>
+    </div>
+    
+    
+
+
+
+
+    
+  </div>
+  
+  
+  
+</div>
+
+<script>
+    var option = {
+        color: [ '#5b86c0', '#C45B59', '#A1BF64', "#886EA8"],
+        legend: {
+            left: 'center',
+            data: ['汽车','摩托','玩具','全部'],
+            bottom:'10px'
+        },
+        xAxis: {
+            type: 'category',
+            splitLine: {
+                lineStyle: {
+                    type: 'dashed'
+                }
+            },
+            data: ['三月二日', '三月三日', '三月四日', '三月五日', '三月六日', '三月七日', '三月八日', '三月九日', '三月十日']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '50px',
+            top:"10px",
+            containLabel: true
+        },
+        yAxis: {
+            type: 'value',
+            splitLine: {show: false}
+        },
+        series: [
+            {
+                name: '汽车',
+                type: 'line',
+                showSymbol:false,
+                data: [200, 380, 250, 320, 400, 460, 320, 300, 220]
+            },
+            {
+                name: '摩托',
+                type: 'line',
+                showSymbol:false,
+                data: [120, 440, 450, 220, 330, 120, 110, 280, 150]
+            },
+            {
+                name: '玩具',
+                type: 'line',
+                showSymbol:false,
+                data: [120, 180, 350, 280, 150, 330, 360, 380, 240]
+            },
+
+            {
+                name: '全部',
+                type: 'line',
+                showSymbol:false,
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+            }
+        ]
+    };
+
+    for(var i=0;i<option.series[1].data.length;i++){
+        option.series[3].data[i]=option.series[0].data[i]+option.series[1].data[i]+option.series[2].data[i];
+    }
+
+
+    myChart = echarts.init($("#chart_1")[0], 'macarons');
+    myChart.setOption(option);
+
+    option = {
+        color: [ '#5b86c0', '#C45B59'],
+        legend: {
+            data: ['平均', '当前'],
+            bottom: 20
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross'
+            }
+        },
+        grid: {
+            top: "10px",
+            bottom: "60px"
+        },
+        xAxis: {
+            type: 'value'
+        },
+        yAxis: {
+            type: 'value',
+        },
+        series: [ {
+            name: '平均',
+            type: 'line',
+
+            data: [[1,250],[2,280],[3,250],[4,125],[5,125]],
+        },
+            {
+                name: '当前',
+                type: 'line',
+                data: [[1,70],[2,140],[3,138],[4,80],[5,100]],
+            }]
+    };
+
+    myChart = echarts.init($("#chart_2")[0], 'macarons');
+    myChart.setOption(option);
+
+    option = {
+        title: {
+            text: '单位：万元'
+        },
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ['汽车', '摩托', '手机', '玩具', '家电', '农用车', '电脑'],
+                axisTick: {
+                    alignWithLabel: true
+                }
+            }
+        ],
+        yAxis : [
+            {
+                show:false,
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                name:'直接访问',
+                type:'bar',
+                barWidth: '60%',
+                data:[150, 90, 79, 50, 117, 200, 160]
+            }
+        ]
+    };
+
+    myChart = echarts.init($("#chart_3")[0], 'macarons');
+    myChart.setOption(option);
+
+    var itemStyle = {
+        normal: {
+            opacity: 0.7,
+            borderWidth: 1,
+            borderColor: 'black',
+            label:{
+                color:'black'
+
+            },
+            labelLine: {
+                lineStyle: {
+                    color: '#235894'
+                }
+            },
+        }
+    };
+
+    option = {
+        color: [ '#F2F2F2', '#d7d7d7', '#FFFFFF'],
+        grid: {
+            top: "10px",
+            bottom: "90px"
+        },
+        series : [
+            {
+                type: 'pie',
+                radius : '65%',
+                center: ['50%', '50%'],
+                selectedMode: 'single',
+                borderColor: '#777',
+                itemStyle: itemStyle,
+                data:[
+                    {value:35, name: '未处理 3500 35%',
+                        label:{
+                            normal:{
+                                textStyle: {
+                                    color: '#666666'
+                                }
+                            }
+                        }
+                    },
+                    {value:35, name: '已处理 3500 35%',
+                        label:{
+                            normal:{
+                                textStyle: {
+                                    color: '#666666'
+                                }
+                            }
+                        }
+                    },
+                    {value:30, name: '处理中 3000 30%',
+                        label:{
+                            normal:{
+                                textStyle: {
+                                    color: '#666666'
+                                }
+                            }
+                        }
+                    },
+                ]
+            }
+        ]
+    };
+
+    myChart = echarts.init($("#chart_4")[0], 'macarons');
+    myChart.setOption(option);
+
+    function draw(id, option) {
+        var myChart = echarts.init(document.getElementById(id));
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+
+    function createRandomItemStyle() {
+        return {
+            normal: {
+                color: 'rgb(' + [
+                    Math.round(Math.random() * 160),
+                    Math.round(Math.random() * 160),
+                    Math.round(Math.random() * 160)
+                ].join(',') + ')'
+            }
+        };
+    }
+
+    draw('word', option = {
+        series: [{
+            type: 'wordCloud',
+            gridSize: 20,
+            sizeRange: [12, 50],
+            rotationRange: [0, 0],
+            shape: 'circle',
+            textStyle: {
+                normal: {
+                    color: function () {
+                        return 'rgb(' + [
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160)
+                        ].join(',') + ')';
+                    }
+                },
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                }
+            },
+            data: [
+                {
+                    name: "Sam S Club",
+                    value: 10000,
+                    itemStyle: {
+                        normal: {
+                            color: 'black'
+                        }
+                    }
+                },
+                {
+                    name: "大众",
+                    value: 6181,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "刹车失灵",
+                    value: 4386,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "华为",
+                    value: 4055,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "服务态度差",
+                    value: 2467,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "处理效率低",
+                    value: 2244,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "失控",
+                    value: 1898,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "发动机",
+                    value: 1484,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "破损",
+                    value: 1112,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "充电器",
+                    value: 965,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "恶意推销",
+                    value: 847,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "磨损",
+                    value: 582,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "打滑",
+                    value: 555,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "欺骗",
+                    value: 550,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "福特",
+                    value: 462,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "凯迪拉克",
+                    value: 366,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "气囊",
+                    value: 360,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "轮胎",
+                    value: 282,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "尾灯",
+                    value: 273,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "阿斯顿马丁",
+                    value: 265,
+                    itemStyle: createRandomItemStyle()
+                }
+            ]
+        }]
+    })
+
+</script>
+
+</body>
+</html>

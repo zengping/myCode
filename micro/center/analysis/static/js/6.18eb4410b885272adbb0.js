@@ -1,0 +1,2 @@
+webpackJsonp([6],{hOxu:function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var i={template:"<div/>",created:function(){this.init()},methods:{init:function(){var t=this.$store.getters.getToken,e=this.$route.params.token;e&&(this.$store.commit("setToken",e),this.$router.push("/index")),t||e||(window.location.href=window._config.LOGIN_PAGE)}}},o=n("VU/8")(i,null,!1,null,null,null);e.default=o.exports}});
+//# sourceMappingURL=6.18eb4410b885272adbb0.js.map

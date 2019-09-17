@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/nav.js"></script>
+    <script src="../scripts/lib/echarts-3.3.1/echarts.min.js"></script>
+    <script src="../scripts/lib/echarts-3.3.1/echarts-wordcloud.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+  <!-- sys-header -->
+  <div class="sys-header">
+    <div class="sys-logo">
+      <h1>重庆质监缺陷管理分析系统</h1>
+      <h2>缺陷产品管理系统</h2>
+    </div>
+    <div class="sys-menu" id="sys-menu">
+      <ul>
+        <li>loading......</li>
+      </ul>
+      <div class="curLine"></div>
+    </div>
+    <div class="sys-topbar">
+      <ul>
+        <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+        <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 执法任务管理 &gt; 案源发现</div>
+
+  <!-- sys-main -->
+  <div class="sys-main sys-main-style">
+	
+    <div class="catechose">
+      	<ul>
+        	<li><a href="task-found.html">被动案源接收</a></li>
+            <li><a href="task-found-bug.html">产品质量案源发现</a></li>
+            <li><a href="task-found-risk.html" class="active">潜在风险案源发现</a></li>
+            <li><a href="task-found-web.html">互联网信息案源发现</a></li>
+        </ul>
+      </div>
+    
+    
+    <div class="col-12">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="panel-title">
+          	
+          </div>
+        </div>
+        <div class="panel-body">
+        
+            <div class="form-box" style=" margin-bottom:20px; background:#f4f4f4; padding:10px; ">
+                <div class="form-item">                 
+                    	产品类型：
+                        <select style=" width:160px; ">
+                            <option>请选择产品类别</option>
+                            <option>全部</option>
+                        </select>
+                        选择时间：
+                    	<ul class="list-time">
+                            <li class="active">今天</li>
+                            <li>近7天</li>
+                            <li>近30天</li>
+                        </ul>
+                        自定义时间
+                        <input class="input" placeholder="请选择开始时间" value="" type="text" style=" width:200px;"> -  <input class="input" placeholder="请选择结束时间" type="text" style=" width:200px;">
+                        <button class="btn"><i class="icon-search"></i>查询</button>
+                </div>
+              </div>
+              
+              <div class="assessment">
+                <div class="assessment-l assessment-l-style">
+                    <a href="task-found-risk.html" class="active"><i class="icon-view-quilt"></i>缺陷库概览</a>
+                    <a href="task-found-risk-compare.html"><i class="icon-view-carousel"></i>缺陷特征比对</a>
+                </div>
+        
+                <div class="assessment-r">
+                    
+                    
+                    <div class="col-4">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">缺陷库部件占比</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="chart" id="chart_1"><img alt="" src="../assets/images/test/68.png" style=" height:260px" /></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-4">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">缺陷库零部件数</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="chart" id="chart_2"><img alt="" src="../assets/images/test/69.png" style=" height:260px" /></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-4">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">缺陷问题总览</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="chart" id="chart_3"><img alt="" src="../assets/images/test/70.png" style=" height:260px" /></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-12">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">缺陷库部件来源动向</div>
+                        </div>
+                        <div class="panel-body">
+                        	<div class="col-8">
+                            	<div class="chart-search">
+                                    <input class="input" placeholder="输入厂商名称检索" style=" width:200px;" type="text">
+                                    <button class="btn"><i class="icon-search"></i>检索</button>
+                                    所在总成：
+                                    <select style=" width:130px; ">
+                                      <option value="车身">车身</option>
+                                      <option value="传动系统">传动系统</option>
+                                      <option value="电气设备">电气设备</option>
+                                      <option value="发动机">发动机</option>
+                                      <option value="附加设备">附加设备</option>
+                                      <option value="轮胎和车轮">轮胎和车轮</option>
+                                      <option value="气囊和安全带">气囊和安全带</option>
+                                      <option value="悬架系统">悬架系统</option>
+                                      <option value="制动系统">制动系统</option>
+                                      <option value="转向系统">转向系统</option>
+                                      <option selected="" value="全部">全部</option>
+                                    </select>
+                                    所在分总成：
+                                    <select style=" width:130px; ">
+                                      <option value="车架">车架</option>
+                                      <option value="车梁">车梁</option>
+                                      <option value="风窗">风窗</option>
+                                      <option value="挂车钩">挂车钩</option>
+                                      <option value="后视镜">后视镜</option>
+                                      <option value="拉手/门锁/拉索">拉手/门锁/拉索</option>
+                                      <option value="座椅">座椅</option>
+                                      <option selected="" value="全部">全部</option>
+                                    </select>
+                                </div>
+                                <div class="chart" id="chart_4"><img alt="" src="../assets/images/test/71.png" style=" height:220px" /></div>
+                            </div>
+                            <div class="col-4"><div class="chart" id="chart_5"><img alt="" src="../assets/images/test/72.png" style=" height:260px" /></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+    		
+            </div>
+            
+            
+            
+        </div>
+      </div>
+    </div>
+    
+    
+
+
+
+
+    
+  </div>
+  
+  
+  
+</div>
+
+<script>
+   var option = {
+        series : [
+            {
+                name: '访问来源',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+                    {value:10, name:'车身'+'\n'+'10%'},
+                    {value:30, name:'电气设备'+'\n'+'30%'},
+                    {value:17, name:'发动机'+'\n'+'17%'},
+                    {value:6, name:'轮胎及车轮'+'\n'+'6%'},
+                    {value:10, name:'气囊和安全带'+'\n'+'10%', selected:true},
+                    {value:4, name:'制动系统'+'\n'+'4%'},
+                    {value:23, name:'转向系统'+'\n'+'23%'}
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    var myChart = echarts.init($("#chart_1")[0], 'macarons');
+     myChart.setOption(option);
+
+
+   option = {
+       color: ['#5f5f5f'],
+       tooltip : {
+           trigger: 'axis',
+           axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+               type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+           }
+       },
+       grid: {
+           left: '3%',
+           right: '4%',
+           bottom: '3%',
+           top:"10px",
+           containLabel: true
+       },
+       xAxis : [
+           {
+               type : 'category',
+               data : ['气囊', '安全带'],
+               axisTick: {
+                   alignWithLabel: true
+               }
+           }
+       ],
+       yAxis : [
+           {
+               type : 'value',
+               max:140
+           }
+       ],
+       series : [
+           {
+               type:'bar',
+               label: {
+                   normal: {
+                       show: true,
+                       position: 'top'
+                   }
+               },
+               barWidth: '60%',
+               data:[120, 80]
+           }
+       ]
+   };
+
+   myChart = echarts.init($("#chart_2")[0], 'macarons');
+   myChart.setOption(option);
+
+   option = {
+       color:["#cccccc"],
+       grid: {
+           left: '5px',
+           right: '90px',
+           bottom: '3%',
+           top:"10px",
+           containLabel: true
+       },
+       xAxis: {
+           show:false,
+           type: 'value',
+           name:"负面信息量",
+           boundaryGap: [0, 0.01]
+       },
+       yAxis: {
+           type: 'category',
+           name:'品牌名称',
+           axisLabel:{
+               show:true
+           },
+           axisLine:{
+               show:false
+           },
+           axisTick :{
+               show:false
+           },
+           data: ['五十铃发动机公司','韩国大宇重工株式会社','美国强鹿','康明斯公司','美国TRW(天合)汽车集团','奥托立夫',"百利得汽车安全系统有限公司","东方久乐汽车","高田汽配制造有限公司"]
+       },
+       series: [
+           {
+               name: '2011年',
+               type: 'bar',
+               label: {
+                   normal: {
+                       show: false,
+                       color:"black",
+                       formatter:function(p){
+                           return p.name;
+                       },
+
+                       position: 'right'
+                   }
+               },
+
+               data: [123, 376, 458, 653, 829, 852,1233,1475,1852]
+           }
+       ]
+   };
+
+   myChart = echarts.init($("#chart_4")[0], 'macarons');
+   myChart.setOption(option);
+
+    function draw(id, option) {
+        var myChart = echarts.init(document.getElementById(id));
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+
+    function createRandomItemStyle() {
+        return {
+            normal: {
+                color: 'rgb(' + [
+                    Math.round(Math.random() * 160),
+                    Math.round(Math.random() * 160),
+                    Math.round(Math.random() * 160)
+                ].join(',') + ')'
+            }
+        };
+    }
+
+    draw('chart_3', option = {
+        series: [{
+            type: 'wordCloud',
+            gridSize: 20,
+            sizeRange: [12, 50],
+            rotationRange: [0, 0],
+            shape: 'circle',
+            textStyle: {
+                normal: {
+                    color: function () {
+                        return 'rgb(' + [
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160)
+                        ].join(',') + ')';
+                    }
+                },
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                }
+            },
+            data: [
+                {
+                    name: "Sam S Club",
+                    value: 10000,
+                    itemStyle: {
+                        normal: {
+                            color: 'black'
+                        }
+                    }
+                },
+                {
+                    name: "漏油",
+                    value: 6181,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "刹车失灵",
+                    value: 4386,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "安全气囊炸裂",
+                    value: 4055,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "轮胎磨损",
+                    value: 2467,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "处理效率低",
+                    value: 2244,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "方向盘抱死",
+                    value: 1898,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "漏电",
+                    value: 1484,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "破损",
+                    value: 1112,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "空调破损",
+                    value: 965,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "尾灯不亮",
+                    value: 847,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "车门无法开启",
+                    value: 582,
+                    itemStyle: createRandomItemStyle()
+                }
+            ]
+        }]
+    })
+
+</script>
+
+</body>
+</html>

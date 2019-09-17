@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/nav.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts.min.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts-wordcloud.min.js"></script>
+
+<script src="../scripts/plugins/jquery.ztree.all.min.js"></script>
+
+<style type="text/css">.ztree li a span.add{ display:none;}</style>
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+  <!-- sys-header -->
+  <div class="sys-header">
+    <div class="sys-logo">
+      <h1>重庆质监缺陷管理分析系统</h1>
+      <h2>缺陷产品管理系统</h2>
+    </div>
+    <div class="sys-menu" id="sys-menu">
+      <ul>
+        <li>loading......</li>
+      </ul>
+      <div class="curLine"></div>
+    </div>
+    <div class="sys-topbar">
+      <ul>
+        <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+        <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 执法任务管理 &gt; 立法取证</div>
+
+
+  <!-- sys-main -->
+  <div class="sys-main sys-main-style">
+  
+    <button class="btn" style=" float: right"><i class="icon-receipt"></i>申请列表管理</button>
+  
+  	<div class="catechose">
+      	<ul>
+        	<li><a class="active" href="filing-evidence.html">企业表</a></li>
+            <li><a href="filing-evidence-pro.html">产品表</a></li>
+        </ul>
+      </div>
+    
+    
+    <div class="panel" style=" margin-top:-10px;">
+        <div class="panel-heading">
+          <div class="panel-title">
+          	
+          </div>
+        </div>
+        <div class="panel-body">
+        	
+            <div class="configurationleft" style=" width:480px; ">
+            	<div class="carstit">
+                    <input class="input" placeholder="请输入产品名称" type="text" style=" width:82%; margin-right:10px; "><button class="btn"><i class="icon-search"></i>搜索</button>
+                </div>
+            	
+            	<table class="table table-striped">
+                   <thead>
+                    <tr>
+                        <td>企业名称</td>
+                        <td>工商注册号</td>
+                        <td>组织机构代码</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="active">
+                            <td>一汽大众</td>
+                            <td>KJKASD909823</td>
+                            <td>23435346346456</td>
+                        </tr>
+                        <tr>
+                            <td>长安福特</td>
+                            <td>KJKASD909823</td>
+                            <td>23435346346456</td>
+                        </tr>
+                        <tr>
+                            <td>嘉陵摩托车</td>
+                            <td>KJKASD909823</td>
+                            <td>23435346346456</td>
+                        </tr>
+                        <tr>
+                            <td>北京现代</td>
+                            <td>KJKASD909823</td>
+                            <td>23435346346456</td>
+                        </tr>
+                        <tr>
+                            <td>上海大众</td>
+                            <td>KJKASD909823</td>
+                            <td>23435346346456</td>
+                        </tr>
+                        <tr>
+                            <td>海尔电器</td>
+                            <td>KJKASD909823</td>
+                            <td>23435346346456</td>
+                        </tr>
+                        <tr>
+                            <td>美的空调</td>
+                            <td>KJKASD909823</td>
+                            <td>23435346346456</td>
+                        </tr>
+                        <tr>
+                            <td>格力空调</td>
+                            <td>KJKASD909823</td>
+                            <td>23435346346456</td>
+                        </tr>
+                        <tr>
+                            <td>上汽通用</td>
+                            <td>KJKASD909823</td>
+                            <td>23435346346456</td>
+                        </tr>
+                        <tr>
+                            <td>广汽本田</td>
+                            <td>KJKASD909823</td>
+                            <td>23435346346456</td>
+                        </tr>
+                        <tr>
+                            <td>戴尔</td>
+                            <td>KJKASD909823</td>
+                            <td>23435346346456</td>
+                        </tr>
+                        <tr>
+                            <td>三星</td>
+                            <td>KJKASD909823</td>
+                            <td>23435346346456</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagebar">
+                    <div class="pageinfo">共有50条记录，每页显示10条</div>
+                    <ul class="pagination">
+                        <li class="disabled"><a href="#">&lt;</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li class="disabled"><a href="#">&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="configuration" style=" margin-left:500px; padding-left:20px; ">
+            	<div class="product-box product-box-style">
+                      	<div class="product-box-l">
+                        	<div class="product-tit"><h3>一汽大众<p>企业数据目录</p></h3></div>
+                        	<ul id="role" class="ztree"></ul>
+                        </div>
+                        <div class="product-box-r">
+                        	<div class="evidence-t">
+                            	<table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <td>车型型号</td>
+                                      <td>VIN码</td>
+                                      <td>发动机号</td>
+                                      <td>车主姓名</td>
+                                      <td>车主联系方式</td>
+                                      <td>故障发生位置</td>
+                                      <td>故障原因</td>
+                                    </tr>
+                                  </thead>
+                                </table>
+                                <div class="evidence-t-t evidence-sub"><p style=" font-size:18px; ">暂时没有相关数据，需要向相关企业发起取证申请获得</p><p><button class="btn add">发起申请</button></p></div>
+                                <div class="evidence-t-t evidence-cancle"><p style=" font-size:18px; ">数据申请中，已向企业提交查看申请，申请通过后方可查看</p><p><button class="btn btn-warning">取消申请</button></p></div>
+                            </div>
+                        	<div class="evidence-b">
+                                <h3>基本信息</h3>
+                                <table class="table table-striped">
+                                  <tbody>
+                                    <tr>
+                                      <td><b>整车质保</b></td>
+                                      <td>三年或十万公里</td>
+                                      <td><b>排量</b></td>
+                                      <td>1.4T</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>变速箱</b></td>
+                                      <td>5挡手动</td>
+                                      <td><b>官方0-100km/h加速(s)</b></td>
+                                      <td>11.3</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>官方0-100km/h加速(s)</b></td>
+                                      <td>11.3s</td>
+                                      <td><b>100-0km/h制动(m)</b></td>
+                                      <td>30m</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>最高车速</b></td>
+                                      <td>180km/h</td>
+                                      <td><b>工信部(L/100km)</b></td>
+                                      <td>6.8/L</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <h3>车体</h3>
+                                <table class="table table-striped">
+                                  <tbody>
+                                    <tr>
+                                      <td><b>车长(mm)</b></td>
+                                      <td>4568</td>
+                                      <td><b>车宽(mm)</b></td>
+                                      <td>1766</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>前轮距(mm)</b></td>
+                                      <td>1534</td>
+                                      <td><b>后轮距(mm)</b></td>
+                                      <td>1534</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>车门数(个)</b></td>
+                                      <td>4</td>
+                                      <td><b>座位数(个)</b></td>
+                                      <td>5</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <h3>发动机</h3>
+                                <table class="table table-striped">
+                                  <tbody>
+                                    <tr>
+                                      <td><b>发动机型</b></td>
+                                      <td>EA211</td>
+                                      <td><b>排量(ml)</b></td>
+                                      <td>1766</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>排量(L)</b></td>
+                                      <td>1.6</td>
+                                      <td><b>进气形式</b></td>
+                                      <td>自然吸气</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>气缸数(个)</b></td>
+                                      <td>4</td>
+                                      <td><b>最大马力(Pa)</b></td>
+                                      <td>110</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>最大功率(kw)</b></td>
+                                      <td>110</td>
+                                      <td><b>最大公里转速(RPM)</b></td>
+                                      <td>5800</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>气缸数(个)</b></td>
+                                      <td>4</td>
+                                      <td><b>最大马力(Pa)</b></td>
+                                      <td>110</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
+                      </div>
+            </div>
+            
+
+            
+        </div>
+      </div>
+    
+    
+
+    
+  </div>
+  
+  
+  
+</div>
+
+
+
+
+<!-- 发起申请 -->
+<div class="dialog">
+  <div class="dialog-win" >
+    <div class="dialog-head">数据请求申请<a class="close" href="javascript:void(0)"><i class="icon-close"></i></a></div>
+    <div class="dialog-body">
+      <div class="form-box" style=" width:90%">
+        <div class="form-item">                 
+        	<div class="form-title">申请说明：</div>
+            <div class="form-content">
+            	  <textarea name="" cols="" rows="" class="textarea"></textarea>
+            </div>
+        </div>
+        <div class="form-item">                 
+                <div class="form-title">关联案件：</div>
+                <div class="form-content"><input name="" type="text" class="input" value=""></div>
+            </div>
+            <div class="form-item">                 
+                <div class="form-title">案件名称：</div>
+                <div class="form-content">
+                    重庆源通设备制造有限公司涉嫌生产销售壳体材料与强制性产品认证描述不一致的低压成套开关设备案
+                </div>
+            </div>
+             <div class="form-item">                 
+                <div class="form-title">数据需求时间：</div>
+                <div class="form-content"><input name="" type="text" class="input" value=""></div>
+            </div>
+            <div class="form-item">                 
+                <div class="form-title">申请人：</div>
+                <div class="form-content">
+                      <input name="" type="text" class="input" value="">
+                </div>
+            </div>
+            <div class="form-item">                 
+                <div class="form-title">申请数据项：</div>
+                <div class="form-content">
+                  <label><input type="checkbox">车型型号</label>
+                  <label><input type="checkbox">VIN码</label>
+                  <label><input type="checkbox">发动机号</label>
+                  <label><input type="checkbox">车主姓名</label>
+                  <label><input type="checkbox">车主联系方式</label>
+                  <label><input type="checkbox">故障发生位置</label>
+                  <label><input type="checkbox">故障原因</label>
+                </div>
+            </div>
+        
+        
+      </div>
+    </div>
+    <div class="dialog-foot">
+    	<button class="btn btnsub">提交申请</button>
+        <button class="btn btn-minor">取消</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+    var setting = {
+      data: {
+        simpleData: {
+          enable: true
+        }
+      }
+    };
+
+    var zNodes1 =[
+			{ id:1, pId:0, name:"乘用车", open:true,font:{'background-color':'black', 'color':'white'}},
+		
+			{ id:2, pId:1, name:"安全故障信息"},
+			{ id:3, pId:1, name:"技术服务信息"},
+			{ id:4, pId:1, name:"境外召回说明"},
+			{ id:5, pId:1, name:"更退换货信息"},
+			{ id:6, pId:1, name:"车型基本配置"},
+			{ id:7, pId:1, name:"车型系列信息", open:true},
+			{ id:71, pId:7, name:"速腾"},
+			{ id:72, pId:7, name:"迈腾"},
+			{ id:73, pId:7, name:"高尔夫"},
+			{ id:74, pId:7, name:"宝来"},
+			
+			{ id:8, pId:1, name:"经销商信息"},
+			{ id:9, pId:1, name:"汽车总成信息"},
+  
+	];
+
+    $(document).ready(function(){
+      $.fn.zTree.init($("#role"), setting, zNodes1);
+	  
+	  
+	  
+	   $(".ztree li span").click(function () {
+		$(".evidence-t").hide();
+	  })
+	  $(".ztree li span").click(function () {
+		$(".evidence-b").show();
+	  })
+	  
+	  
+	  $(".dialog-head .close").click(function(){
+			$(".dialog").hide();	
+		})
+		
+		$(".add").click(function(){
+			$(".dialog").show();	
+		})
+		
+		$(".btnsub").click(function(){
+			$(".dialog").hide();	
+			$(".evidence-sub").hide();
+			$(".evidence-cancle").show();	
+		})
+		
+		
+		$("#role_11_span").click(function () {
+			$(".evidence-t").show();
+		  })
+		  $("#role_11_span").click(function () {
+			$(".evidence-b").hide();
+		  })
+		
+		
+		
+
+    });
+  </script>
+
+
+</body>
+</html>

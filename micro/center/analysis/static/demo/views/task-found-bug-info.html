@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/nav.js"></script>
+
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+  <!-- sys-header -->
+  <div class="sys-header">
+    <div class="sys-logo">
+      <h1>重庆质监缺陷管理分析系统</h1>
+      <h2>缺陷产品管理系统</h2>
+    </div>
+    <div class="sys-menu" id="sys-menu">
+      <ul>
+        <li>loading......</li>
+      </ul>
+      <div class="curLine"></div>
+    </div>
+    <div class="sys-topbar">
+      <ul>
+        <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+        <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 执法任务管理 &gt; 案源发现</div>
+
+  <!-- sys-main -->
+  <div class="sys-main sys-main-style">
+	
+    <div class="catechose">
+      	<ul>
+        	<li><a href="task-found.html">被动案源接收</a></li>
+            <li><a href="task-found-bug.html" class="active">产品质量案源发现</a></li>
+            <li><a href="task-found-risk.html">潜在风险案源发现</a></li>
+            <li><a href="task-found-web.html">互联网信息案源发现</a></li>
+        </ul>
+      </div>
+    
+    
+    <div class="col-12" style=" margin-top:20px; ">
+      <div class="panel">
+        <div class="panel-heading" style=" border-top:1px solid #ddd">
+          <div class="panel-title">
+          	<div class="list-chose">
+                <ul>
+                    <li class="active"><a href="task-found-bug.html">投诉</a></li>
+                    <li><a href="task-found-bug02.html" class="active">维保</a></li>
+                    <li><a href="task-found-bug03.html">质量事故</a></li>
+                </ul>
+              </div>
+          </div>
+        </div>
+        <div class="panel-body">
+        
+            <div class="form-box" style=" margin-bottom:20px; background:#f4f4f4; padding:10px; ">
+                <div class="form-item">                 
+                    	产品类型：
+                        <select style=" width:160px; ">
+                            <option>请选择产品类别</option>
+                            <option>全部</option>
+                        </select>
+                        选择时间：
+                    	<ul class="list-time">
+                            <li class="active">今天</li>
+                            <li>近7天</li>
+                            <li>近30天</li>
+                        </ul>
+                        自定义时间
+                        <input class="input" placeholder="请选择开始时间" value="" type="text" style=" width:200px;"> -  <input class="input" placeholder="请选择结束时间" type="text" style=" width:200px;">
+                        <button class="btn"><i class="icon-search"></i>查询</button>
+                </div>
+              </div>
+              
+              <div class="assessment">
+                <div class="assessment-l assessment-l-style">
+                    <a href="task-found-bug.html"><i class="icon-view-quilt"></i>投诉概览</a>
+                    <a href="task-found-bug-band.html"><i class="icon-view-carousel"></i>投诉品牌</a>
+                    <a href="task-found-bug-pro.html"><i class="icon-assessment"></i>投诉产品</a>
+                    <a href="task-found-bug-info.html" class="active"><i class="icon-recent-actors"></i>投诉信息</a>
+                </div>
+        
+                <div class="assessment-r">
+                
+                	<div class="search" style=" margin-bottom:15px; ">
+                        <ul>
+                          <li>
+                            <span>时间：</span>
+                            <select>
+                                <option>新-旧</option>
+                                <option>旧-新</option>
+                            </select>
+                          </li>
+                          <li>
+                            <span>货值：</span>
+                            <select>
+                                <option>大-小</option>
+                                <option>小-大</option>
+                            </select>
+                          </li>
+                          <li>关键字检索：<input class="input" placeholder="请输入关键字" type="text"></li>
+                          <li><button class="btn"><i class="icon-search"></i>查询</button></li>
+                        </ul>
+                      </div>
+                    
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <td>编号</td>
+                          <td>标题</td>
+                          <td>商品名称</td>
+                          <td>规格型号</td>
+                          <td>涉及货值</td>
+                          <td>举报内容</td>
+                          <td>投诉人</td>
+                          <td>投诉时间</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>100251</td>
+                          <td>投诉长安福特发动机问题</td>
+                          <td>长安福特</td>
+                          <td>新福克斯 三厢 1.6 MT 舒适型 </td>
+                          <td>15万</td>
+                          <td>发动机经常熄火，4s店修了几次都没有好</td>
+                          <td>李先生</td>
+                          <td>2017/08/07 12:12:30</td>
+                        </tr>
+                        <tr>
+                          <td>100251</td>
+                          <td>丰田4s店欺骗消费者</td>
+                          <td>凯美瑞</td>
+                          <td>凯美瑞1.8T自动豪华型 </td>
+                          <td>18万</td>
+                          <td>4S店保养车替换了车身原有零部件</td>
+                          <td>张女士</td>
+                          <td>2017/08/07 12:12:30</td>
+                        </tr>
+                        <tr>
+                          <td>100251</td>
+                          <td>大众迈腾车门问题</td>
+                          <td>一汽-大众 </td>
+                          <td>2.0L 自动豪华版 </td>
+                          <td>20万</td>
+                          <td>15年买的迈腾，车门锁多次失灵</td>
+                          <td>陈女士</td>
+                          <td>2017/08/07 12:12:30</td>
+                        </tr>
+                        <tr>
+                          <td>100251</td>
+                          <td>陆风4s店服务员打人</td>
+                          <td>江铃陆风</td>
+                          <td>汽油2.0T两驱 豪华型 </td>
+                          <td>6000</td>
+                          <td>半年前付定金，至今未提车，4s店多次推脱不退还定金，还动手打人，导致轻微脑震荡</td>
+                          <td>李先生</td>
+                          <td>2017/08/07 12:12:30</td>
+                        </tr>
+                        <tr>
+                          <td>100251</td>
+                          <td>投诉长安福特发动机问题</td>
+                          <td>长安福特</td>
+                          <td>新福克斯 三厢 1.6 MT 舒适型 </td>
+                          <td>15万</td>
+                          <td>发动机经常熄火，4s店修了几次都没有好</td>
+                          <td>李先生</td>
+                          <td>2017/08/07 12:12:30</td>
+                        </tr>
+                        <tr>
+                          <td>100251</td>
+                          <td>大众迈腾车门问题</td>
+                          <td>一汽-大众 </td>
+                          <td>2.0L 自动豪华版 </td>
+                          <td>20万</td>
+                          <td>15年买的迈腾，车门锁多次失灵</td>
+                          <td>陈女士</td>
+                          <td>2017/08/07 12:12:30</td>
+                        </tr>
+                        <tr>
+                          <td>100251</td>
+                          <td>陆风4s店服务员打人</td>
+                          <td>江铃陆风</td>
+                          <td>汽油2.0T两驱 豪华型 </td>
+                          <td>6000</td>
+                          <td>半年前付定金，至今未提车，4s店多次推脱不退还定金，还动手打人，导致轻微脑震荡</td>
+                          <td>李先生</td>
+                          <td>2017/08/07 12:12:30</td>
+                        </tr>
+                        <tr>
+                          <td>100251</td>
+                          <td>投诉长安福特发动机问题</td>
+                          <td>长安福特</td>
+                          <td>新福克斯 三厢 1.6 MT 舒适型 </td>
+                          <td>15万</td>
+                          <td>发动机经常熄火，4s店修了几次都没有好</td>
+                          <td>李先生</td>
+                          <td>2017/08/07 12:12:30</td>
+                        </tr>
+                        <tr>
+                          <td>100251</td>
+                          <td>丰田4s店欺骗消费者</td>
+                          <td>凯美瑞</td>
+                          <td>凯美瑞1.8T自动豪华型 </td>
+                          <td>18万</td>
+                          <td>4S店保养车替换了车身原有零部件</td>
+                          <td>张女士</td>
+                          <td>2017/08/07 12:12:30</td>
+                        </tr>
+                        <tr>
+                          <td>100251</td>
+                          <td>大众迈腾车门问题</td>
+                          <td>一汽-大众 </td>
+                          <td>2.0L 自动豪华版 </td>
+                          <td>20万</td>
+                          <td>15年买的迈腾，车门锁多次失灵</td>
+                          <td>陈女士</td>
+                          <td>2017/08/07 12:12:30</td>
+                        </tr>
+                        <tr>
+                          <td>100251</td>
+                          <td>陆风4s店服务员打人</td>
+                          <td>江铃陆风</td>
+                          <td>汽油2.0T两驱 豪华型 </td>
+                          <td>6000</td>
+                          <td>半年前付定金，至今未提车，4s店多次推脱不退还定金，还动手打人，导致轻微脑震荡</td>
+                          <td>李先生</td>
+                          <td>2017/08/07 12:12:30</td>
+                        </tr>
+                      </tbody>
+                    </table>
+           			
+                    <div class="pagebar">
+                      <div class="pageinfo">共有10条记录，每页显示15条</div>
+                      <ul class="pagination">
+                        <li class="disabled"><a href="#">&lt;</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li class="disabled"><a href="#">&gt;</a></li>
+                      </ul>
+                    </div>
+                    
+                </div>
+    		
+            </div>
+            
+            
+            
+        </div>
+      </div>
+    </div>
+    
+    
+
+    
+
+
+    
+  </div>
+  
+  
+  
+</div>
+
+</body>
+</html>

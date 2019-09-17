@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>重庆质监缺陷管理分析系统</title>
+  <link rel="stylesheet" href="../assets/css/analysis.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/icons/style.css">
+
+  <script src="../scripts/jquery-1.11.3.min.js"></script>
+  <script src="../scripts/lib/echarts-3.3.1/echarts.js"></script>
+  <script src="../scripts/nav.js"></script>
+
+  <script type="text/javascript" src="../scripts/plugins/jcarousellite_1.js"></script>
+  <script>
+    $(function () {
+      var liLength = $("#rtList li").size();
+      //alert(liLength);
+      if (liLength >= 6) {
+        $("#rtList").jCarouselLite({
+          btnNext: "#rt_next",
+          btnPrev: "#rt_pre",
+          visible: 6,
+          auto: 3000,
+          speed: 500
+        });
+      }
+    })
+
+  </script>
+
+</head>
+
+<body>
+
+
+  <div class="assessment-r" style="margin-left: 0px">
+
+
+    <div class="col-6">
+      <div class="panel">
+        <div class="panel-heading border-warning">
+          <div class="panel-title">消费行业分析</div>
+        </div>
+        <div class="panel-body">
+          <div class="chart" id="img1">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="panel">
+        <div class="panel-heading border-gray">
+          <div class="panel-title">行业投诉分析</div>
+        </div>
+        <div class="panel-body">
+          <div class="chart" id="img2"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-8">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="panel-title">消费品牌分析</div>
+        </div>
+        <div class="panel-body">
+          <div class="h_pro_pic_con h_pro_pic_con_style">
+            <div class="fl"><a href="javascript:;" class="h_control" id="rt_pre"><i class="icon-chevron-left"></i></a></div>
+            <div class="fm h_pro_pic_outer">
+              <div id="rtList">
+                <ul>
+                  <li><a href="#">全部</a></li>
+                  <li><a href="#">汽车</a></li>
+                  <li><a href="#">家电</a></li>
+                  <li><a href="#">儿童玩具</a></li>
+                  <li><a href="#">电线电缆</a></li>
+                  <li><a href="#">冰箱</a></li>
+                  <li><a href="#">空调</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="fl"><a href="javascript:;" class="h_control" id="rt_next"><i class="icon-chevron-right"></i></a></div>
+          </div>
+          <div class="chart" style=" height:400px;" id="img3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="panel-title">质量投诉品牌TOP10</div>
+        </div>
+        <div class="panel-body">
+          <div class="chart" style="height:460px;" id="img4"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <script>
+      (function () {
+        (function init() {
+          img1();
+          img2();
+          img3();
+          img4();
+        })();
+
+        function img1() {
+          var option = {
+            tooltip: {
+              trigger: 'axis'
+            },
+            legend: {
+              data: ['消费数量', '消费金额']
+            },
+            toolbox: {
+              show: true,
+              feature: {
+                dataView: { show: true, readOnly: false },
+                magicType: { show: true, type: ['line', 'bar'] },
+                restore: { show: true },
+                saveAsImage: { show: true }
+              }
+            },
+            calculable: true,
+            xAxis: [
+              {
+                type: 'category',
+                boundaryGap: false,
+                data: ['汽车', '装饰材料', '空调', '钢铁', '摩托车', '笔记本电脑', '手机', '冰箱', '洗衣机', '电视机', '电梯']
+              }
+            ],
+            yAxis: [
+              {
+                type: 'value'
+              }
+            ],
+            series: [
+              {
+                name: '消费数量',
+                type: 'bar',
+                data: [1800, 200, 1200, 15000, 1600, 4000, 22000, 2100, 2500, 5300, 1600]
+              },
+              {
+                name: '消费金额',
+                type: 'bar',
+                data: [9000, 2000, 3000, 4000, 2500, 4600, 1400, 1800, 2900, 1100, 2000]
+              }
+            ]
+          };
+
+          var myChart = echarts.init(document.getElementById('img1'), 'macarons');
+          myChart.setOption(option);
+        }
+
+        function img2() {
+          var option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['汽车', '装饰材料', '空调', '钢铁', '摩托车', '笔记本电脑']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                  dataView: { show: true, readOnly: false },
+                  magicType: { show: true, type: ['line', 'bar'] },
+                  restore: { show: true },
+                  saveAsImage: { show: true }
+                }
+            },
+            xAxis:  {
+                type: 'category',
+                boundaryGap: false,
+                data: ['一月','二月','三月','四月','五月','六月','七月']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name:'汽车',
+                    type:'line',
+                    data:[11, 11, 15, 13, 12, 13, 10, 18]
+                },
+                {
+                    name:'装饰材料',
+                    type:'line',
+                    data:[1, 2, 2, 5, 3, 2, 0, 4]
+                },
+                {
+                    name:'空调',
+                    type:'line',
+                    data:[21, 42, 112, 65, 33, 42, 80, 44]
+                },
+                {
+                    name:'钢铁',
+                    type:'line',
+                    data:[115, 212, 142, 185, 153, 142, 190, 174]
+                },
+                {
+                    name:'摩托车',
+                    type:'line',
+                    data:[251, 312, 282, 295, 263, 282, 304, 324]
+                },
+                {
+                    name:'笔记本电脑',
+                    type:'line',
+                    data:[71, 22, 55, 51, 39, 28, 60, 114]
+                }
+            ]
+          };
+
+          var myChart = echarts.init(document.getElementById('img2'), 'macarons');
+          myChart.setOption(option);
+        }
+
+        function img3() {
+          labelTop = {
+            normal : {
+                label : {
+                    show : true,
+                    position : 'center',
+                    formatter : '{b}',
+                    textStyle: {
+                        baseline : 'bottom'
+                    }
+                },
+                labelLine : {
+                    show : false
+                }
+            }
+        };
+        var labelFromatter = {
+            normal : {
+                label : {
+                    formatter : function (params){
+                        return 100 - params.value + '%'
+                    },
+                    textStyle: {
+                        baseline : 'top'
+                    }
+                }
+            },
+        };
+        var labelBottom = {
+            normal : {
+                color: '#ccc',
+                label : {
+                    show : true,
+                    position : 'center'
+                },
+                labelLine : {
+                    show : false
+                }
+            },
+            emphasis: {
+                color: 'rgba(0,0,0,0)'
+            }
+        };
+        var radius = [40, 55];
+        var option = {
+            legend: {
+                x : 'center',
+                y : 'center',
+                data:[
+                    '三星', 'LG', '苹果', '黑莓', '索尼', 'HTC'
+                ]
+            },
+           series : [
+                {
+                    type : 'pie',
+                    center : ['15%', '30%'],
+                    radius : radius,
+                    x: '5%', // for funnel
+                    itemStyle : labelFromatter,
+                    data : [
+                        {name:'other', value:75, itemStyle : labelBottom},
+                        {name:'三星', value:25,itemStyle : labelTop}
+                    ]
+                },
+                {
+                    type : 'pie',
+                    center : ['45%', '30%'],
+                    radius : radius,
+                    x:'35%', // for funnel
+                    itemStyle : labelFromatter,
+                    data : [
+                        {name:'other', value:91, itemStyle : labelBottom},
+                        {name:'LG', value:9,itemStyle : labelTop}
+                    ]
+                },
+                {
+                    type : 'pie',
+                    center : ['75%', '30%'],
+                    radius : radius,
+                    x:'65%', // for funnel
+                    itemStyle : labelFromatter,
+                    data : [
+                        {name:'other', value:86, itemStyle : labelBottom},
+                        {name:'苹果', value:14,itemStyle : labelTop}
+                    ]
+                },
+                {
+                    type : 'pie',
+                    center : ['15%', '70%'],
+                    radius : radius,
+                    y: '55%',   // for funnel
+                    x:'5%', // for funnel
+                    itemStyle : labelFromatter,
+                    data : [
+                        {name:'other', value:91, itemStyle : labelBottom},
+                        {name:'黑莓', value:9,itemStyle : labelTop}
+                    ]
+                },
+                {
+                    type : 'pie',
+                    center : ['45%', '70%'],
+                    radius : radius,
+                    y: '55%',   // for funnel
+                    x:'35%', // for funnel
+                    itemStyle : labelFromatter,
+                    data : [
+                        {name:'other', value:92, itemStyle : labelBottom},
+                        {name:'索尼', value:8,itemStyle : labelTop}
+                    ]
+                },
+                {
+                    type : 'pie',
+                    center : ['75%', '70%'],
+                    radius : radius,
+                    y: '55%',   // for funnel
+                    x: '65%',    // for funnel
+                    itemStyle : labelFromatter,
+                    data : [
+                        {name:'other', value:97, itemStyle : labelBottom},
+                        {name:'HTC', value:3,itemStyle : labelTop}
+                    ]
+                }
+            ]
+        };
+
+          var myChart = echarts.init(document.getElementById('img3'), 'macarons');
+          myChart.setOption(option);
+        }
+
+        function img4() {
+          var option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            grid: {
+                left: '3%',
+                right: '2%',
+                top: '1%',
+                bottom: '1%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value'
+            },
+            yAxis: {
+                type: 'category',
+                data: ['三星','索尼','大众','日产','苹果','法拉利']
+            },
+            series: [
+                {
+                    type: 'bar',
+                    data: [18203, 23489, 29034, 104970, 131744, 630230]
+                }
+            ]
+        };
+
+          var myChart = echarts.init(document.getElementById('img4'), 'macarons');
+          myChart.setOption(option);
+        }
+      })();
+
+  </script>
+</body>
+
+</html>

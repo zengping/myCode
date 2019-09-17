@@ -1,0 +1,1 @@
+(function(){ document.write('<script type="text/javascript" src="./scripts/lib/bdjs/apiv2.0.2.min.js?'+(new Date).getTime()+'"></script>');})();

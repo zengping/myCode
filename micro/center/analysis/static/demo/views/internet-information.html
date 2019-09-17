@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts.min.js"></script>
+<script src="../scripts/lib/echarts-2.2.2/echarts.js"></script>
+<script src="../scripts/nav.js"></script>
+
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+  <!-- sys-header -->
+  <div class="sys-header">
+    <div class="sys-logo">
+      <h1>重庆质监缺陷管理分析系统</h1>
+      <h2>缺陷产品管理系统</h2>
+    </div>
+    <div class="sys-menu" id="sys-menu">
+      <ul>
+        <li>loading......</li>
+      </ul>
+      <div class="curLine"></div>
+    </div>
+    <div class="sys-topbar">
+      <ul>
+        <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+        <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 互联网情报分析 &gt; 信息查询 </div>
+  
+  <!-- sys-main -->
+  <div class="sys-main sys-main-style">
+	
+    <div class="catechose">
+      	<ul>
+        	<li><a href="internet-analysis.html">互联网情报预警</a></li>
+            <li><a href="internet-industry.html">行业分析</a></li>
+            <li><a href="internet-brand.html">品牌分析</a></li>
+            <li><a href="internet-products.html">产品分析</a></li>
+            <li><a class="active" href="internet-information.html">信息查询</a></li>
+        </ul>
+      </div>
+      
+      <div class="form-box">
+        <div class="form-item">                 
+            <input type="text" style=" width:200px;" value="" placeholder="请输入关键字" class="input">
+            <button class="btn btn-warning" ><i class="icon-chart-bar"></i>分析</button>
+            <button class="btn"><i class="icon-search"></i>检索文本</button>
+        </div>
+      </div>
+     
+     <div class="col-12">
+     	
+        <div class="panel">
+            <div class="panel-heading border-warning">
+              <div class="panel-title">
+              	<div class="form-box">
+                    <div class="form-item">
+                        <div class="form-title">选择时间：</div>
+                        <div class="form-content">
+                            <ul class="list-time">
+                                <li>全部</li>
+                                <li class="active">今天</li>
+                                <li>近7天</li>
+                                <li>近30天</li>
+                            </ul>
+                            <input type="text" style=" width:200px;" value="" placeholder="请选择开始时间" class="input"> -
+                            <input type="text" style=" width:200px;" placeholder="请选择结束时间" class="input">
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <div class="form-title">媒体来源：</div>
+                        <div class="form-content">
+                            <ul class="list-time">
+                                <li class="active">全部</li>
+                                <li>政府网站</li>
+                                <li>新闻网站</li>
+                                <li>论坛</li>
+                                <li>企业官网</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <div class="form-title">选择类型：</div>
+                        <div class="form-content">
+                            <ul class="list-time">
+                                <li class="active">全部</li>
+                                <li>公文公告</li>
+                                <li>热点情报</li>
+                                <li>行业信息</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <div class="form-title">情感倾向：</div>
+                        <div class="form-content">
+                            <ul class="list-time">
+                                <li>全部</li>
+                                <li class="active">正面</li>
+                                <li>中性</li>
+                                <li>负面</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <td>信息ID</td>
+                      <td>标题</td>
+                      <td>敏感词</td>
+                      <td>来源</td>
+                      <td>相似信息</td>
+                      <td>类型</td>
+                      <td>热度</td>
+                      <td>发表时间</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>0000665</td>
+                      <td><span>国家质量监督检验检疫总局《质检总局关于发布内地供港冰鲜禽肉、冷冻禽肉和冰鲜猪肉...</span></td>
+                      <td>公告</td>
+                      <td>国家质监总局</td>
+                      <td>2</td>
+                      <td>公文公告</td>
+                      <td>36524</td>
+                      <td>2017/09/12 13:20:01</td>
+                    </tr>
+                    <tr>
+                      <td>0000664</td>
+                      <td><span >地产股井喷！万科A涨逾5%创历史新高</span></td>
+                      <td>万科</td>
+                      <td>腾讯新闻</td>
+                      <td>6</td>
+                      <td>网络信息</td>
+                      <td>32166</td>
+                      <td>2017/09/12 10:26:01</td>
+                    </tr>
+                    <tr>
+                      <td>0000663</td>
+                      <td><span >新闻纸大幅提价，明年还能看到报纸吗</span></td>
+                      <td>媒体 焦虑</td>
+                      <td>腾讯新闻</td>
+                      <td>6</td>
+                      <td>网络信息</td>
+                      <td>32166</td>
+                      <td>2017/09/12 10:26:01</td>
+                    </tr>
+                    <tr>
+                      <td>0000662</td>
+                      <td><span >自动驾驶行业素描（下）：特斯拉、谷歌们最焦虑的是什么?</span></td>
+                      <td>特斯拉 谷歌</td>
+                      <td>网易新闻</td>
+                      <td>6</td>
+                      <td>网络信息</td>
+                      <td>32166</td>
+                      <td>2017/09/12 10:26:01</td>
+                    </tr>
+                    <tr>
+                      <td>0000661</td>
+                      <td><span >“水逆”退散？Uber 即将获得120亿美元，来自软银和滴滴</span></td>
+                      <td>滴滴 Uber</td>
+                      <td>腾讯新闻</td>
+                      <td>6</td>
+                      <td>网络信息</td>
+                      <td>32166</td>
+                      <td>2017/09/12 10:26:01</td>
+                    </tr>
+                    <tr>
+                      <td>0000665</td>
+                      <td><span>国家质量监督检验检疫总局《质检总局关于发布内地供港冰鲜禽肉、冷冻禽肉和冰鲜猪肉...</span></td>
+                      <td>公告</td>
+                      <td>国家质监总局</td>
+                      <td>2</td>
+                      <td>公文公告</td>
+                      <td>36524</td>
+                      <td>2017/09/12 13:20:01</td>
+                    </tr>
+                    <tr>
+                      <td>0000664</td>
+                      <td><span >地产股井喷！万科A涨逾5%创历史新高</span></td>
+                      <td>万科</td>
+                      <td>腾讯新闻</td>
+                      <td>6</td>
+                      <td>网络信息</td>
+                      <td>32166</td>
+                      <td>2017/09/12 10:26:01</td>
+                    </tr>
+                    <tr>
+                      <td>0000663</td>
+                      <td><span >新闻纸大幅提价，明年还能看到报纸吗</span></td>
+                      <td>媒体 焦虑</td>
+                      <td>腾讯新闻</td>
+                      <td>6</td>
+                      <td>网络信息</td>
+                      <td>32166</td>
+                      <td>2017/09/12 10:26:01</td>
+                    </tr>
+                    <tr>
+                      <td>0000662</td>
+                      <td><span >自动驾驶行业素描（下）：特斯拉、谷歌们最焦虑的是什么?</span></td>
+                      <td>特斯拉 谷歌</td>
+                      <td>网易新闻</td>
+                      <td>6</td>
+                      <td>网络信息</td>
+                      <td>32166</td>
+                      <td>2017/09/12 10:26:01</td>
+                    </tr>
+                    <tr>
+                      <td>0000661</td>
+                      <td><span >“水逆”退散？Uber 即将获得120亿美元，来自软银和滴滴</span></td>
+                      <td>滴滴 Uber</td>
+                      <td>腾讯新闻</td>
+                      <td>6</td>
+                      <td>网络信息</td>
+                      <td>32166</td>
+                      <td>2017/09/12 10:26:01</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pagebar">
+                    <div class="pageinfo">共有50条记录，每页显示10条</div>
+                    <ul class="pagination">
+                        <li class="disabled"><a href="#">&lt;</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li class="disabled"><a href="#">&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+     
+                        
+     </div> 
+     
+      
+  </div>
+  
+  
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/nav.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts.min.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts-wordcloud.min.js"></script>
+
+<script src="../scripts/plugins/jquery.ztree.all.min.js"></script>
+
+<style type="text/css">.ztree li a span.add{ display:none;} .panel-body{ min-height:260px} .chart{ height:230px;}</style>
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+  <!-- sys-header -->
+  <div class="sys-header">
+    <div class="sys-logo">
+      <h1>重庆质监缺陷管理分析系统</h1>
+      <h2>缺陷产品管理系统</h2>
+    </div>
+    <div class="sys-menu" id="sys-menu">
+      <ul>
+        <li>loading......</li>
+      </ul>
+      <div class="curLine"></div>
+    </div>
+    <div class="sys-topbar">
+      <ul>
+        <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+        <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 产品缺陷监测系统</div>
+
+
+  <!-- sys-main -->
+  <div class="sys-main sys-main-style">
+
+	
+    <div class="catechose">
+      	<ul>
+        	<li><a href="defect.html">缺陷产品发现</a></li>
+            <li><a href="defect2.html">缺陷产品状况分析</a></li>
+            <li><a class="active" href="defect3.html">潜在风险预判</a></li>
+        </ul>
+      </div>
+    
+    
+    <div class="panel" style=" margin-top:-10px;">
+        <div class="panel-heading" style=" border-top:none">
+          <div class="panel-title">
+          	
+          </div>
+        </div>
+        <div class="panel-body">
+        
+        	<div class="defect-tit">“朗逸2016款1.6T”</div>
+        
+            <div class="form-box" style=" margin-bottom:20px; background:#f4f4f4; padding:10px; ">
+                <div class="form-item">                 
+                    	<ul class="list-time">
+                            <li onClick="javascript:window.location.href='defect3.html'">• 产品流向来源风险预判</li>
+                            <li class="active" onClick="javascript:window.location.href='defect3-02.html'">• 相似缺陷案件风险预判</li>
+                        </ul>
+  
+                </div>
+              </div>
+              
+              
+              <div class="defect">
+              	<div class="defect-left">
+                    <div class="carstit">
+                        <input class="input" placeholder="输入关键词检索相似案件，多个关键词用“,”隔开" style=" width:330px; margin-right:10px; " type="text"><button class="btn"><i class="icon-search"></i>搜索</button>
+                    </div>
+                    <h3>热门问题部件</h3>
+                    <ul class="defect-ul">
+                    	<li>空调</li><li>安全带</li><li>安全气囊</li><li>车架</li><li>刹车</li><li>电瓶</li><li>车门</li>
+                    </ul>
+                    <h3>热门问题关键字</h3>
+                    <ul class="defect-ul">
+                    	<li>漏油</li><li>漏电</li><li>制冷异常</li><li>死亡</li><li>失控</li><li>失灵</li><li>磨损</li><li>熄火</li><li>脱漆</li>
+                    </ul>
+                </div>
+                <div class="defect-right">
+                    <div class="col-6">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">缺陷库案例智能推荐</div>
+                        </div>
+                        <div class="panel-body" style=" min-height:586px; overflow-y:scroll; height:586px">
+                            <div class="newslist">
+                                <ul>
+                                    <li>
+                                        <h3>本田技研工业（中国）投资有限公司召回部分进口讴歌系列汽车</h3>
+                                        <p>来源：产品召回	 &nbsp;&nbsp;&nbsp;&nbsp; 缺陷类型：工艺缺陷</p>
+                                        <p>生产厂商：广汽本田汽车销售有限公司 <span class="badge badge-danger">相同厂商</span></p>
+                                        <p>缺陷部件：气囊 缺陷描述：安全气囊安装了高田公司生产的未带干燥剂的硝酸铵气体发生器。在安全气囊展开时，上述气囊的气体发生器可能发生异常破损，导致碎片飞出，伤及车内人员</p>
+                                    </li>
+                                    <li>
+                                        <h3>本田技研工业（中国）投资有限公司召回部分进口讴歌系列汽车</h3>
+                                        <p>来源：产品召回	 &nbsp;&nbsp;&nbsp;&nbsp; 缺陷类型：工艺缺陷</p>
+                                        <p>生产厂商：广汽本田汽车销售有限公司 <span class="badge badge-danger">相同厂商</span></p>
+                                        <p>缺陷部件：气囊 缺陷描述：安全气囊安装了高田公司生产的未带干燥剂的硝酸铵气体发生器。在安全气囊展开时，上述气囊的气体发生器可能发生异常破损，导致碎片飞出，伤及车内人员</p>
+                                    </li>
+                                    <li>
+                                        <h3>本田技研工业（中国）投资有限公司召回部分进口讴歌系列汽车</h3>
+                                        <p>来源：产品召回	 &nbsp;&nbsp;&nbsp;&nbsp; 缺陷类型：工艺缺陷</p>
+                                        <p>生产厂商：广汽本田汽车销售有限公司 <span class="badge badge-danger">相同厂商</span></p>
+                                        <p>缺陷部件：气囊 缺陷描述：安全气囊安装了高田公司生产的未带干燥剂的硝酸铵气体发生器。在安全气囊展开时，上述气囊的气体发生器可能发生异常破损，导致碎片飞出，伤及车内人员</p>
+                                    </li>
+                                    <li>
+                                        <h3>本田技研工业（中国）投资有限公司召回部分进口讴歌系列汽车</h3>
+                                        <p>来源：产品召回	 &nbsp;&nbsp;&nbsp;&nbsp; 缺陷类型：工艺缺陷</p>
+                                        <p>生产厂商：广汽本田汽车销售有限公司 <span class="badge badge-danger">相同厂商</span></p>
+                                        <p>缺陷部件：气囊 缺陷描述：安全气囊安装了高田公司生产的未带干燥剂的硝酸铵气体发生器。在安全气囊展开时，上述气囊的气体发生器可能发生异常破损，导致碎片飞出，伤及车内人员</p>
+                                    </li>
+                                    <li>
+                                        <h3>本田技研工业（中国）投资有限公司召回部分进口讴歌系列汽车</h3>
+                                        <p>来源：产品召回	 &nbsp;&nbsp;&nbsp;&nbsp; 缺陷类型：工艺缺陷</p>
+                                        <p>生产厂商：广汽本田汽车销售有限公司 <span class="badge badge-danger">相同厂商</span></p>
+                                        <p>缺陷部件：气囊 缺陷描述：安全气囊安装了高田公司生产的未带干燥剂的硝酸铵气体发生器。在安全气囊展开时，上述气囊的气体发生器可能发生异常破损，导致碎片飞出，伤及车内人员</p>
+                                    </li>
+                                    <li>
+                                        <h3>本田技研工业（中国）投资有限公司召回部分进口讴歌系列汽车</h3>
+                                        <p>来源：产品召回	 &nbsp;&nbsp;&nbsp;&nbsp; 缺陷类型：工艺缺陷</p>
+                                        <p>生产厂商：广汽本田汽车销售有限公司 <span class="badge badge-danger">相同厂商</span></p>
+                                        <p>缺陷部件：气囊 缺陷描述：安全气囊安装了高田公司生产的未带干燥剂的硝酸铵气体发生器。在安全气囊展开时，上述气囊的气体发生器可能发生异常破损，导致碎片飞出，伤及车内人员</p>
+                                    </li>
+                                    <li>
+                                        <h3>本田技研工业（中国）投资有限公司召回部分进口讴歌系列汽车</h3>
+                                        <p>来源：产品召回	 &nbsp;&nbsp;&nbsp;&nbsp; 缺陷类型：工艺缺陷</p>
+                                        <p>生产厂商：广汽本田汽车销售有限公司 <span class="badge badge-danger">相同厂商</span></p>
+                                        <p>缺陷部件：气囊 缺陷描述：安全气囊安装了高田公司生产的未带干燥剂的硝酸铵气体发生器。在安全气囊展开时，上述气囊的气体发生器可能发生异常破损，导致碎片飞出，伤及车内人员</p>
+                                    </li>
+                                    <li>
+                                        <h3>本田技研工业（中国）投资有限公司召回部分进口讴歌系列汽车</h3>
+                                        <p>来源：产品召回	 &nbsp;&nbsp;&nbsp;&nbsp; 缺陷类型：工艺缺陷</p>
+                                        <p>生产厂商：广汽本田汽车销售有限公司 <span class="badge badge-danger">相同厂商</span></p>
+                                        <p>缺陷部件：气囊 缺陷描述：安全气囊安装了高田公司生产的未带干燥剂的硝酸铵气体发生器。在安全气囊展开时，上述气囊的气体发生器可能发生异常破损，导致碎片飞出，伤及车内人员</p>
+                                    </li>
+                                    <li>
+                                        <h3>本田技研工业（中国）投资有限公司召回部分进口讴歌系列汽车</h3>
+                                        <p>来源：产品召回	 &nbsp;&nbsp;&nbsp;&nbsp; 缺陷类型：工艺缺陷</p>
+                                        <p>生产厂商：广汽本田汽车销售有限公司 <span class="badge badge-danger">相同厂商</span></p>
+                                        <p>缺陷部件：气囊 缺陷描述：安全气囊安装了高田公司生产的未带干燥剂的硝酸铵气体发生器。在安全气囊展开时，上述气囊的气体发生器可能发生异常破损，导致碎片飞出，伤及车内人员</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">缺陷案例分析</div>
+                        </div>
+                        <div class="panel-body" >
+                        	<div class="col-6">
+                            	<table class="table table-striped">
+                                  <tbody>
+                                    <tr>
+                                      <td>相似案例</td>
+                                      <td>135</td>
+                                    </tr>
+                                    <tr>
+                                      <td>相同厂商</td>
+                                      <td>12</td>
+                                    </tr>
+                                    <tr>
+                                      <td>相同品牌</td>
+                                      <td>3</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                            <div class="col-6" ><div class="chart" id="chart1" style="height: 100%"><img alt="" src="../assets/images/test/125.png" style=" height:200px" /></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="panel">
+                        <div class="panel-heading">
+                          <div class="panel-title">可能导致结果</div>
+                        </div>
+                        <div class="panel-body" >
+                            <div class="chart" id="chart2"><img alt="" src="../assets/images/test/126.png" style=" height:200px" /></div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+
+            
+            
+        </div>
+      </div>
+    
+    
+
+
+
+
+    
+  </div>
+  
+  
+  
+</div>
+
+<script>
+
+    var setting = {
+      data: {
+        simpleData: {
+          enable: true
+        }
+      }
+    };
+
+    var zNodes1 =[
+			{ id:1, pId:0, name:"乘用车", open:true,font:{'background-color':'black', 'color':'white'}},
+		
+			{ id:2, pId:1, name:"安全故障信息"},
+			{ id:3, pId:1, name:"技术服务信息"},
+			{ id:4, pId:1, name:"境外召回说明"},
+			{ id:5, pId:1, name:"更退换货信息"},
+			{ id:6, pId:1, name:"车型基本配置"},
+			{ id:7, pId:1, name:"车型系列信息", open:true},
+			{ id:71, pId:7, name:"速腾"},
+			{ id:72, pId:7, name:"迈腾"},
+			{ id:73, pId:7, name:"高尔夫"},
+			{ id:74, pId:7, name:"宝来"},
+			
+			{ id:8, pId:1, name:"经销商信息"},
+			{ id:9, pId:1, name:"汽车总成信息"},
+  
+	];
+
+    $(document).ready(function(){
+      $.fn.zTree.init($("#role"), setting, zNodes1);
+
+    });
+  </script>
+<script>
+
+    function draw(id, option) {
+        var myChart = echarts.init(document.getElementById(id));
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+    var colors = ['#5793f3', '#d14a61', '#675bba'];
+    function createRandomItemStyle() {
+        return {
+            normal: {
+                color: 'rgb(' + [
+                    Math.round(Math.random() * 160),
+                    Math.round(Math.random() * 160),
+                    Math.round(Math.random() * 160)
+                ].join(',') + ')'
+            }
+        };
+    }
+    draw('chart1',option = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            x: 'left',
+            data:['举报','投诉','调查']
+        },
+        series: [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:335, name:'举报'},
+                    {value:310, name:'投诉'},
+                    {value:234, name:'调查'},
+                ]
+            }
+        ]
+    })
+
+    draw('chart2', option = {
+        series: [{
+            type: 'wordCloud',
+            gridSize: 20,
+            sizeRange: [12, 50],
+            rotationRange: [0, 0],
+            shape: 'circle',
+            textStyle: {
+                normal: {
+                    color: function () {
+                        return 'rgb(' + [
+                                Math.round(Math.random() * 160),
+                                Math.round(Math.random() * 160),
+                                Math.round(Math.random() * 160)
+                            ].join(',') + ')';
+                    }
+                },
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                }
+            },
+            data: [
+                {
+                    name: "破损",
+                    value: 6181,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "完美",
+                    value: 4055,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "量化",
+                    value: 2467,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "好的",
+                    value: 2244,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "打滑",
+                    value: 1898,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "个人",
+                    value: 1484,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "发动机",
+                    value: 1112,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "失控",
+                    value: 965,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "刹车失灵",
+                    value: 847,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "路况",
+                    value: 582,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "良好",
+                    value: 555,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "天气",
+                    value: 550,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "手刹",
+                    value: 462,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "坏的",
+                    value: 366,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "身体",
+                    value: 360,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "头疼",
+                    value: 282,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "加速",
+                    value: 273,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "超速",
+                    value: 265,
+                    itemStyle: createRandomItemStyle()
+                }
+            ]
+        }]
+    })
+
+</script>
+
+</body>
+</html>

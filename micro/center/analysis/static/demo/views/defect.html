@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/nav.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts.min.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts-wordcloud.min.js"></script>
+
+<script src="../scripts/plugins/jquery.ztree.all.min.js"></script>
+
+<style type="text/css">.ztree li a span.add{ display:none;}</style>
+
+</head>
+<body>
+
+<div class="panel" style=" margin-top:-10px;">
+  <div class="panel-heading" style=" border-top:none">
+    <div class="panel-title">
+
+    </div>
+  </div>
+  <div class="panel-body">
+
+    <div class="form-box" style=" margin-bottom:20px; background:#f4f4f4; padding:10px; ">
+      <div class="form-item">
+        行业类型：
+        <select style=" width:160px; ">
+          <option>请选择行业类型</option>
+          <option>全部</option>
+        </select>
+        选择时间：
+        <ul class="list-time">
+          <li class="active">今天</li>
+          <li>近7天</li>
+          <li>近30天</li>
+        </ul>
+        自定义时间
+        <input class="input" placeholder="请选择开始时间" value="" type="text" style=" width:200px;"> -  <input class="input" placeholder="请选择结束时间" type="text" style=" width:200px;">
+        <button class="btn"><i class="icon-search"></i>查询</button>
+      </div>
+    </div>
+
+
+    <div class="col-6">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="panel-title">缺陷产品预警</div>
+        </div>
+        <div style=" min-height:666px;" class="panel-body">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <td>产品名称</td>
+              <td>维保评分</td>
+              <td>投诉评分</td>
+              <td>事故评分</td>
+              <td>互联网评分</td>
+              <td>综合评分</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="active01">
+              <td><a href="defect2.html">朗逸2016款1.6T</a></td>
+              <td>15</td>
+              <td>14</td>
+              <td>15</td>
+              <td>13</td>
+              <td>57</td>
+            </tr>
+            <tr class="active02">
+              <td><a href="defect2.html">本田思域  运动版 1.4T</a></td>
+              <td>13</td>
+              <td>14</td>
+              <td>12</td>
+              <td>10</td>
+              <td>49</td>
+            </tr>
+            <tr class="active03">
+              <td><a href="defect2.html">牙签弩</a></td>
+              <td>13</td>
+              <td>12</td>
+              <td>13</td>
+              <td>10</td>
+              <td>48</td>
+            </tr>
+            <tr>
+              <td><a href="defect2.html">Galaxy Note8</a></td>
+              <td>11</td>
+              <td>8</td>
+              <td>12</td>
+              <td>9</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td><a href="defect2.html">小米手环</a></td>
+              <td>13</td>
+              <td>7</td>
+              <td>6</td>
+              <td>8</td>
+              <td>44</td>
+            </tr>
+            <tr>
+              <td><a href="defect2.html">OPPO R9</a></td>
+              <td>9</td>
+              <td>7</td>
+              <td>8</td>
+              <td>8</td>
+              <td>42</td>
+            </tr>
+            <tr>
+              <td><a href="defect2.html">小米电视</a></td>
+              <td>9</td>
+              <td>7</td>
+              <td>6</td>
+              <td>5</td>
+              <td>37</td>
+            </tr>
+            <tr>
+              <td><a href="defect2.html">Galaxy Note8</a></td>
+              <td>11</td>
+              <td>8</td>
+              <td>12</td>
+              <td>9</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td><a href="defect2.html">小米手环</a></td>
+              <td>13</td>
+              <td>7</td>
+              <td>6</td>
+              <td>8</td>
+              <td>44</td>
+            </tr>
+            <tr>
+              <td><a href="defect2.html">OPPO R9</a></td>
+              <td>9</td>
+              <td>7</td>
+              <td>8</td>
+              <td>8</td>
+              <td>42</td>
+            </tr>
+            <tr>
+              <td><a href="defect2.html">小米电视</a></td>
+              <td>9</td>
+              <td>7</td>
+              <td>6</td>
+              <td>5</td>
+              <td>37</td>
+            </tr>
+            <tr>
+              <td><a href="defect2.html">Galaxy Note8</a></td>
+              <td>11</td>
+              <td>8</td>
+              <td>12</td>
+              <td>9</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td><a href="defect2.html">小米手环</a></td>
+              <td>13</td>
+              <td>7</td>
+              <td>6</td>
+              <td>8</td>
+              <td>44</td>
+            </tr>
+            <tr>
+              <td><a href="defect2.html">OPPO R9</a></td>
+              <td>9</td>
+              <td>7</td>
+              <td>8</td>
+              <td>8</td>
+              <td>42</td>
+            </tr>
+            <tr>
+              <td><a href="defect2.html">小米电视</a></td>
+              <td>9</td>
+              <td>7</td>
+              <td>6</td>
+              <td>5</td>
+              <td>37</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="panel-title">产品维保排行</div>
+        </div>
+        <div class="panel-body">
+          <div class="chart" id="chart1"><!--<img alt="" src="../assets/images/test/97.png" style=" height:260px" />--></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="panel-title">事故产品前十</div>
+        </div>
+        <div class="panel-body">
+          <div class="chart" id="chart2"><!--<img alt="" src="../assets/images/test/94.png" style=" height:260px" />--></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="panel-title">产品投诉排行</div>
+        </div>
+        <div class="panel-body">
+          <div class="chart" id="chart3"><!--<img alt="" src="../assets/images/test/95.png" style=" height:260px" />--></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="panel-title">互联网信息综合排行</div>
+        </div>
+        <div class="panel-body">
+          <div class="chart" id="chart4"><img alt="" src="../assets/images/test/96.png" style=" height:260px" /></div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+<script>
+
+    var setting = {
+      data: {
+        simpleData: {
+          enable: true
+        }
+      }
+    };
+
+    var zNodes1 =[
+			{ id:1, pId:0, name:"乘用车", open:true,font:{'background-color':'black', 'color':'white'}},
+
+			{ id:2, pId:1, name:"安全故障信息"},
+			{ id:3, pId:1, name:"技术服务信息"},
+			{ id:4, pId:1, name:"境外召回说明"},
+			{ id:5, pId:1, name:"更退换货信息"},
+			{ id:6, pId:1, name:"车型基本配置"},
+			{ id:7, pId:1, name:"车型系列信息", open:true},
+			{ id:71, pId:7, name:"速腾"},
+			{ id:72, pId:7, name:"迈腾"},
+			{ id:73, pId:7, name:"高尔夫"},
+			{ id:74, pId:7, name:"宝来"},
+
+			{ id:8, pId:1, name:"经销商信息"},
+			{ id:9, pId:1, name:"汽车总成信息"},
+
+	];
+
+    $(document).ready(function(){
+      $.fn.zTree.init($("#role"), setting, zNodes1);
+
+    });
+    option1 = {
+		    title: {
+		        text: '事故产品前10'
+
+		    },
+		    tooltip: {
+		        trigger: 'axis',
+		        axisPointer: {
+		            type: 'shadow'
+		        }
+		    },
+		    legend: {
+		        data: ['2011年', '2012年']
+		    },
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '3%',
+		        containLabel: true
+		    },
+		    xAxis: {
+		        type: 'value',
+		        boundaryGap: [0, 0.01]
+		    },
+		    yAxis: {
+		        type: 'category',
+		        data: ['迈巴赫','东风','丰田','本田','沃尔沃','玛莎拉蒂']
+		    },
+		    series: [
+		        {
+
+		            type: 'bar',
+		            data: [1820, 2348, 2904, 10470, 1344, 230]
+		        }
+		    ]
+		};
+    var chart1 = echarts.init(document.getElementById('chart1'), 'macarons');
+		chart1.setOption(option1, true);
+
+		option2 = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: ['医疗事故', '交通事故']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis:  {
+        type: 'value'
+    },
+    yAxis: {
+        type: 'category',
+        data: ['朗逸','本田','丰田','大众','吉利']
+    },
+    series: [
+        {
+            name: '医疗事故',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [320, 302, 301, 334, 390]
+        },
+        {
+            name: '交通事故',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [120, 132, 101, 134, 90]
+        }
+    ]
+};
+
+	 var chart2 = echarts.init(document.getElementById('chart2'));
+		chart2.setOption(option2, true);
+
+
+
+		 option3 ={
+
+				        tooltip: {},
+				        legend: {
+				            data:['数量']
+				        },
+				        grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+				        xAxis: {
+				            data: ['note8','s8','vivo','moto','sony']
+				        },
+				        yAxis: {},
+				        series: [{
+				            name: '销量',
+				            type: 'bar',
+				            data: [100,200,330,500,400]
+				        }]
+				    };
+		var chart3 = echarts.init(document.getElementById('chart3'));
+		chart3.setOption(option3, true);
+
+
+				option4 = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: ['互联网信息', '网络信息','行业信息']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis:  {
+    	 type: 'category',
+        data: ['朗逸','本田','丰田','大众','吉利']
+
+    },
+    yAxis: {
+         type: 'value'
+    },
+    series: [
+        {
+            name: '互联网信息',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [320, 302, 301, 334, 390]
+        },
+        {
+            name: '网络信息',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [120, 132, 101, 134, 90]
+        },
+        {
+            name: '行业信息',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [46, 80, 10, 134, 20]
+        }
+    ]
+};
+
+	 var chart4 = echarts.init(document.getElementById('chart4'));
+		chart4.setOption(option4, true);
+  </script>
+
+
+</body>
+</html>

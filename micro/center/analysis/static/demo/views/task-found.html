@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>重庆质监缺陷管理分析系统</title>
+    <link rel="stylesheet" href="../assets/css/analysis.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/icons/style.css">
+
+    <script src="../scripts/jquery-1.11.3.min.js"></script>
+    <script src="../scripts/lib/echarts-3.3.1/echarts.js"></script>
+    <script src="../scripts/lib/echarts-3.3.1/echarts-wordcloud.min.js"></script>
+    <script src="../scripts/lib/echarts-2.2.2/echarts.js"></script>
+    <script src="../scripts/nav.js"></script>
+
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+    <!-- sys-header -->
+    <div class="sys-header">
+        <div class="sys-logo">
+            <h1>重庆质监缺陷管理分析系统</h1>
+            <h2>缺陷产品管理系统</h2>
+        </div>
+        <div class="sys-menu" id="sys-menu">
+            <ul>
+                <li>loading......</li>
+            </ul>
+            <div class="curLine"></div>
+        </div>
+        <div class="sys-topbar">
+            <ul>
+                <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+                <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 执法任务管理 &gt; 案源发现</div>
+
+
+    <!-- sys-main -->
+    <div class="sys-main sys-main-style">
+
+        <div class="catechose">
+            <ul>
+                <li><a href="task-found.html" class="active">被动案源接收</a></li>
+                <li><a href="task-found-bug.html">产品质量案源发现</a></li>
+                <li><a href="task-found-risk.html">潜在风险案源发现</a></li>
+                <li><a href="task-found-web.html">互联网信息案源发现</a></li>
+            </ul>
+        </div>
+
+
+        <div class="col-9">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title"></div>
+                </div>
+                <div class="panel-body">
+
+                    <div class="list-task">
+                        <dl>
+                            <dd class="list-task-01"><i class="icon-order-asc"></i><em>1252</em>
+                                <p>今日新增</p><b>均值：1000</b>
+                            </dd>
+                            <dd class="list-task-02"><i class="icon-order-desc"></i><em>564</em>
+                                <p>12365新增</p><b>均值：234</b>
+                            </dd>
+                            <dd class="list-task-03"><i class="icon-order-asc"></i><em>359</em>
+                                <p>质量检验</p><b>均值：213</b>
+                            </dd>
+                            <dd class="list-task-04"><i class="icon-order-asc"></i><em>241</em>
+                                <p>特种设备通报</p><b>均值：156</b>
+                            </dd>
+                            <dd class="list-task-05"><i class="icon-order-asc"></i><em>101</em>
+                                <p>专项检查</p><b>均值：23</b>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="form-box">
+                        <div class="form-item">
+                            <div class="form-title">选择时间：</div>
+                            <div class="form-content">
+                                <ul class="list-time">
+                                    <li>全部</li>
+                                    <li class="active">今天</li>
+                                    <li>近7天</li>
+                                    <li>近30天</li>
+                                </ul>
+                                <input class="input" placeholder="请选择开始时间" value="" type="text" style=" width:200px;"> -
+                                <input class="input" placeholder="请选择结束时间" type="text" style=" width:200px;">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-title">选择来源：</div>
+                            <div class="form-content">
+                                <ul class="list-time">
+                                    <li>全部</li>
+                                    <li class="active">12365</li>
+                                    <li>质量检验</li>
+                                    <li>专项检查</li>
+                                    <li>特种设备通报</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-title">关键字检索：</div>
+                            <div class="form-content">
+                                <input class="input" placeholder="请输入关键词" type="text" style=" width:404px;">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-title">&nbsp;</div>
+                            <div class="form-content">
+                                <button class="btn"><i class="icon-search"></i>查询</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <td>案源ID</td>
+                                <td>来源</td>
+                                <td>品牌</td>
+                                <td>产品名称</td>
+                                <td>型号</td>
+                                <td>内容</td>
+                                <td>申诉时间</td>
+                                
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>0000156</td>
+                                <td>质量检验</td>
+                                <td>三星</td>
+                                <td>Galaxy Note8</td>
+                                <td>Galaxy Note8</td>
+                                <td>买一个月就电池发热，操作卡顿，多次检修...</td>
+                                <td>2017/09/12 13:20:01</td>
+                                 
+                            </tr>
+                            <tr>
+                                <td>0000156</td>
+                                <td>质量检验</td>
+                                <td>东芝</td>
+                                <td>笔记本电脑A</td>
+                                <td>8G+500G标配版</td>
+                                <td>屏幕有裂痕不给退换坚决举报检修...</td>
+                                <td>2017/09/12 13:20:01</td>
+                                 
+                            </tr>
+                            <tr>
+                                <td>0000156</td>
+                                <td>质量检验</td>
+                                <td>三星</td>
+                                <td>Galaxy Note8</td>
+                                <td>Galaxy Note8</td>
+                                <td>买一个月就电池发热，操作卡顿，多次检修...</td>
+                                <td>2017/09/12 13:20:01</td>
+                                 
+                            </tr>
+                            <tr>
+                                <td>0000156</td>
+                                <td>质量检验</td>
+                                <td>东芝</td>
+                                <td>笔记本电脑A</td>
+                                <td>8G+500G标配版</td>
+                                <td>屏幕有裂痕不给退换坚决举报检修...</td>
+                                <td>2017/09/12 13:20:01</td>
+                                 
+                            </tr>
+                            <tr>
+                                <td>0000156</td>
+                                <td>质量检验</td>
+                                <td>三星</td>
+                                <td>Galaxy Note8</td>
+                                <td>Galaxy Note8</td>
+                                <td>买一个月就电池发热，操作卡顿，多次检修...</td>
+                                <td>2017/09/12 13:20:01</td>
+                                 
+                            </tr>
+                            <tr>
+                                <td>0000156</td>
+                                <td>质量检验</td>
+                                <td>东芝</td>
+                                <td>笔记本电脑A</td>
+                                <td>8G+500G标配版</td>
+                                <td>屏幕有裂痕不给退换坚决举报检修...</td>
+                                <td>2017/09/12 13:20:01</td>
+                                 
+                            </tr>
+                            <tr>
+                                <td>0000156</td>
+                                <td>质量检验</td>
+                                <td>三星</td>
+                                <td>Galaxy Note8</td>
+                                <td>Galaxy Note8</td>
+                                <td>买一个月就电池发热，操作卡顿，多次检修...</td>
+                                <td>2017/09/12 13:20:01</td>
+                                 
+                            </tr>
+                            <tr>
+                                <td>0000156</td>
+                                <td>质量检验</td>
+                                <td>东芝</td>
+                                <td>笔记本电脑A</td>
+                                <td>8G+500G标配版</td>
+                                <td>屏幕有裂痕不给退换坚决举报检修...</td>
+                                <td>2017/09/12 13:20:01</td>
+                                 
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="pagebar">
+                            <div class="pageinfo">共有50条记录，每页显示10条</div>
+                            <ul class="pagination">
+                                <li class="disabled"><a href="#">&lt;</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li class="disabled"><a href="#">&gt;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="panel">
+                <div class="panel-heading border-warning">
+                    <div class="panel-title">新增信息分布图</div>
+                </div>
+                <div class="panel-body">
+                    <div class="chart" id="info"></div>
+                    <div class="chart" id="word"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</body>
+<script>
+    function draw(id, option) {
+        var myChart = echarts.init(document.getElementById(id));
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+
+    function createRandomItemStyle() {
+        return {
+            normal: {
+                color: 'rgb(' + [
+                    Math.round(Math.random() * 160),
+                    Math.round(Math.random() * 160),
+                    Math.round(Math.random() * 160)
+                ].join(',') + ')'
+            }
+        };
+    }
+    draw('info', option = {
+        tooltip: {},
+        legend: {
+            data: ['质量检验', '专项检查']
+        },
+        radar: {
+            // shape: 'circle',
+            name: {
+                textStyle: {
+                    color: '#fff',
+                    backgroundColor: '#999',
+                    borderRadius: 3,
+                    padding: [3, 5]
+                }
+            },
+            indicator: [
+                {name: '销售（sales）', max: 6500},
+                {name: '管理（Administration）', max: 16000},
+                {name: '信息技术（Information Techology）', max: 30000},
+                {name: '客服（Customer Support）', max: 38000},
+                {name: '研发（Development）', max: 52000},
+                {name: '市场（Marketing）', max: 25000}
+            ]
+        },
+        series: [{
+            name: '预算 vs 开销（Budget vs spending）',
+            type: 'radar',
+            // areaStyle: {normal: {}},
+            data: [
+                {
+                    value: [4300, 10000, 28000, 35000, 50000, 19000],
+                    name: '质量检验'
+                },
+                {
+                    value: [5000, 14000, 28000, 31000, 42000, 21000],
+                    name: '专项检查'
+                }
+            ]
+        }]
+    })
+    draw('word', option = {
+        series: [{
+            type: 'wordCloud',
+            gridSize: 20,
+            sizeRange: [12, 50],
+            rotationRange: [0, 0],
+            shape: 'circle',
+            textStyle: {
+                normal: {
+                    color: function () {
+                        return 'rgb(' + [
+                                Math.round(Math.random() * 160),
+                                Math.round(Math.random() * 160),
+                                Math.round(Math.random() * 160)
+                            ].join(',') + ')';
+                    }
+                },
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                }
+            },
+            data: [
+                {
+                    name: "Sam S Club",
+                    value: 10000,
+                    itemStyle: {
+                        normal: {
+                            color: 'black'
+                        }
+                    }
+                },
+                {
+                    name: "破损",
+                    value: 6181,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "三星",
+                    value: 4386,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "完美",
+                    value: 4055,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "量化",
+                    value: 2467,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "好的",
+                    value: 2244,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "打滑",
+                    value: 1898,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "个人",
+                    value: 1484,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "发动机",
+                    value: 1112,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "失控",
+                    value: 965,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "刹车失灵",
+                    value: 847,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "路况",
+                    value: 582,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "良好",
+                    value: 555,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "天气",
+                    value: 550,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "手刹",
+                    value: 462,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "坏的",
+                    value: 366,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "身体",
+                    value: 360,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "头疼",
+                    value: 282,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "加速",
+                    value: 273,
+                    itemStyle: createRandomItemStyle()
+                },
+                {
+                    name: "超速",
+                    value: 265,
+                    itemStyle: createRandomItemStyle()
+                }
+            ]
+        }]
+    })
+
+
+
+
+</script>
+</html>

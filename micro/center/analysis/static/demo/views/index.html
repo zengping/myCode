@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/nav.js"></script>
+
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+  <!-- sys-header -->
+  <div class="sys-header">
+    <div class="sys-logo">
+      <h1>重庆质监缺陷管理分析系统</h1>
+      <h2>缺陷产品管理系统</h2>
+    </div>
+    <div class="sys-menu" id="sys-menu">
+      <ul>
+        <li>loading......</li>
+      </ul>
+      <div class="curLine"></div>
+    </div>
+    <div class="sys-topbar">
+      <ul>
+        <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+        <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 执法情报检索 </div>
+
+  <!-- sys-main -->
+  <div class="searchboxbg">
+
+        <div class="search_box_bg">
+        	<div class="seach-chose">
+                    <strong>全部</strong>
+                    <dl>
+                        <dd class="searchclick01">全部</dd>
+                        <dd class="searchclick02">案件信息</dd>
+                        <dd class="searchclick03">取证信息</dd>
+                        <dd class="searchclick04">缺陷数据库</dd>
+                        <dd class="searchclick05">情报整编</dd>
+                    </dl>
+                </div>
+          <a href="#" class="cetclogo"><img src="../assets/images/cetc-logo.png"></a>
+          <input class="input" placeholder="请输入关键字" value="" type="text">
+          <a href="search.html" class="btn">凌云搜索</a>
+          
+          <!-- 案件信息 -->
+          <div class="searchhigh searchbox02">
+          	<div class="form-item">
+                <div class="form-title">案件来源：</div>
+                <div class="form-content">
+                    <select>
+                      <option value="全部">全部</option>
+                      <option selected="" value="监督检查">监督检查</option>
+                      <option value="监督检验后处理">监督检验后处理</option>
+                      <option value="12365转办">12365转办</option>
+                      <option value="专项执法">专项执法</option>
+                      <option value="专项整治">专项整治</option>
+                      <option value="上级交办">上级交办</option>
+                      <option value="其他">其他</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-item">
+                <div class="form-title">案件来源：</div>
+                <div class="form-content">
+                  <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0">全部</label>
+                  <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1">待办理</label>
+                  <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_2">办理中</label>
+                  <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_3">已结案</label>
+                </div>
+            </div>
+            <div class="form-item">
+                <div class="form-title">办案单位：</div>
+                <div class="form-content">
+                    <select>
+                      <option selected="" value="全部">全部</option>
+                      <option value="南岸">南岸</option>
+                      <option value="大度">大度</option>
+                      <option value="云阳">云阳</option>
+                      <option value="梁平">梁平</option>
+                      <option value="江津">江津</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-item">
+                <div class="form-title">违法类型：</div>
+                <div class="form-content">
+                    <select>
+                      <option selected="" value="全部">全部</option>
+                      <option value="质量违法">质量违法</option>
+                      <option value="标准化违法">标准化违法</option>
+                      <option value="特种设备违法">特种设备违法</option>
+                      <option value="认证认可违法">认证认可违法</option>
+                    </select>
+                </div>
+            </div>
+          </div>
+          
+              <!-- 取证信息 -->
+              <div class="searchhigh searchbox03">
+                <div class="form-item">
+                    <div class="form-title">检索表单：</div>
+                    <div class="form-content">
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0">全部</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1">企业表</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_2">产品表</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 缺陷数据库 -->
+              <div class="searchhigh searchbox04">
+                <div class="form-item">
+                    <div class="form-title">缺陷来源：</div>
+                    <div class="form-content">
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0">全部</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1">抽检</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_2">召回</label>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="form-title">缺陷类型：</div>
+                    <div class="form-content">
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0">全部</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1">结构缺陷</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_2">缺陷类型</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_3">标识缺陷</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_4">部件缺陷</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_5">设计缺陷</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 情报整编 -->
+              <div class="searchhigh searchbox05">
+                <div class="form-item">
+                    <div class="form-title">情报类型：</div>
+                    <div class="form-content">
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0">全部</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1">结构缺陷</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_2">缺陷类型</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_3">标识缺陷</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_4">部件缺陷</label>
+                      <label><input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_5">设计缺陷</label>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+        
+        
+
+
+      </div>
+  
+  
+  
+</div>
+
+<script type="text/javascript">
+// JavaScript Document
+
+		$(function(){
+			
+			//搜索结果
+			$(".seach-chose strong").click(function(){	
+				$(this).next("dl").slideToggle();
+			});
+			$(".seach-chose dd").click(function(){
+				$(this).addClass("cur").siblings().removeClass("cur");
+				$(this).parents("dl").siblings("strong").text(  $(this).text() );
+			});
+			$(".seach-chose dd").click(function(){	
+				$(this).parent("dl").slideToggle();
+			});
+			
+			$(".searchclick01").click(function(){	
+				$(".searchbox01").show();
+				$(".searchbox02, .searchbox03, .searchbox04, .searchbox05, .searchbox06").hide();
+			});
+			$(".searchclick02").click(function(){	
+				$(".searchbox02").show();
+				$(".searchbox01, .searchbox03, .searchbox04, .searchbox05, .searchbox06").hide();
+			});
+			$(".searchclick03").click(function(){	
+				$(".searchbox03").show();
+				$(".searchbox02, .searchbox01, .searchbox04, .searchbox05, .searchbox06").hide();
+			});
+			$(".searchclick04").click(function(){	
+				$(".searchbox04").show();
+				$(".searchbox02, .searchbox03, .searchbox01, .searchbox05, .searchbox06").hide();
+			});
+			$(".searchclick05").click(function(){	
+				$(".searchbox05").show();
+				$(".searchbox02, .searchbox03, .searchbox04, .searchbox01, .searchbox06").hide();
+			});
+			$(".searchclick06").click(function(){	
+				$(".searchbox06").show();
+				$(".searchbox02, .searchbox03, .searchbox04, .searchbox05, .searchbox01").hide();
+			});
+	
+	   });
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/nav.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts.min.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts-wordcloud.min.js"></script>
+
+<script src="../scripts/plugins/jquery.ztree.all.min.js"></script>
+
+<style type="text/css">.ztree li a span.add{ display:none;}</style>
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+  <!-- sys-header -->
+  <div class="sys-header">
+    <div class="sys-logo">
+      <h1>重庆质监缺陷管理分析系统</h1>
+      <h2>缺陷产品管理系统</h2>
+    </div>
+    <div class="sys-menu" id="sys-menu">
+      <ul>
+        <li>loading......</li>
+      </ul>
+      <div class="curLine"></div>
+    </div>
+    <div class="sys-topbar">
+      <ul>
+        <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+        <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 执法任务管理 &gt; 决策支持</div>
+
+
+  <!-- sys-main -->
+  <div class="sys-main sys-main-style">
+  
+  	<div class="catechose">
+      	<ul>
+        	<li><a class="active" href="decision-support.html">精准执法</a></li>
+            <li><a href="decision-support2.html">专项整治</a></li>
+            <li><a href="decision-support3.html">案件处置</a></li>
+        </ul>
+      </div>
+    
+    
+    <div class="panel" style=" margin-top:-10px;">
+        <div class="panel-heading" style=" border-top:1px solid #ddd">
+          <div class="panel-title">
+          	
+          </div>
+        </div>
+        <div class="panel-body">
+        
+            <div class="form-box" style=" margin-bottom:10px; ">
+                <div class="form-item">                 
+                        <a class="btn" href="decision-support.html">返回上一页</a>
+                </div>
+              </div>
+              
+                    
+                <div class="col-7">
+                  <div class="panel">
+                    <div class="panel-heading">
+                      <div class="panel-title">案件详情</div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                          	<tr>
+                              <td><b>案件编号</b></td>
+                              <td>DDK52126</td>
+                              <td><b>办案单位</b></td>
+                              <td>大度</td>
+                              <td><b>案件来源</b></td>
+                              <td>监督检查</td>
+                            </tr>
+                            <tr>
+                              <td><b>案件名称</b></td>
+                              <td colspan="5">重庆厦工机械销售有限公司使用的起重机械未经定期检验合格，在我局下达监督检验书后未在限期内整改</td>
+                            </tr>
+                            <tr>
+                              <td><b>是否大案要案</b></td>
+                              <td>是</td>
+                              <td><b>立案时间</b></td>
+                              <td>17-08-09</td>
+                              <td><b>案件状态</b></td>
+                              <td>办理中</td>
+                            </tr>
+                            <tr>
+                              <td><b>违法类型</b></td>
+                              <td colspan="5">使用未经定期检验的特种设备</td>
+                            </tr>
+                            <tr>
+                              <td><b>涉案物品</b></td>
+                              <td>起重机</td>
+                              <td><b>涉案物品规格型号</b></td>
+                              <td>轻型起重机</td>
+                              <td><b>涉案货值</b></td>
+                              <td>900万元</td>
+                            </tr>
+                            <tr>
+                              <td><b>处理结果</b></td>
+                              <td colspan="5">罚款300万</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-5">
+                  <div class="panel">
+                    <div class="panel-heading">
+                      <div class="panel-title">相似已结案件</div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <td>案件编号</td>
+                              <td>案件名称</td>
+                              <td>相似度</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>DDK52126</td>
+                              <td><span class="word-wrap" style=" width:300px; " title="重庆厦工机械销售有限公司使用的起重机械未经定期检验合格，在我局下达监督检验书后未在限期内整改">重庆厦工机械销售有限公司使用的起重机械未经定期检验合格，在我局下达监督检验书后未在限期内整改</span></td>
+                              <td>100%</td>
+                            </tr>
+                            <tr>
+                              <td>NAQ10256</td>
+                              <td><span class="word-wrap" style=" width:300px; " title="重庆加建房地产开发有限公司在岳建阁小区使用的8台电梯超过定期检验有效期案">重庆加建房地产开发有限公司在岳建阁小区使用的8台电梯超过定期检验有效期案</span></td>
+                              <td>98%</td>
+                            </tr>
+                            <tr>
+                              <td>LYZ52126</td>
+                              <td><span class="word-wrap" style=" width:300px; " title="重庆厦工机械销售有限公司使用的起重机械未经定期检验合格，在我局下达监督检验书后未在限期内整改">重庆厦工机械销售有限公司使用的起重机械未经定期检验合格，在我局下达监督检验书后未在限期内整改</span></td>
+                              <td>96%</td>
+                            </tr>
+                            <tr>
+                              <td>TRE10256</td>
+                              <td><span class="word-wrap" style=" width:300px; " title="重庆加建房地产开发有限公司在岳建阁小区使用的8台电梯超过定期检验有效期案">重庆加建房地产开发有限公司在岳建阁小区使用的8台电梯超过定期检验有效期案</span></td>
+                              <td>90%</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-8">
+                  <div class="panel">
+                    <div class="panel-heading">
+                      <div class="panel-title">相似案件决策分析</div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="chart" id="chart_1"><img alt="" src="../assets/images/test/91.png" style=" width:100%; height:260px; " /></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-4">
+                  <div class="panel">
+                    <div class="panel-heading">
+                      <div class="panel-title">决策推荐</div>
+                    </div>
+                    <div class="panel-body">
+                        <dl class="recommend">
+                        	<dd>
+                            	<h3>方案一</h3>
+                                <em>50%相似案件使用</em>
+                                <p><b>没收产品</b>
+                                <b>吊销许可</b>
+                                <b>销毁产品</b>
+                                <b>召回产品</b>
+                                <b>罚款： 处罚依据条款：质监罚字[2016]第30号</b></p>
+                            </dd>
+                            <dd>
+                            	<h3>方案二</h3>
+                                <em>30%相似案件使用</em>
+                                <p><b>吊销许可</b>
+                                <b>召回产品</b>
+                                <b>通报公安机关</b></p>
+                            </dd>
+                        </dl>
+                    </div>
+                  </div>
+                </div>
+            
+            
+            
+        </div>
+      </div>
+    
+    
+
+
+
+
+    
+  </div>
+  
+  
+  
+</div>
+
+<script>
+
+    var setting = {
+      data: {
+        simpleData: {
+          enable: true
+        }
+      }
+    };
+
+    var zNodes1 =[
+			{ id:1, pId:0, name:"乘用车", open:true,font:{'background-color':'black', 'color':'white'}},
+		
+			{ id:2, pId:1, name:"安全故障信息"},
+			{ id:3, pId:1, name:"技术服务信息"},
+			{ id:4, pId:1, name:"境外召回说明"},
+			{ id:5, pId:1, name:"更退换货信息"},
+			{ id:6, pId:1, name:"车型基本配置"},
+			{ id:7, pId:1, name:"车型系列信息", open:true},
+			{ id:71, pId:7, name:"速腾"},
+			{ id:72, pId:7, name:"迈腾"},
+			{ id:73, pId:7, name:"高尔夫"},
+			{ id:74, pId:7, name:"宝来"},
+			
+			{ id:8, pId:1, name:"经销商信息"},
+			{ id:9, pId:1, name:"汽车总成信息"},
+  
+	];
+
+    $(document).ready(function(){
+      $.fn.zTree.init($("#role"), setting, zNodes1);
+
+    });
+
+    var labelTop = {
+        normal : {
+            label : {
+                show : true,
+                position : 'center',
+                formatter : '{b}',
+                textStyle: {
+                    baseline : 'bottom'
+                }
+            },
+            labelLine : {
+                show : false
+            }
+        }
+    };
+    var labelFromatter = {
+        normal : {
+            label : {
+                formatter : function (params){
+                    return 100 - params.value + '%'
+                },
+                textStyle: {
+                    baseline : 'top'
+                }
+            }
+        },
+    }
+    var labelBottom = {
+        normal : {
+            color: '#ccc',
+            label : {
+                show : true,
+                position : 'center'
+            },
+            labelLine : {
+                show : false
+            }
+        },
+        emphasis: {
+            color: 'rgba(0,0,0,0)'
+        }
+    };
+    var radius = [40, 55];
+    option = {
+        legend: {
+            x : 'center',
+            y : 'center',
+            data:[
+                '通报公安机关','没有产品','销毁产品','吊销许可','强制执行',
+                '罚款', '标准化问题', '召回产品', '检查督办', '大案要案'
+            ]
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '0',
+            top:"0px",
+            containLabel: true
+        },
+        color:["#2ec7c9","#b6a2de","#5ab1ef","#ffb980","#d87a80","#8b96b0","#dbc60c","#8c74be","#95706d","#dc69aa",],
+        series : [
+            {
+                type : 'pie',
+                center : ['10%', '22%'],
+                radius : radius,
+                x: '0%', // for funnel
+                itemStyle : labelFromatter,
+                data : [
+                    {name:'other', value:46, itemStyle : labelBottom},
+                    {name:'通报公安机关', value:54,itemStyle : labelTop}
+                ]
+            },
+            {
+                type : 'pie',
+                center : ['30%', '22%'],
+                radius : radius,
+                x:'20%', // for funnel
+                itemStyle : labelFromatter,
+                data : [
+                    {name:'other', value:56, itemStyle : labelBottom},
+                    {name:'没有产品', value:44,itemStyle : labelTop}
+                ]
+            },
+            {
+                type : 'pie',
+                center : ['50%', '22%'],
+                radius : radius,
+                x:'40%', // for funnel
+                itemStyle : labelFromatter,
+                data : [
+                    {name:'other', value:65, itemStyle : labelBottom},
+                    {name:'销毁产品', value:35,itemStyle : labelTop}
+                ]
+            },
+            {
+                type : 'pie',
+                center : ['70%', '22%'],
+                radius : radius,
+                x:'60%', // for funnel
+                itemStyle : labelFromatter,
+                data : [
+                    {name:'other', value:70, itemStyle : labelBottom},
+                    {name:'吊销许可+', value:30,itemStyle : labelTop}
+                ]
+            },
+            {
+                type : 'pie',
+                center : ['90%', '22%'],
+                radius : radius,
+                x:'80%', // for funnel
+                itemStyle : labelFromatter,
+                data : [
+                    {name:'other', value:73, itemStyle : labelBottom},
+                    {name:'强制执行', value:27,itemStyle : labelTop}
+                ]
+            },
+            {
+                type : 'pie',
+                center : ['10%', '78%'],
+                radius : radius,
+                y: '55%',   // for funnel
+                x: '0%',    // for funnel
+                itemStyle : labelFromatter,
+                data : [
+                    {name:'other', value:78, itemStyle : labelBottom},
+                    {name:'召回产品', value:22,itemStyle : labelTop}
+                ]
+            },
+            {
+                type : 'pie',
+                center : ['30%', '78%'],
+                radius : radius,
+                y: '55%',   // for funnel
+                x:'20%',    // for funnel
+                itemStyle : labelFromatter,
+                data : [
+                    {name:'other', value:78, itemStyle : labelBottom},
+                    {name:'罚款', value:22,itemStyle : labelTop}
+                ]
+            },
+            {
+                type : 'pie',
+                center : ['50%', '78%'],
+                radius : radius,
+                y: '55%',   // for funnel
+                x:'40%', // for funnel
+                itemStyle : labelFromatter,
+                data : [
+                    {name:'other', value:78, itemStyle : labelBottom},
+                    {name:'标准化问题', value:22,itemStyle : labelTop}
+                ]
+            },
+            {
+                type : 'pie',
+                center : ['70%', '78%'],
+                radius : radius,
+                y: '55%',   // for funnel
+                x:'60%', // for funnel
+                itemStyle : labelFromatter,
+                data : [
+                    {name:'other', value:83, itemStyle : labelBottom},
+                    {name:'大案要案', value:17,itemStyle : labelTop}
+                ]
+            },
+            {
+                type : 'pie',
+                center : ['90%', '78%'],
+                radius : radius,
+                y: '55%',   // for funnel
+                x:'80%', // for funnel
+                itemStyle : labelFromatter,
+                data : [
+                    {name:'other', value:89, itemStyle : labelBottom},
+                    {name:'检查督办', value:11,itemStyle : labelTop}
+                ]
+            }
+        ]
+    };
+
+    myChart = echarts.init($("#chart_1")[0], 'macarons');
+    myChart.setOption(option);
+
+</script>
+
+
+</body>
+</html>

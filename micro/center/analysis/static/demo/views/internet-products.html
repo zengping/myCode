@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts.min.js"></script>
+<script src="../scripts/lib/echarts-2.2.2/echarts.js"></script>
+<script src="../scripts/nav.js"></script>
+
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+  <!-- sys-header -->
+  <div class="sys-header">
+    <div class="sys-logo">
+      <h1>重庆质监缺陷管理分析系统</h1>
+      <h2>缺陷产品管理系统</h2>
+    </div>
+    <div class="sys-menu" id="sys-menu">
+      <ul>
+        <li>loading......</li>
+      </ul>
+      <div class="curLine"></div>
+    </div>
+    <div class="sys-topbar">
+      <ul>
+        <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+        <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 互联网情报分析 &gt; 产品分析 </div>
+
+  <!-- sys-main -->
+  <div class="sys-main sys-main-style">
+
+    <div class="catechose">
+      	<ul>
+        	<li><a href="internet-analysis.html">互联网情报预警</a></li>
+            <li><a href="internet-industry.html">行业分析</a></li>
+            <li><a href="internet-brand.html">品牌分析</a></li>
+            <li><a class="active" href="internet-products.html">产品分析</a></li>
+            <li><a href="internet-information.html">信息查询</a></li>
+        </ul>
+      </div>
+
+      <div class="form-box">
+        <div class="form-item">
+            <input type="text" style=" width:200px;" value="" placeholder="请输入关键字" class="input">
+            <button class="btn btn-warning" onclick="location.href='internet-products-chose.html'"><i class="icon-chart-bar"></i>分析</button>
+            <button class="btn" onclick="location.href='internet-information.html'"><i class="icon-search"></i>检索文本</button>
+        </div>
+      </div>
+
+      <div class="col-6">
+          <div class="panel">
+            <div class="panel-heading border-warning">
+              <div class="panel-title">产品预警</div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <td>预警评分</td>
+                      <td>产品名称</td>
+                      <td>热度评分</td>
+                      <td>负面信息评分</td>
+                      <td>维保投诉评分</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="active01">
+                      <td>12</td>
+                      <td><a href="internet-products-chose.html">朗逸2016款1.6T</a></td>
+                      <td>5</td>
+                      <td>4</td>
+                      <td>3</td>
+                    </tr>
+                    <tr class="active02">
+                      <td>9</td>
+                      <td><a href="internet-products-chose.html">本田思域  运动版 1.4T</a></td>
+                      <td>4</td>
+                      <td>3</td>
+                      <td>2</td>
+                    </tr>
+                    <tr class="active03">
+                      <td>7</td>
+                      <td><a href="internet-products-chose.html">牙签弩</a></td>
+                      <td>4</td>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td><a href="internet-products-chose.html">Galaxy Note8</a></td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td><a href="internet-products-chose.html">小米手环</a></td>
+                      <td>1</td>
+                      <td>2</td>
+                      <td>1</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-3">
+          <div class="panel">
+            <div class="panel-heading border-warning">
+              <div class="panel-title">消息数量占比</div>
+            </div>
+            <div class="panel-body">
+                <div class="chart" id="chart_1"><img alt="" src="../assets/images/test/52.png" style=" height:260px" /></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-3">
+          <div class="panel">
+            <div class="panel-heading border-warning">
+              <div class="panel-title">情感倾向</div>
+            </div>
+            <div class="panel-body">
+              <div class="chart" style="float: left;width: 70%" >
+                <div class="chart" id="chart_2" ><img alt="" src="../assets/images/test/53.png" style=" height:260px" /></div>
+
+              </div>
+              <div style="float: left;width: 30px">
+                <span>中性</span>
+                <span>213</span>
+                <span>负面</span>
+                <span>112</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="panel">
+            <div class="panel-heading border-warning">
+              <div class="panel-title">产品情报量走势</div>
+            </div>
+            <div class="panel-body">
+                <div class="chart"  id="chart_3"><img alt="" src="../assets/images/test/57.png" style=" height:260px" /></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="panel">
+            <div class="panel-heading border-warning">
+              <div class="panel-title">情报地域分布</div>
+            </div>
+            <div class="panel-body" style="float: left;width: 65%">
+                <div class="chart"  id="chart_4"><img alt="" src="../assets/images/test/60.png"  style=" height:260px;width: 60%;float: left"  /></div>
+            </div>
+            <div class="panel-body" style="float: left;width: 35%">
+
+              <div class="chart"  id="chart_5"><img alt="" src="../assets/images/test/60.png" style=" height:260px;width: 40%;float: left" /></div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+  </div>
+
+
+
+</div>
+<script>
+   function fill() {
+       var option = {
+           color:["#B6A2DE","#5AB1EF","#FFB980"],
+           grid: {
+               left: '3%',
+               right: '4%',
+               bottom: '3%',
+               containLabel: true
+           },
+           xAxis : [
+               {
+                   type : 'category',
+                   show:false,
+                   data : ['周一','周二','周三','周四','周五','周六','周日']
+               }
+           ],
+           yAxis : [
+               {
+                   type : 'value'
+               }
+           ],
+           series : [
+               {
+                   name:'互联网信息',
+                   type:'bar',
+                   stack: '广告',
+                   data:[120, 132, 101, 134, 90, 230, 250]
+               },
+               {
+                   name:'网络评价',
+                   type:'bar',
+                   stack: '广告',
+                   data:[220, 182, 191, 234, 290, 330, 310]
+               },
+               {
+                   name:'行业信息',
+                   type:'bar',
+                   stack: '广告',
+                   data:[150, 232, 201, 154, 190, 330, 410]
+               }
+           ]
+       };
+
+       var myChart = echarts.init($("#chart_1")[0], 'macarons');
+       myChart.setOption(option);
+
+
+       option = {
+           legend: {
+               orient: 'vertical',
+               left: 'left',
+               formatter:function(){ return "" },
+               data: ['53%','24%','16%','7%']
+           },
+           series : [
+               {
+                   name: '访问来源',
+                   type: 'pie',
+                   radius : '55%',
+                   center: ['50%', '60%'],
+                   data:[
+                       {value:530, name:'53%'},
+                       {value:230, name:'24%'},
+                       {value:160, name:'16%'},
+                       {value:60, name:'7%'}
+                   ],
+                   itemStyle: {
+                       emphasis: {
+                           shadowBlur: 10,
+                           shadowOffsetX: 0,
+                           shadowColor: 'rgba(0, 0, 0, 0.5)'
+                       }
+                   }
+               }
+           ]
+       };
+
+       myChart = echarts.init($("#chart_2")[0], 'macarons');
+       myChart.setOption(option);
+
+       option = {
+           color:["blue"],
+           tooltip: {
+               trigger: 'item',
+               formatter: '{a} <br/>{b} : {c}'
+           },
+           xAxis: {
+               type: 'category',
+               splitLine: {show: false},
+               data: ['09-20', '09-20', '09-20', '09-20', '09-20', '09-20', '09-20', '09-20', '09-20']
+           },
+           grid: {
+               left: '3%',
+               right: '4%',
+               bottom: '3%',
+               top:"10px",
+               containLabel: true
+           },
+           yAxis: {
+               type: 'value',
+               axisLine:{
+                   show:false
+               }
+           },
+           series: [
+               {
+                   name: '汽车事故预警',
+                   type: 'line',
+                   smooth: true,
+                   data: [188, 168, 49, 32, 50, 66, 52, 75, 0]
+               }
+           ]
+       };
+
+       myChart = echarts.init($("#chart_3")[0], 'macarons');
+       myChart.setOption(option);
+
+
+       option = {
+           grid: {
+               left: '3%',
+               right: '4%',
+               bottom: '3%',
+               containLabel: true
+           },
+           xAxis: {
+               show:false,
+               type: 'value',
+               boundaryGap: [0, 0.01],
+               max:100
+           },
+           yAxis: {
+               type: 'category',
+               splitLine:{show:false},
+               data: ['其他 ','台湾','广西','新疆','陕西','北京','上海']
+           },
+           series: [
+               { // For shadow
+                   type: 'bar',
+                   itemStyle: {
+                       normal: {color: 'rgba(0,0,0,0.05)'}
+                   },
+                   barGap:'-100%',
+                   barCategoryGap:'40%',
+                   data: [100, 100,100, 100, 100, 100, 100],
+                   animation: false
+               },
+               {
+                   name: '2011年',
+                   type: 'bar',
+                   itemStyle: {
+                       normal: {
+                           color: new echarts.graphic.LinearGradient(
+                               0, 0, 0, 1,
+                               [
+                                   {offset: 0, color: '#83bff6'},
+                                   {offset: 0.5, color: '#188df0'},
+                                   {offset: 1, color: '#188df0'}
+                               ]
+                           )
+                       },
+                       emphasis: {
+                           color: new echarts.graphic.LinearGradient(
+                               0, 0, 0, 1,
+                               [
+                                   {offset: 0, color: '#2378f7'},
+                                   {offset: 0.7, color: '#2378f7'},
+                                   {offset: 1, color: '#83bff6'}
+                               ]
+                           )
+                       }
+                   },
+                   label: {
+                       normal: {
+                           position: 'right',
+                           show: true,
+                           formatter:function(p){
+                               return p.value+"%"
+
+                           }
+                       }
+                   },
+                   data: [2.83,  6.25,19.34, 5.90, 19.34, 14.15, 35.38]
+               }
+           ]
+       };
+
+       myChart = echarts.init($("#chart_5")[0], 'macarons');
+       myChart.setOption(option);
+   }
+
+   fill()
+
+   var option_3  = {
+       dataRange: {
+           show:false,
+           min: 0,
+           max: 1000,
+           color:['#7BBBF6','blue'],
+           text:['高','低'],           // 文本，默认为数值文本
+           calculable : true
+       },
+       roamController: {
+           show: true,
+           x: 'right',
+           mapTypeControl: {
+               'china': true
+           }
+       },
+       series : [
+           {
+               name: '订单量',
+               type: 'map',
+               mapType: 'china',
+               roam: false,
+               selectedMode : 'single',
+               itemStyle:{
+                   normal:{
+                       label:{
+                           show:false,
+                           textStyle: {
+                               color: "rgb(249, 249, 249)"
+                           }
+                       }
+                   },
+                   emphasis:{label:{show:false}}
+               },
+               data:[
+                   {name: '北京',value: Math.round(Math.random()*2000)},
+                   {name: '天津',value: Math.round(Math.random()*2000)},
+                   {name: '上海',value: Math.round(Math.random()*2000)},
+                   {name: '重庆',value: Math.round(Math.random()*2000)},
+                   {name: '河北',value: 0},
+                   {name: '河南',value: Math.round(Math.random()*2000)},
+                   {name: '云南',value: 5},
+                   {name: '辽宁',value: 305},
+                   {name: '黑龙江',value: Math.round(Math.random()*2000)},
+                   {name: '湖南',value: 200},
+                   {name: '安徽',value: Math.round(Math.random()*2000)},
+                   {name: '山东',value: Math.round(Math.random()*2000)},
+                   {name: '新疆',value: Math.round(Math.random()*2000)},
+                   {name: '江苏',value: Math.round(Math.random()*2000)},
+                   {name: '浙江',value: Math.round(Math.random()*2000)},
+                   {name: '江西',value: Math.round(Math.random()*2000)},
+                   {name: '湖北',value: Math.round(Math.random()*2000)},
+                   {name: '广西',value: Math.round(Math.random()*2000)},
+                   {name: '甘肃',value: Math.round(Math.random()*2000)},
+                   {name: '山西',value: Math.round(Math.random()*2000)},
+                   {name: '内蒙古',value: Math.round(Math.random()*2000)},
+                   {name: '陕西',value: Math.round(Math.random()*2000)},
+                   {name: '吉林',value: Math.round(Math.random()*2000)},
+                   {name: '福建',value: Math.round(Math.random()*2000)},
+                   {name: '贵州',value: Math.round(Math.random()*2000)},
+                   {name: '广东',value: Math.round(Math.random()*2000)},
+                   {name: '青海',value: Math.round(Math.random()*2000)},
+                   {name: '西藏',value: Math.round(Math.random()*2000)},
+                   {name: '四川',value: Math.round(Math.random()*2000)},
+                   {name: '宁夏',value: Math.round(Math.random()*2000)},
+                   {name: '海南',value: Math.round(Math.random()*2000)},
+                   {name: '台湾',value: Math.round(Math.random()*2000)},
+                   {name: '香港',value: Math.round(Math.random()*2000)},
+                   {name: '澳门',value: Math.round(Math.random()*2000)}
+               ]
+           }
+       ]
+   };
+
+   $.getJSON('../scripts/lib/echarts-2.2.2/geoJson/china.json', function (chinaJson) {
+       echarts.registerMap('china', chinaJson);
+       var chart = echarts.init($("#chart_4")[0]);
+       chart.setOption(option_3);
+       chart.on("click", function (param) {
+           console.log(param);
+           fill();
+       });
+   });
+
+</script>
+
+</body>
+</html>

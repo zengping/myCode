@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+  <script src="../scripts/jquery-1.11.3.min.js"></script>
+  <script src="../scripts/nav.js"></script>
+  <script src="../scripts/lib/echarts-3.3.1/echarts.min.js"></script>
+  <script src="../scripts/lib/echarts-3.3.1/echarts-wordcloud.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+  <!-- sys-header -->
+  <div class="sys-header">
+    <div class="sys-logo">
+      <h1>重庆质监缺陷管理分析系统</h1>
+      <h2>缺陷产品管理系统</h2>
+    </div>
+    <div class="sys-menu" id="sys-menu">
+      <ul>
+        <li>loading......</li>
+      </ul>
+      <div class="curLine"></div>
+    </div>
+    <div class="sys-topbar">
+      <ul>
+        <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+        <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 互联网情报分析 &gt; 品牌分析 </div>
+  
+  <!-- sys-main -->
+  <div class="sys-main sys-main-style">
+	
+    <div class="catechose">
+      	<ul>
+        	<li><a href="internet-analysis.html">互联网情报预警</a></li>
+            <li><a href="internet-industry.html">行业分析</a></li>
+            <li><a class="active" href="internet-brand.html">品牌分析</a></li>
+            <li><a href="internet-products.html">产品分析</a></li>
+            <li><a href="internet-information.html">信息查询</a></li>
+        </ul>
+      </div>
+      
+      <div class="form-box">
+        <div class="form-item">                 
+            品牌名称：
+            <input type="text" style=" width:200px;" value="三星" placeholder="请输入品牌名称" class="input">
+            <button onclick="location.href='internet-brand-chose.html'" class="btn btn-warning"><i class="icon-chart-bar"></i>分析</button>
+            <button onclick="location.href='internet-information.html'" class="btn"><i class="icon-search"></i>检索文本</button>
+        </div>
+      </div>
+      
+      <div class="col-4">
+          <div class="panel">
+            <div class="panel-heading border-warning">
+              <div class="panel-title">品牌预警</div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <td>行业</td>
+                      <td>热度评分</td>
+                      <td>负面信息评分</td>
+                      <td>传播评分</td>
+                      <td>总评分</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="active01">
+                      <td><a href="internet-brand-chose.html">三星</a></td>
+                      <td>5</td>
+                      <td>4</td>
+                      <td>9</td>
+                      <td>18</td>
+                    </tr>
+                    <tr class="active02">
+                      <td><a href="internet-brand-chose.html">LG</a></td>
+                      <td>4</td>
+                      <td>4</td>
+                      <td>8</td>
+                      <td>16</td>
+                    </tr>
+                    <tr class="active03">
+                      <td><a href="internet-brand-chose.html">Apple</a></td>
+                      <td>3</td>
+                      <td>4</td>
+                      <td>3</td>
+                      <td>13</td>
+                    </tr>
+                    <tr>
+                      <td><a href="internet-brand-chose.html">大众</a></td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>8</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-4">
+          <div class="panel">
+            <div class="panel-heading border-warning">
+              <div class="panel-title">消息数量及占比</div>
+            </div>
+            <div class="panel-body">
+                <div class="chart">
+                    <div class="chart" id="chart_1"><img alt="" src="../assets/images/test/52.png" style=" height:260px" /></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      
+      <div class="col-4">
+          <div class="panel">
+            <div class="panel-heading border-warning">
+              <div class="panel-title">来源占比</div>
+            </div>
+            <div class="panel-body">
+                <div class="chart" id="chart_2"><img alt="" src="../assets/images/test/54.png" style=" height:260px" /></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-4">
+          <div class="panel">
+            <div class="panel-heading border-warning">
+              <div class="panel-title">预警品牌相关产品</div>
+            </div>
+            <div class="panel-body">
+            	<div class="chart"  id="chart_3"><img alt="" src="../assets/images/test/61.png" style=" height:260px" /></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-4">
+          <div class="panel">
+            <div class="panel-heading border-warning">
+              <div class="panel-title">品牌信息画像</div>
+            </div>
+            <div class="panel-body">
+                <div class="chart"  id="chart_4"><img alt="" src="../assets/images/test/62.png" style=" height:260px" /></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-4">
+          <div class="panel">
+            <div class="panel-heading border-warning">
+              <div class="panel-title">品牌热门消息</div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <td>消息内容</td>
+                      <td>信息来源</td>
+                      <td>发布时间</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>三星手机又炸了</td>
+                      <td>新浪微博</td>
+                      <td>2017-09-30</td>
+                    </tr>
+                    <tr>
+                      <td>大众速腾轮胎有问题啊</td>
+                      <td>百度</td>
+                      <td>2017-09-30</td>
+                    </tr>
+                    <tr>
+                      <td>苹果</td>
+                      <td>今日头条</td>
+                      <td>2017-09-30</td>
+                    </tr>
+                    <tr>
+                      <td>大众撞车啦</td>
+                      <td>新浪微博</td>
+                      <td>2017-09-30</td>
+                    </tr>
+                    <tr>
+                      <td>广汽三菱召回了刚出产的汽车</td>
+                      <td>新浪微博</td>
+                      <td>2017-09-30</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+
+                
+      
+      
+  </div>
+
+  <script>
+      var option = {
+          color:["#B6A2DE","#5AB1EF","#FFB980"],
+          grid: {
+              left: '3%',
+              right: '4%',
+              bottom: '3%',
+              containLabel: true
+          },
+          xAxis : [
+              {
+                  type : 'category',
+                  show:false,
+                  data : ['周一','周二','周三','周四','周五','周六','周日']
+              }
+          ],
+          yAxis : [
+              {
+                  type : 'value'
+              }
+          ],
+          series : [
+              {
+                  name:'互联网信息',
+                  type:'bar',
+                  stack: '广告',
+                  data:[120, 132, 101, 134, 90, 230, 250]
+              },
+              {
+                  name:'网络评价',
+                  type:'bar',
+                  stack: '广告',
+                  data:[220, 182, 191, 234, 290, 330, 310]
+              },
+              {
+                  name:'行业信息',
+                  type:'bar',
+                  stack: '广告',
+                  data:[150, 232, 201, 154, 190, 330, 410]
+              }
+          ]
+      };
+
+      var myChart = echarts.init($("#chart_1")[0], 'macarons');
+      myChart.setOption(option);
+
+      option = {
+          series : [
+              {
+                  name: '访问来源',
+                  type: 'pie',
+                  radius: ['30%', '70%'],
+                  center: ['50%', '60%'],
+                  data:[
+                      {value:35, name:'社交媒体：0.1%'},
+                      {value:105, name:'综合：0.5%'},
+                      {value:335, name:'纸媒：6.3%'},
+                      {value:310, name:'博客：7.0%'},
+                      {value:234, name:'论坛：7.0%'},
+                      {value:135, name:'其他：8.3%%0'},
+                      {value:1548, name:'新闻：70.8%'}
+                  ],
+                  itemStyle: {
+                      emphasis: {
+                          shadowBlur: 10,
+                          shadowOffsetX: 0,
+                          shadowColor: 'rgba(0, 0, 0, 0.5)'
+                      }
+                  }
+              }
+          ]
+      };
+
+      myChart = echarts.init($("#chart_2")[0], 'macarons');
+      myChart.setOption(option);
+
+
+       option = {
+          color:["#cccccc"],
+          grid: {
+              left: '0px',
+              right: '90px',
+              bottom: '3%',
+              top:"30px",
+              containLabel: true
+          },
+          xAxis: {
+              type: 'value',
+              boundaryGap: [0, 0.01],
+              splitLine:{show:false},
+              axisLabel:{
+                  show:false
+              },
+              axisTick :{
+                  show:false
+              },
+
+          },
+          yAxis: {
+              type: 'category',
+              name:'产品名称',
+              axisLabel:{
+                  show:false
+              },
+              axisTick :{
+                  show:false
+              },
+              data: ['三星','LG','大众','阿斯顿马丁','宝马','捷安特',"飞利浦","丰田","乐高"]
+          },
+          series: [
+              {
+                  name: '2011年',
+                  type: 'bar',
+                  label: {
+                      normal: {
+                          show: true,
+                          color:"#FF0000",
+                          formatter:function(p){
+                              return p.name;
+                          },
+
+                          position: 'right'
+                      }
+                  },
+                  itemStyle:{
+                      normal: {
+                          borderWidth: 1,
+                          borderColor: 'black'
+                      }
+                  },
+
+                  data: [203, 289, 134, 470, 144, 230,155,188,103]
+              }
+          ]
+      };
+
+       myChart = echarts.init($("#chart_3")[0], 'macarons');
+      myChart.setOption(option);
+
+      function draw(id, option) {
+          var myChart = echarts.init(document.getElementById(id));
+          // 使用刚指定的配置项和数据显示图表。
+          myChart.setOption(option);
+      }
+
+      function createRandomItemStyle() {
+          return {
+              normal: {
+                  color: 'rgb(' + [
+                      Math.round(Math.random() * 160),
+                      Math.round(Math.random() * 160),
+                      Math.round(Math.random() * 160)
+                  ].join(',') + ')'
+              }
+          };
+      }
+
+      draw('chart_4', option = {
+          series: [{
+              type: 'wordCloud',
+              gridSize: 20,
+              sizeRange: [12, 50],
+              rotationRange: [0, 0],
+              shape: 'circle',
+              textStyle: {
+                  normal: {
+                      color: function () {
+                          return 'rgb(' + [
+                              Math.round(Math.random() * 160),
+                              Math.round(Math.random() * 160),
+                              Math.round(Math.random() * 160)
+                          ].join(',') + ')';
+                      }
+                  },
+                  emphasis: {
+                      shadowBlur: 10,
+                      shadowColor: '#333'
+                  }
+              },
+              data: [
+                  {
+                      value: 10000,
+                      itemStyle: {
+                          normal: {
+                              color: 'black'
+                          }
+                      }
+                  },
+                  {
+                      name: "面包车",
+                      value: 6181,
+                      itemStyle: createRandomItemStyle()
+                  },
+                  {
+                      name: "劲炫",
+                      value: 4386,
+                      itemStyle: createRandomItemStyle()
+                  },
+                  {
+                      name: "广汽",
+                      value: 4055,
+                      itemStyle: createRandomItemStyle()
+                  },
+                  {
+                      name: "三菱",
+                      value: 2467,
+                      itemStyle: createRandomItemStyle()
+                  },
+                  {
+                      name: "发动机",
+                      value: 2244,
+                      itemStyle: createRandomItemStyle()
+                  },
+                  {
+                      name: "控制继电器",
+                      value: 1898,
+                      itemStyle: createRandomItemStyle()
+                  },
+                  {
+                      name: "三星手机",
+                      value: 1484,
+                      itemStyle: createRandomItemStyle()
+                  },
+                  {
+                      name: "海尔",
+                      value: 1464,
+                      itemStyle: createRandomItemStyle()
+                  },
+                  {
+                      name: "洗衣机",
+                      value: 1284,
+                      itemStyle: createRandomItemStyle()
+                  }
+              ]
+          }]
+      })
+
+  </script>
+  
+  
+  
+</div>
+
+</body>
+</html>

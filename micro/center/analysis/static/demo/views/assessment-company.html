@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts.min.js"></script>
+    <script type="text/javascript" src="../scripts/plugins/jcarousellite_1.js"></script>
+    <script src="../scripts/lib/echarts-2.2.2/echarts.js"></script>
+<script src="../scripts/nav.js"></script>
+
+<script type="text/javascript" src="../scripts/plugins/jcarousellite_1.js"></script>
+<script>
+$(function(){
+	var liLength = $("#rtList li").size();
+	//alert(liLength);
+	if(liLength>=6){
+		$("#rtList").jCarouselLite({
+			btnNext: "#rt_next",
+			btnPrev: "#rt_pre",
+			visible:6,
+			auto:3000,
+			speed: 500
+		});
+	}
+})
+
+</script>
+
+</head>
+<body>
+
+
+
+
+  <div class="assessment-r" style="margin-left: 0px">
+
+
+    <div class="h_pro_pic_con">
+      <div class="fl"><a href="javascript:;" class="h_control" id="rt_pre"><i class="icon-chevron-left"></i></a></div>
+      <div class="fm h_pro_pic_outer">
+        <div id="rtList">
+          <ul>
+            <li><a href="#">全部</a></li>
+            <li><a href="#">汽车</a></li>
+            <li><a href="#">家电</a></li>
+            <li><a href="#">儿童玩具</a></li>
+            <li><a href="#">电线电缆</a></li>
+            <li><a href="#">家电</a></li>
+            <li><a href="#">汽车</a></li>
+            <li><a href="#">家电</a></li>
+            <li><a href="#">儿童玩具</a></li>
+            <li><a href="#">电线电缆</a></li>
+            <li><a href="#">家电</a></li>
+            <li><a href="#">汽车</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fl"><a href="javascript:;" class="h_control" id="rt_next"><i class="icon-chevron-right"></i></a></div>
+    </div>
+
+    <div class="col-5">
+      <div class="panel">
+        <div class="panel-heading border-warning">
+          <div class="panel-title">企业分布</div>
+        </div>
+        <div class="panel-body" style=" height:665px;">
+          <div class="chart" id="chart_map"><img alt="" src="../assets/images/test/2.png"  /></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-7">
+      <div class="panel">
+        <div class="panel-heading border-gray">
+          <div class="panel-title">企业信用分布量统计-重庆市</div>
+        </div>
+        <div class="panel-body">
+          <div class="chart" id="chart_creditCount"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-7">
+      <div class="panel">
+        <div class="panel-heading border-gray">
+          <div class="panel-title">企业处罚量统计-重庆市</div>
+        </div>
+        <div class="panel-body">
+          <div class="chart" id="chart_punishCount" ></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4" style=" clear:both ">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="panel-title">处罚次数TOP5厂商</div>
+        </div>
+        <div class="panel-body">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <td>处罚次数</td>
+              <td>名称</td>
+              <td>状态</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>12</td>
+              <td>XXX汽车修理厂</td>
+              <td><span class="badge badge-danger">关闭</span></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>XXX汽车修理厂</td>
+              <td><span class="badge badge-primary">营业</span></td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>XXX汽车修理厂</td>
+              <td><span class="badge badge-danger">关闭</span></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>XXX汽车修理厂</td>
+              <td><span class="badge badge-primary">营业</span></td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>XXX汽车修理厂</td>
+              <td><span class="badge badge-danger">关闭</span></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>XXX汽车修理厂</td>
+              <td><span class="badge badge-primary">营业</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="panel-title">厂商信用度分析</div>
+        </div>
+        <div class="panel-body">
+          <div class="xinyonglist">
+            <dl>
+              <dd class="dd02">
+                <a href="##">
+                  60
+                  <p>信用指数</p>
+                </a>
+              </dd>
+              <dd class="dd01">
+                <a href="##">
+                  B
+                  <p>质量评级</p>
+                </a>
+              </dd>
+              <dd class="dd03">
+                <a href="##">
+                  80
+                  <p>投诉指数</p>
+                </a>
+              </dd>
+              <dd class="dd04">
+                <a href="##">
+                  差
+                  <p>整改效率</p>
+                </a>
+              </dd>
+            </dl>
+          </div>
+          <div class="chart" id="chart_complaint" style=" min-height:180px; height:180px; "><img alt="" src="../assets/images/test/8.png" /></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="panel-title">厂商评价分析</div>
+        </div>
+        <div class="panel-body">
+          <div class="chart" id="chart_evaluate">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+<script>
+    //app.title = '坐标轴刻度与标签对齐';
+
+   function fill() {
+       var option = {
+           color: ['#3398DB'],
+           tooltip : {
+               trigger: 'axis',
+               axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                   type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+               }
+           },
+           grid: {
+               left: '3%',
+               right: '4%',
+               bottom: '3%',
+               containLabel: true
+           },
+           xAxis : [
+               {
+                   type : 'category',
+                   data: ['渝中区','大渡口区','江北区 ','沙坪坝区','九龙坡区','南岸区','北碚区','綦江区  ','双桥区  ','渝北区  ','巴南区  ','万州区  '],
+                   axisTick: {
+                       alignWithLabel: true
+                   }
+               }
+           ],
+           yAxis : [
+               {
+                   type : 'value'
+               }
+           ],
+           series : [
+               {
+                   name:'直接访问',
+                   type:'bar',
+                   barWidth: '60%',
+                   data:[2, 5, 8, 12, 32, 80, 138,168, 49, 30, 22, 18]
+               }
+           ]
+       };
+
+
+       var myChart = echarts.init($("#chart_creditCount")[0], 'macarons');
+       myChart.setOption(option);
+
+
+       option = {
+           tooltip: {
+               trigger: 'axis'
+           },
+           legend: {
+               data:['张三','李四','王五','赵六'],
+               bottom: 10
+           },
+           grid: {
+               left: '3%',
+               right: '4%',
+               bottom: '60px',
+               top:'10px',
+               containLabel: true
+           },
+           xAxis: {
+               type: 'category',
+               boundaryGap: false,
+
+			   data : ['1月', '2月', '3月', '4月', '5月', '6月', '7月','8月', '9月','10月', '11月','12月'],
+           },
+           yAxis: {
+               type: 'value',
+
+           },
+           series: [
+               {
+                   name:'张三',
+                   type:'line',
+                   data:[20, 15, 33, 50, 77, 66, 58, 66, 42, 56, 48, 75]
+               },
+               {
+                   name:'李四',
+                   type:'line',
+                   data:[15, 22, 15, 40, 62, 40, 30, 45, 25, 15, 40, 35]
+               },
+               {
+                   name:'王五',
+                   type:'line',
+                   data:[40, 40, 55, 60, 45, 35, 55, 30, 62, 78, 90, 60]
+               },
+               {
+                   name:'赵六',
+                   type:'line',
+                   data:[60, 65, 52, 20, 15, 25, 35, 40, 25, 38, 15, 20]
+               }
+           ]
+       };
+
+       myChart = echarts.init($("#chart_punishCount")[0], 'macarons');
+       myChart.setOption(option);
+
+       var list=[46,42,87,59,50,67,69,40,44,48,59,45];
+       var mouth= ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
+       function createComplaintSeries() {
+           var seriers=[];
+           for(var i=0;i<list.length;i++){
+               var temp=   {
+                   type: 'bar',
+                   barWidth:'23px',
+                   barGap: 0.4,
+                   label: {
+                       normal: {
+                           show: true,
+                           position: 'top',
+                           formatter:function(param){
+                               return mouth[param.seriesIndex] +'\n'+ param.value+ "%";
+                           }
+                       }
+                   },
+                   data: [list[i]]
+               }
+
+               seriers.push(temp)
+           }
+
+           return seriers;
+       }
+
+       option = {
+           color: ['#c1232b', '#B5C334', '#FCCE10', '#E87C25'  , '#B5C334', '#FCCE10', '#E87C25', '#B5C334', '#FCCE10', '#E87C25', '#B5C334', '#FCCE10'],
+           grid: {
+               left: '3%',
+               right: '4%',
+               bottom: '3%',
+               containLabel: true
+           },
+           xAxis: {
+               type : 'category',
+               show:false,
+               splitLine: {show:false},
+               data : ['一月']
+           },
+           yAxis: {
+               type : 'value',
+               max:100,
+               show:false
+           },
+           series: createComplaintSeries()
+       };
+
+
+       myChart = echarts.init($("#chart_complaint")[0], 'macarons');
+       myChart.setOption(option);
+
+
+
+       placeHolderStyle = {
+           normal: {
+               label: {
+                   show: false,
+                   position: "center"
+               },
+               labelLine: {
+                   show: false
+               },
+               color: "#FFFFFF",
+               borderColor: "#dedede",
+               borderWidth: 0
+           },
+           emphasis: {
+               color: "#dedede",
+               borderColor: "#dedede",
+               borderWidth: 0
+           }
+       };
+       option = {
+           backgroundColor: '#fff',
+           color: ['#DB7093', '#fff', '#FF8C00', '#fff', "#48D1CC"],
+           legend: [{
+               orient: '',
+               icon: 'circle',
+               left: 'right',
+               top: 'center',
+               data: ['负面', '中立', '正面']
+           }],
+           series: [{
+               name: '值',
+               type: 'pie',
+               clockWise: true, //顺时加载
+               hoverAnimation: false, //鼠标移入变大
+               radius: [64, 78],
+               itemStyle: {
+                   normal: {
+                       label: {
+                           show: true,
+                           textStyle: {
+                               fontSize: 20
+                           },
+                           position: 'outside'
+                       },
+                       labelLine: {
+                           show: true,
+                           length: 15,
+                           smooth: 0.5
+                       },
+                       borderWidth: 8,
+                       shadowBlur: 40,
+                       borderColor: "#DB7093",
+                       shadowColor: 'rgba(0, 0, 0, 0)' //边框阴影
+                   }
+               },
+               //及格率数据修改
+               data: [{
+                   value: 6.1,
+                   name: '正面：61%'
+               }, {
+                   value: 5.9,
+                   name: '',
+                   itemStyle: placeHolderStyle
+               }]
+           }, {
+               name: '白',
+               type: 'pie',
+               clockWise: false,
+               radius: [63, 63],
+               hoverAnimation: false,
+               data: [{
+                   value: 1
+               }]
+           }, {
+               name: '值',
+               type: 'pie',
+               clockWise: true,
+               hoverAnimation: false,
+               radius: [53, 60],
+               itemStyle: {
+                   normal: {
+                       label: {
+                           show: true,
+                           textStyle: {
+                               fontSize: 20
+                           },
+                       },
+                       labelLine: {
+                           show: true,
+                           length: 22,
+                           smooth: 0.5
+                       },
+                       borderWidth: 8,
+                       shadowBlur: 40,
+                       borderColor: "#FF8C00",
+                       shadowColor: 'rgba(0, 0, 0, 0)' //边框阴影
+                   }
+               },
+               //得分率数据修改
+               data: [{
+                   value: 3.6,
+                   name: '中立：36%'
+               }, {
+                   value: 4.3,
+                   name: '',
+                   itemStyle: placeHolderStyle
+               }]
+           }, {
+               name: '白',
+               type: 'pie',
+               clockWise: false,
+               hoverAnimation: false,
+               radius: [51, 52],
+               data: [{
+                   value: 1
+               }]
+           }, {
+               name: '值',
+               type: 'pie',
+               clockWise: true,
+               hoverAnimation: false,
+               radius: [40, 50],
+               itemStyle: {
+                   normal: {
+                       label: {
+                           show: true,
+                           textStyle: {
+                               fontSize: 20
+                           },
+                       },
+                       labelLine: {
+                           show: true,
+                           length: 40,
+                           smooth: 0.5
+                       },
+                       borderWidth: 8,
+                       shadowBlur: 40,
+                       borderColor: "#48D1CC",
+                       shadowColor: 'rgba(0, 0, 0, 0)' //边框阴影
+                   }
+               },
+               //优秀率数据修改
+               data: [{
+                   value: 0.3,
+                   name: '负面：3%',
+
+               }, {
+                   value: 9.7,
+                   name: '',
+                   itemStyle: placeHolderStyle
+               }]
+           },  {
+               name: '白',
+               type: 'pie',
+               clockWise: true,
+               hoverAnimation: false,
+               radius: [22, 22],
+               label: {
+                   normal: {
+                       position: 'center'
+                   }
+               },
+               data: [{
+                   value: 1,
+                   label: {
+                       normal: {
+                           textStyle: {
+                               color: '#666666',
+                               fontSize: 26
+                           }
+                       }
+                   }
+               }, {
+                   tooltip: {
+                       show: false
+                   },
+               }]
+           }]
+       };
+
+
+       myChart = echarts.init($("#chart_evaluate")[0], 'macarons');
+       myChart.setOption(option);
+   }
+
+   fill();
+
+    function map() {
+        require.config({
+            paths: {
+                echarts: '../scripts/lib/echarts-2.2.2'
+            }
+        });
+        require(
+            [
+                'echarts',
+                'echarts/theme/dark',
+                'echarts/chart/map'
+            ],
+            function(ec, theme) {
+                require('echarts/util/mapData/params').params["重庆市"] = {
+                    getGeoJson: (function () {
+                        return function (callback) {
+                            $.getJSON('../scripts/lib/echarts-2.2.2/geoJson/china-main-city/500100.json', callback);
+                        }
+                    })()
+                }
+                var option = {
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: '{b}'
+                    },
+                    series : [
+                        {
+                            type: 'map',
+                            mapType: '重庆市',
+                            selectedMode : 'single',
+                            itemStyle:{
+                                normal:{label:{show:false}},
+                                emphasis:{label:{show:false}}
+                            },
+                            data:[]
+                        }
+                    ]
+                };
+                var chart = ec.init(document.getElementById("chart_map"));
+                chart.setOption(option);
+                chart.on("mapSelected", function (param) {
+                    console.log(param);
+                    fill();
+                });
+            }
+        );
+    }
+  //  map();
+
+
+</script>
+
+</body>
+</html>

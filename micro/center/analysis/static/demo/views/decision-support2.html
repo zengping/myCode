@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>重庆质监缺陷管理分析系统</title>
+<link rel="stylesheet" href="../assets/css/analysis.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/icons/style.css">
+
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/nav.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts.min.js"></script>
+<script src="../scripts/lib/echarts-3.3.1/echarts-wordcloud.min.js"></script>
+
+<script src="../scripts/plugins/jquery.ztree.all.min.js"></script>
+
+<style type="text/css">.ztree li a span.add{ display:none;}</style>
+
+</head>
+<body>
+
+<div class="sys-wraper">
+
+  <!-- sys-header -->
+  <div class="sys-header">
+    <div class="sys-logo">
+      <h1>重庆质监缺陷管理分析系统</h1>
+      <h2>缺陷产品管理系统</h2>
+    </div>
+    <div class="sys-menu" id="sys-menu">
+      <ul>
+        <li>loading......</li>
+      </ul>
+      <div class="curLine"></div>
+    </div>
+    <div class="sys-topbar">
+      <ul>
+        <li><a href="#"> <i class="icon-person"></i>Admin</a></li>
+        <li><a href="#"> <i class="icon-logout"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sys-path"> <i class="icon-room"></i>首页 &gt; 执法任务管理 &gt; 决策支持</div>
+
+
+  <!-- sys-main -->
+  <div class="sys-main sys-main-style">
+  
+  	<div class="catechose">
+      	<ul>
+        	<li><a href="decision-support.html">精准执法</a></li>
+            <li><a class="active" href="decision-support2.html">专项整治</a></li>
+            <li><a href="decision-support3.html">案件处置</a></li>
+        </ul>
+      </div>
+    
+    
+    <div class="panel" style=" margin-top:-10px;">
+        <div class="panel-heading">
+          <div class="panel-title">
+          	
+          </div>
+        </div>
+        <div class="panel-body">
+        
+            <div class="form-box" style=" margin-bottom:20px; background:#f4f4f4; padding:10px; ">
+                <div class="form-item">                 
+                        选择时间：
+                    	<ul class="list-time">
+                            <li class="active">今天</li>
+                            <li>近7天</li>
+                            <li>近30天</li>
+                        </ul>
+                        自定义时间
+                        <input class="input" placeholder="请选择开始时间" value="" type="text" style=" width:200px;"> -  <input class="input" placeholder="请选择结束时间" type="text" style=" width:200px;">
+                        <button class="btn"><i class="icon-search"></i>查询</button>
+                </div>
+              </div>
+              
+                    
+                <div class="col-6">
+                  <img alt="" src="../assets/images/test/test92.png"  />
+                </div>
+                
+                <div class="col-6">
+                  <div class="panel">
+                    <div class="panel-heading border-warning">
+                      <div class="panel-title">专项整治列表</div>
+                    </div>
+                    <div class="panel-body">
+                    	<div class="carstit">
+                            <input class="input" placeholder="请输入产品名称" style=" width:82%; margin-right:10px; " type="text"><button class="btn"><i class="icon-search"></i>搜索</button>
+                        </div>
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <td>发布时间</td>
+                              <td>任务号</td>
+                              <td>名称</td>
+                              <td>案件数量</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>2017/07/08</td>
+                              <td>JJ1457745</td>
+                              <td><a href="decision-support2-detail.html">个人机动车辆专项整治</a></td>
+                              <td>678</td>
+                            </tr>
+                            <tr>
+                              <td>2017/07/08</td>
+                              <td>YZ125488</td>
+                              <td><a href="decision-support2-detail.html">电线电缆产品专项整治</a></td>
+                              <td>678</td>
+                            </tr>
+                            <tr>
+                              <td>2017/07/08</td>
+                              <td>NA235841</td>
+                              <td><a href="decision-support2-detail.html">餐饮计量专项整治</a></td>
+                              <td>678</td>
+                            </tr>
+                            <tr>
+                              <td>2017/07/08</td>
+                              <td>CQ564822</td>
+                              <td><a href="decision-support2-detail.html">气瓶专项整治</a></td>
+                              <td>678</td>
+                            </tr>
+                            <tr>
+                              <td>2017/07/08</td>
+                              <td>JJ1457745</td>
+                              <td><a href="decision-support2-detail.html">个人机动车辆专项整治</a></td>
+                              <td>678</td>
+                            </tr>
+                            <tr>
+                              <td>2017/07/08</td>
+                              <td>YZ125488</td>
+                              <td><a href="decision-support2-detail.html">电线电缆产品专项整治</a></td>
+                              <td>678</td>
+                            </tr>
+                            <tr>
+                              <td>2017/07/08</td>
+                              <td>NA235841</td>
+                              <td><a href="decision-support2-detail.html">餐饮计量专项整治</a></td>
+                              <td>678</td>
+                            </tr>
+                            <tr>
+                              <td>2017/07/08</td>
+                              <td>CQ564822</td>
+                              <td><a href="decision-support2-detail.html">气瓶专项整治</a></td>
+                              <td>678</td>
+                            </tr>
+                            <tr>
+                              <td>2017/07/08</td>
+                              <td>JJ1457745</td>
+                              <td><a href="decision-support2-detail.html">个人机动车辆专项整治</a></td>
+                              <td>678</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div class="pagebar">
+                            <div class="pageinfo">共有50条记录，每页显示10条</div>
+                            <ul class="pagination">
+                                <li class="disabled"><a href="#">&lt;</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li class="disabled"><a href="#">&gt;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                
+               
+                
+                
+   
+            
+            
+            
+        </div>
+      </div>
+    
+    
+
+
+
+
+    
+  </div>
+  
+  
+  
+</div>
+
+<script>
+
+    var setting = {
+      data: {
+        simpleData: {
+          enable: true
+        }
+      }
+    };
+
+    var zNodes1 =[
+			{ id:1, pId:0, name:"乘用车", open:true,font:{'background-color':'black', 'color':'white'}},
+		
+			{ id:2, pId:1, name:"安全故障信息"},
+			{ id:3, pId:1, name:"技术服务信息"},
+			{ id:4, pId:1, name:"境外召回说明"},
+			{ id:5, pId:1, name:"更退换货信息"},
+			{ id:6, pId:1, name:"车型基本配置"},
+			{ id:7, pId:1, name:"车型系列信息", open:true},
+			{ id:71, pId:7, name:"速腾"},
+			{ id:72, pId:7, name:"迈腾"},
+			{ id:73, pId:7, name:"高尔夫"},
+			{ id:74, pId:7, name:"宝来"},
+			
+			{ id:8, pId:1, name:"经销商信息"},
+			{ id:9, pId:1, name:"汽车总成信息"},
+  
+	];
+
+    $(document).ready(function(){
+      $.fn.zTree.init($("#role"), setting, zNodes1);
+
+    });
+  </script>
+
+
+</body>
+</html>
